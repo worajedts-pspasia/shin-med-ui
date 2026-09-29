@@ -1,0 +1,295 @@
+{
+  "comment": "Mirror of the @theme tokens in app/frontend/index.css. Kept in sync and cross-checked by tools/verify-spec.mjs. Usage strings document where each token is used.",
+  "groups": [
+    {
+      "group": "Accent",
+      "tokens": [
+        {
+          "name": "things-blue",
+          "value": "#3b82ec",
+          "usage": "Primary accent: checkboxes (filled), blue labels, separators, New List, + button, links"
+        },
+        {
+          "name": "things-blue-dark",
+          "value": "#3474d8",
+          "usage": "Hover state of the accent blue"
+        },
+        {
+          "name": "things-blue-soft",
+          "value": "#eef3fd",
+          "usage": "Selected/expanded task row background"
+        },
+        {
+          "name": "things-badge",
+          "value": "#e5484d",
+          "usage": "Today count badge in the sidebar; overdue/deadline-today chip text"
+        },
+        {
+          "name": "things-evening",
+          "value": "#7a8fae",
+          "usage": "Moon icon in the This Evening separator"
+        }
+      ]
+    },
+    {
+      "group": "Surfaces",
+      "tokens": [
+        {
+          "name": "things-sidebar",
+          "value": "#f5f5f3",
+          "usage": "Sidebar and drawer background"
+        },
+        {
+          "name": "things-window",
+          "value": "#e8e8e6",
+          "usage": "Desktop backdrop behind the floating window"
+        },
+        {
+          "name": "things-hairline",
+          "value": "#e5e5e3",
+          "usage": "Hairline separators, sidebar divider, toolbar border"
+        },
+        {
+          "name": "things-select",
+          "value": "#e3e3e1",
+          "usage": "Selected sidebar row background"
+        },
+        {
+          "name": "things-hover",
+          "value": "#f6f6f4",
+          "usage": "Task row hover background"
+        },
+        {
+          "name": "things-chip",
+          "value": "#e9e9e7",
+          "usage": "Active filter chip background"
+        },
+        {
+          "name": "things-chip-soft",
+          "value": "#f2f2f0",
+          "usage": "Reminder/deadline chip background"
+        },
+        {
+          "name": "things-border",
+          "value": "#dcdcd9",
+          "usage": "Outlined toolbar square button border"
+        },
+        {
+          "name": "things-tag-border",
+          "value": "#e0e0de",
+          "usage": "Tag pill border"
+        },
+        {
+          "name": "things-box",
+          "value": "#c8c8c6",
+          "usage": "Checkbox circle border; Tomorrow dashed circle"
+        }
+      ]
+    },
+    {
+      "group": "Text",
+      "tokens": [
+        {
+          "name": "things-title",
+          "value": "#26262a",
+          "usage": "Big view titles, project header names"
+        },
+        {
+          "name": "things-ink",
+          "value": "#3c3c3b",
+          "usage": "Task titles, sidebar rows"
+        },
+        {
+          "name": "things-ink-strong",
+          "value": "#1e1e1d",
+          "usage": "Selected sidebar row text"
+        },
+        {
+          "name": "things-ink-2",
+          "value": "#4a4a48",
+          "usage": "Checklist item text"
+        },
+        {
+          "name": "things-gray",
+          "value": "#a8a8a5",
+          "usage": "Secondary text: notes, counts, subtitles, completed tasks"
+        },
+        {
+          "name": "things-gray-2",
+          "value": "#8a8a88",
+          "usage": "Chip text, notes in expanded tasks"
+        },
+        {
+          "name": "things-gray-3",
+          "value": "#7a7a78",
+          "usage": "Tag pill text"
+        },
+        {
+          "name": "things-gray-4",
+          "value": "#6a6a68",
+          "usage": "Toolbar icons, hamburger"
+        },
+        {
+          "name": "things-gray-5",
+          "value": "#5a5a58",
+          "usage": "Hovered menu icon text"
+        }
+      ]
+    },
+    {
+      "group": "Glyphs & lists",
+      "tokens": [
+        {
+          "name": "things-glyph-blue",
+          "value": "#4a7cf5",
+          "usage": "Inbox tray glyph fill; House list icon; Work tag"
+        },
+        {
+          "name": "things-gold",
+          "value": "#f7ce45",
+          "usage": "Today star glyph fill"
+        },
+        {
+          "name": "things-gold-dark",
+          "value": "#e0b93a",
+          "usage": "Today star glyph stroke"
+        },
+        {
+          "name": "things-cal",
+          "value": "#e8453c",
+          "usage": "Upcoming calendar glyph stroke"
+        },
+        {
+          "name": "things-teal",
+          "value": "#2db8a6",
+          "usage": "Anytime layers glyph; Trip list icon; Errand tag"
+        },
+        {
+          "name": "things-tan",
+          "value": "#c9b458",
+          "usage": "Someday box glyph; Travel tag"
+        },
+        {
+          "name": "things-green",
+          "value": "#3fbf6e",
+          "usage": "Logbook glyph"
+        },
+        {
+          "name": "things-purple",
+          "value": "#7c5cd6",
+          "usage": "Side Project list icon; Phone tag"
+        },
+        {
+          "name": "things-orange",
+          "value": "#f0923f",
+          "usage": "Quarter Close list icon; Home tag"
+        },
+        {
+          "name": "things-pink",
+          "value": "#e86fa4",
+          "usage": "Reading tag"
+        },
+        {
+          "name": "things-light-red",
+          "value": "#ff5f57",
+          "usage": "macOS traffic light: close"
+        },
+        {
+          "name": "things-light-yellow",
+          "value": "#febc2e",
+          "usage": "macOS traffic light: minimize"
+        },
+        {
+          "name": "things-light-green",
+          "value": "#28c840",
+          "usage": "macOS traffic light: zoom"
+        }
+      ]
+    },
+    {
+      "group": "Clinic severity",
+      "tokens": [
+        {
+          "name": "clinic-ok",
+          "value": "#197f47",
+          "usage": "Normal result, Keep action, met quality measure (AA-corrected)"
+        },
+        {
+          "name": "clinic-ok-soft",
+          "value": "#eaf7ef",
+          "usage": "Normal row tint and met-measure chip background"
+        },
+        {
+          "name": "clinic-warn",
+          "value": "#a36100",
+          "usage": "Abnormal high/low flag, care gap due, allergy not recorded (AA-corrected)"
+        },
+        {
+          "name": "clinic-warn-soft",
+          "value": "#fdf4e6",
+          "usage": "Abnormal row tint and due-measure chip background"
+        },
+        {
+          "name": "clinic-critical",
+          "value": "#c62828",
+          "usage": "Critical value, Stop/Inactivate, allergy banner"
+        },
+        {
+          "name": "clinic-critical-soft",
+          "value": "#fcebea",
+          "usage": "Critical row tint and allergy banner background"
+        }
+      ]
+    },
+    {
+      "group": "Clinic data surfaces",
+      "tokens": [
+        {
+          "name": "clinic-grid-line",
+          "value": "#ededeb",
+          "usage": "Cell border inside dense grids (flowsheet, results, schedule)"
+        },
+        {
+          "name": "clinic-grid-header",
+          "value": "#f4f4f2",
+          "usage": "Sticky header row and header column band"
+        },
+        {
+          "name": "clinic-zebra",
+          "value": "#fafaf9",
+          "usage": "Alternating row tint in dense tables"
+        },
+        {
+          "name": "clinic-lane",
+          "value": "#f7f7f5",
+          "usage": "Timeline swimlane band and flowsheet section-group row"
+        },
+        {
+          "name": "clinic-today",
+          "value": "#fff4d6",
+          "usage": "Today column in a timeline, today cell in the mini calendar"
+        }
+      ]
+    },
+    {
+      "group": "Clinic paper",
+      "tokens": [
+        {
+          "name": "clinic-paper",
+          "value": "#fdfcf7",
+          "usage": "Printable document preview surface (Rx, letter, fax, CCD)"
+        },
+        {
+          "name": "clinic-paper-edge",
+          "value": "#e8e5d8",
+          "usage": "Paper border / page edge"
+        },
+        {
+          "name": "clinic-paper-ink",
+          "value": "#2b2a26",
+          "usage": "Text on the paper surface — warmer than things-ink"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,694 @@
+{
+  "sidebar": {
+    "inbox": "Inbox",
+    "today": "Today",
+    "upcoming": "Upcoming",
+    "anytime": "Anytime",
+    "someday": "Someday",
+    "logbook": "Logbook",
+    "lists": "Lists",
+    "areas": "Areas",
+    "newList": "New List",
+    "newArea": "New Area",
+    "settings": "Account & Settings",
+    "trash": "Trash"
+  },
+  "view": {
+    "loading": "Loading…",
+    "toDos": "{{count}} To-Dos",
+    "remaining": "{{count}} Remaining",
+    "completed": "{{count}} Completed",
+    "scheduled": "{{count}} Scheduled",
+    "todayEmpty": "Nothing left for today. Enjoy!",
+    "inboxEmpty": "Inbox zero. Nice.",
+    "upcomingEmpty": "Nothing scheduled ahead.",
+    "somedayEmpty": "No someday dreams yet.",
+    "trashEmpty": "Trash is Empty",
+    "emptyTrash": "Empty Trash",
+    "restore": "Restore",
+    "thisEvening": "This Evening",
+    "tomorrow": "Tomorrow",
+    "noProject": "No Project",
+    "thisWeek": "This Week",
+    "earlier": "Earlier",
+    "projects": "Projects",
+    "toDosSection": "To-Dos",
+    "noListsInArea": "No lists in this area.",
+    "all": "All",
+    "open": "Open",
+    "openCount": "{{count}} Open"
+  },
+  "task": {
+    "when": "When",
+    "deadline": "Deadline",
+    "tags": "Tags",
+    "move": "Move",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "evening": "This Evening",
+    "someday": "Someday",
+    "clear": "Clear",
+    "clearDeadline": "Clear deadline",
+    "cancel": "Cancel",
+    "reopen": "Reopen",
+    "delete": "Delete",
+    "checklistItem": "Checklist item",
+    "notes": "Notes",
+    "remaining": "{{count}} remaining",
+    "lists": "Lists",
+    "areas": "Areas"
+  },
+  "dialog": {
+    "newTodo": "New To-Do",
+    "newTodoDesc": "Create a new to-do",
+    "add": "Add",
+    "cancel": "Cancel",
+    "newList": "New List",
+    "newListDesc": "Group related to-dos into a project.",
+    "newArea": "New Area",
+    "newAreaDesc": "A broader category that holds lists.",
+    "listName": "List name",
+    "areaName": "Area name",
+    "noArea": "No area",
+    "inbox": "Inbox"
+  },
+  "toolbar": {
+    "newTodo": "New To-Do ⌘N",
+    "checklist": "New Checklist Item ⌥⌘N",
+    "schedule": "Schedule… ⌥⌘T",
+    "deadline": "Deadline… ⌥⌘D",
+    "quickFind": "Quick Find ⌥Space"
+  },
+  "toast": {
+    "completed": "Completed",
+    "undo": "Undo",
+    "added": "To-Do added",
+    "listCreated": "List created",
+    "areaCreated": "Area created",
+    "trashed": "Moved to Trash",
+    "restored": "Restored",
+    "todayClear": "Today is clear 🎉",
+    "trashEmptied": "Trash emptied",
+    "error": "Something went wrong"
+  },
+  "quickfind": {
+    "placeholder": "Search to-dos, lists, areas, tags…",
+    "noResults": "No results.",
+    "searching": "Searching…",
+    "typeToSearch": "Type to search everything.",
+    "tasks": "To-Dos",
+    "projects": "Lists",
+    "areas": "Areas",
+    "tags": "Tags"
+  },
+  "menu": {
+    "settings": "Account & Settings",
+    "tags": "Manage Tags",
+    "api": "API Documentation",
+    "language": "Language"
+  },
+  "clinic": {
+    "common": {
+      "none": "— None",
+      "collapse": "Collapse",
+      "expand": "Expand",
+      "more": "+{{count}} more",
+      "select": "Select"
+    },
+    "severity": {
+      "N": "Normal",
+      "H": "High",
+      "L": "Low",
+      "HH": "Critical high",
+      "LL": "Critical low",
+      "A": "Abnormal"
+    },
+    "allergy": {
+      "label": "Allergies",
+      "hasAllergies": "Allergies",
+      "noKnown": "No known drug allergies",
+      "confirmedAt": "Confirmed {{date}}",
+      "notRecorded": "Allergy status not recorded",
+      "record": "Record allergies",
+      "review": "Review",
+      "severity": {
+        "mild": "Mild",
+        "moderate": "Moderate",
+        "severe": "Severe"
+      }
+    },
+    "patient": {
+      "mrn": "MRN",
+      "dob": "DOB",
+      "age": "Age",
+      "sex": "Sex",
+      "sexLabel": {
+        "male": "Male",
+        "female": "Female",
+        "other": "Other",
+        "unknown": "Unknown"
+      },
+      "alerts": "Alerts",
+      "phone": "Phone"
+    },
+    "queue": {
+      "arrived": "Arrived",
+      "accepted": "Accepted",
+      "held": "Held",
+      "done": "Done",
+      "cancelled": "Cancelled",
+      "pending": "Pending",
+      "in-room": "In room",
+      "info": "Info",
+      "waitMinutes": "{{minutes}} min",
+      "title": "Waiting queue",
+      "refresh": "Refresh",
+      "urgency": "Urgency",
+      "name": "Name",
+      "wait": "Wait",
+      "status": "Status",
+      "note": "Note"
+    },
+    "urgency": {
+      "routine": "Routine",
+      "rush": "Rush",
+      "urgent": "Urgent"
+    },
+    "age": {
+      "y": "y",
+      "m": "mo",
+      "d": "d"
+    },
+    "panel": {
+      "meta": "Meta",
+      "status": {
+        "ok": "OK",
+        "warn": "Warning",
+        "critical": "Critical"
+      }
+    },
+    "table": {
+      "empty": "No records",
+      "loading": "Loading…"
+    },
+    "form": {
+      "unsaved": "Unsaved changes",
+      "saving": "Saving…",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "actions": "Form actions"
+    },
+    "toolbar": {
+      "label": "Actions",
+      "more": "More actions"
+    },
+    "search": {
+      "placeholder": "Search code or term",
+      "noResults": "No matching codes",
+      "searching": "Searching…",
+      "favorites": "Favorites",
+      "recents": "Recent",
+      "results": "Results",
+      "useFreeText": "Use exact text",
+      "typeToSearch": "Type to search",
+      "clear": "Clear selection"
+    },
+    "appt": {
+      "actions": "Appointment actions",
+      "status": {
+        "scheduled": "Scheduled",
+        "confirmed": "Confirmed",
+        "checked-in": "Checked in",
+        "in-room": "In room",
+        "checked-out": "Checked out",
+        "no-show": "No show"
+      },
+      "action": {
+        "completed": "Completed",
+        "notCompleted": "Not completed",
+        "discharged": "Discharged",
+        "edit": "Edit"
+      }
+    },
+    "cal": {
+      "label": "Calendar"
+    },
+    "grouped": {
+      "arrangedBy": "Arranged by"
+    },
+    "pager": {
+      "label": "Pagination",
+      "items": "{{total}} items",
+      "rows": "{{total}} rows",
+      "page": "Page {{page}} of {{pageCount}}",
+      "prev": "Previous page",
+      "next": "Next page"
+    },
+    "keyhint": {
+      "shortcutIs": "Shortcut: {{shortcut}}"
+    },
+    "tasks": {
+      "label": "Tasks"
+    },
+    "reception": {
+      "title": "Reception — registration & queue",
+      "findPatient": "Find patient",
+      "searchPatient": "Search name or MRN",
+      "patientRecord": "Patient record",
+      "identity": "Identity",
+      "given": "Given name",
+      "family": "Family name",
+      "dob": "Date of birth",
+      "phone": "Phone",
+      "address": "Address",
+      "houseNo": "House no.",
+      "moo": "Moo",
+      "road": "Road",
+      "subdistrict": "Subdistrict",
+      "district": "District",
+      "postcode": "Postal code",
+      "visit": "Visit",
+      "newPatient": "New patient",
+      "saveSend": "Save & send to clinician",
+      "printOpd": "Print OPD card",
+      "invalidReason": "Required fields are missing."
+    },
+    "vitals": {
+      "derived": "derived",
+      "abnormal": "Abnormal value",
+      "cc": "CC"
+    },
+    "result": {
+      "analyte": "Analyte",
+      "value": "Value",
+      "flag": "Flag",
+      "range": "Reference range",
+      "uom": "UOM",
+      "status": "Status",
+      "final": "Final",
+      "collected": "Collected"
+    },
+    "flow": {
+      "encounters": "{{shown}} of {{total}} encounters",
+      "plot": "Plot {{count}}",
+      "measure": "Measure",
+      "rows": "{{count}} rows"
+    },
+    "trend": {
+      "range": "Range",
+      "reference": "Normal range"
+    },
+    "range": {
+      "all": "All"
+    },
+    "legend": {
+      "label": "Categories",
+      "layers": "Layers ({{count}})"
+    },
+    "timeline": {
+      "when": "When",
+      "cluster": "{{count}} events",
+      "noDetail": "No detail recorded",
+      "today": "Today"
+    },
+    "med": {
+      "show": "Show",
+      "current": "Current",
+      "all": "All",
+      "label": "Medication",
+      "status": {
+        "active": "Active",
+        "stopped": "Stopped",
+        "held": "Held"
+      }
+    },
+    "problem": {
+      "alert": "Alert",
+      "priority": "Priority",
+      "priority.primary": "Primary",
+      "priority.secondary": "Secondary",
+      "code": "Code",
+      "description": "Description",
+      "onset": "Onset",
+      "modified": "Modified",
+      "note": "Note"
+    },
+    "medlist": {
+      "interaction": "Interaction warning",
+      "info": "Info",
+      "start": "Start",
+      "drug": "Drug",
+      "drugInfo": "Drug info",
+      "lastRefill": "Last refill",
+      "prescriber": "Prescriber",
+      "group.current": "Current",
+      "group.historical": "Historical"
+    },
+    "gap": {
+      "measure": "Measure",
+      "interval": "Interval",
+      "today": "Today",
+      "previous": "Previous",
+      "previousDate": "Previous date",
+      "allMet": "All measures up to date"
+    },
+    "summary": {
+      "reviewed": "Reviewed {{date}}",
+      "reattestHint": "Click to re-attest today",
+      "add": "Add",
+      "status": "Status",
+      "mine": "Mine",
+      "total": "Total",
+      "row.scheduled": "Scheduled",
+      "row.checked-in": "Checked-In",
+      "row.checked-out": "Checked-Out",
+      "row.no-show": "No-Shows"
+    },
+    "nested": {
+      "add": "+ ADD"
+    },
+    "findings": {
+      "allNormal": "All Normal",
+      "abnx": "Abnx"
+    },
+    "sig": {
+      "direction": "Direction codes",
+      "pickCode": "Pick a code…",
+      "preview": "Sig (editable)",
+      "edited": "hand-edited"
+    },
+    "lineitem": {
+      "actions": "Row actions",
+      "edit": "Edit row",
+      "duplicate": "Duplicate row",
+      "delete": "Delete row",
+      "ok": "OK",
+      "warn": "Warning"
+    },
+    "orderset": {
+      "apply": "Apply set",
+      "save": "Save as set",
+      "scope.mine": "My sets",
+      "scope.clinic": "Clinic sets"
+    },
+    "drugtree": {
+      "warning": "Warning",
+      "favorite": "Toggle favorite",
+      "filter.route": "Route",
+      "filter.dosage": "Form",
+      "filter.strength": "Strength",
+      "filter.autoExpand": "Auto-expand"
+    },
+    "order": {
+      "kind.drug": "Drug",
+      "kind.lab": "Lab test",
+      "kind.imaging": "Imaging",
+      "kind.procedure": "Procedure",
+      "indication": "Indication",
+      "qty": "Quantity",
+      "days": "Days",
+      "normalRange": "Normal range",
+      "min": "Minimum",
+      "max": "Maximum",
+      "to": "to",
+      "criticalValue": "Critical value",
+      "criticalHint": "Flags the result as critical above this value",
+      "relatedProblems": "Related problems",
+      "cost": "Cost (ทุน)",
+      "modality": "Modality",
+      "delete": "Delete",
+      "save": "Save order"
+    },
+    "card": {
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "recipient": {
+      "role.staff": "Staff",
+      "role.physician": "Physician",
+      "role.nurse": "Nurse",
+      "role.pharmacist": "Pharmacist",
+      "remove": "Remove {{name}}",
+      "add": "Add recipient",
+      "search": "Search staff"
+    },
+    "msg": {
+      "re": "Re",
+      "chart": "Chart",
+      "unread": "Unread",
+      "from": "From",
+      "sent": "Sent",
+      "to": "To",
+      "subject": "Subject",
+      "read": "Read {{time}}",
+      "delivered": "Delivered",
+      "attachments": "Attachments",
+      "body": "Message",
+      "write": "Write a message… (⌘↵ to send)",
+      "attach": "Attach",
+      "importance": "Importance",
+      "importance.normal": "Normal",
+      "importance.high": "High",
+      "importance.low": "Low",
+      "more": "More",
+      "convertToTask": "Convert to task",
+      "send": "Send",
+      "removeAttachment": "Remove attachment"
+    },
+    "rail": {
+      "label": "Modules"
+    },
+    "launcher": {
+      "label": "App shortcuts",
+      "open": "Open app launcher",
+      "search": "Search apps",
+      "noResults": "No apps found",
+      "pin": "Pin to toolbar",
+      "unpin": "Unpin from toolbar"
+    },
+    "recon": {
+      "item": "Item",
+      "decision": "Decision",
+      "keep": "Keep",
+      "stop": "Stop",
+      "inactivate": "Inactivate",
+      "undecided": "Undecided",
+      "kind": {
+        "allergy": "Allergies",
+        "medication": "Medications",
+        "problem": "Problems"
+      },
+      "empty": "Nothing to reconcile",
+      "items": "items",
+      "pending": "undecided",
+      "reviewed": "Mark as Reviewed",
+      "preview": "Preview",
+      "save": "Save"
+    },
+    "notehistory": {
+      "empty": "No history"
+    },
+    "codepicker": {
+      "lookup": "Lookup code…"
+    },
+    "template": {
+      "select": "Documentation template",
+      "placeholder": "Choose a template…",
+      "none": "No template",
+      "generated": "Generated",
+      "jump": "Jump to the field that produced this"
+    },
+    "audit": {
+      "modified": "Modified {{at}} by {{name}}",
+      "created": "Created {{at}} by {{name}}",
+      "createdLabel": "Created",
+      "modifiedLabel": "Modified",
+      "revision": "Revision",
+      "viewHistory": "View history",
+      "historyTitle": "Record history",
+      "historyDesc": "Append-only audit of every change to this record."
+    },
+    "inbox": {
+      "empty": "Nothing new"
+    },
+    "msglist": {
+      "empty": "No messages"
+    },
+    "ops": {
+      "print": "Print",
+      "period": "Period",
+      "config": "Configuration",
+      "series": "Chart series",
+      "ackTop": "Ack Top",
+      "ackAll": "Ack All",
+      "ackOne": "Acknowledge",
+      "alerts": "Active alerts",
+      "noAlerts": "No active alerts",
+      "critical": "Critical",
+      "warn": "Warning",
+      "events": "Events — {{label}}",
+      "scorecard": "Site scorecard"
+    },
+    "compliance": {
+      "category": "Category",
+      "met": "Met",
+      "unmet": "Not met",
+      "partial": "Partial",
+      "na": "N/A"
+    },
+    "em": {
+      "level": "E/M level",
+      "desktopOnly": "The coding matrix needs a desktop viewport."
+    },
+    "fishbone": {
+      "chem7": "CHEM-7 fishbone",
+      "cbc": "CBC fishbone",
+      "desktopOnly": "Diagram view needs a desktop viewport — see Result Table."
+    },
+    "bodymap": {
+      "empty": "No findings marked",
+      "view": "View diagram",
+      "dialogTitle": "Body diagram",
+      "dialogDesc": "Tap a region to mark or unmark a finding."
+    },
+    "anatomy": {
+      "title": "Anatomy inspector",
+      "mode": "Vessel system",
+      "arterial": "Arterial",
+      "venous": "Venous",
+      "desktopOnly": "The inspector needs a desktop viewport."
+    },
+    "vaccine": {
+      "vaccine": "Vaccine",
+      "dose": "Dose",
+      "dateGiven": "Date given",
+      "nextDue": "Next due",
+      "site": "Site",
+      "route": "Route",
+      "reaction": "Reaction",
+      "record": "Record a dose: {{vaccine}}",
+      "recordShort": "Record",
+      "empty": "No series",
+      "dialogTitle": "Record vaccine dose",
+      "lot": "Lot number",
+      "givenBy": "Given by",
+      "notes": "Notes",
+      "save": "Save dose"
+    },
+    "query": {
+      "field": "Field",
+      "op": "Operator",
+      "value": "Value",
+      "remove": "Remove rule",
+      "addRule": "Add rule",
+      "criteria": "OR'd criteria",
+      "or": "or",
+      "run": "Run",
+      "results": "{{count}} results",
+      "noResults": "No matches",
+      "bulkHint": "selected",
+      "desktopOnly": "The rule editor needs a desktop viewport; results still render.",
+      "drag": "Drag to reorder",
+      "moveUp": "Move rule up",
+      "moveDown": "Move rule down"
+    },
+    "cohort": {
+      "alignLabel": "Aligned by",
+      "align": {
+        "dates": "Calendar dates",
+        "first-event": "First event"
+      },
+      "empty": "No patients match",
+      "patients": "patients",
+      "desktopOnly": "Swimlanes need a desktop viewport."
+    },
+    "shell": {
+      "context": "Context",
+      "inspector": "Inspector",
+      "openRail": "Open modules"
+    },
+    "chartnav": {
+      "label": "Chart sections"
+    },
+    "status": {
+      "label": "Status"
+    },
+    "psearch": {
+      "placeholder": "Search name, MRN, phone…",
+      "results": "Patients"
+    },
+    "picker": {
+      "title": "Select patient",
+      "select": "Select",
+      "count": "{{count}} patients found"
+    },
+    "identity": {
+      "address": "Address",
+      "insurance": "Insurance",
+      "changePhoto": "Change photo"
+    },
+    "sched": {
+      "prev": "Previous",
+      "next": "Next",
+      "today": "Today",
+      "hint": "Click a slot to create · right-click a block for actions"
+    },
+    "resource": {
+      "selectAll": "All",
+      "clear": "Clear"
+    },
+    "zoom": {
+      "label": "Zoom",
+      "day": "Day",
+      "week": "Week",
+      "month": "Month"
+    },
+    "paper": {
+      "document": "Document"
+    },
+    "rx": {
+      "interactionsPending": "Interactions pending",
+      "pendingWatermark": "PENDING",
+      "rxSymbol": "Rx",
+      "license": "Lic.",
+      "drug": "Drug",
+      "sig": "Sig",
+      "dispense": "Dispense",
+      "refills": "Refills",
+      "voidUntil": "Void until",
+      "diagnosis": "Diagnosis",
+      "to": "To",
+      "sigLine": "signature",
+      "send": "Send",
+      "sendTitle": "Send this prescription?",
+      "sendDesc": "Sending transmits the order to the pharmacy and cannot be undone.",
+      "sendConfirm": "Send now"
+    },
+    "report": {
+      "requisition": "Requisition",
+      "accession": "Accession",
+      "collected": "Collected",
+      "reported": "Reported",
+      "patient": "Patient",
+      "viewHl7": "View HL7 File"
+    },
+    "doc": {
+      "actions": "Document actions",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out",
+      "rotate": "Rotate",
+      "crop": "Crop",
+      "print": "Print",
+      "download": "Download",
+      "resendFax": "Resend fax",
+      "externalContent": "External content",
+      "id": "ID"
+    },
+    "minimap": {
+      "label": "Timeline density",
+      "from": "Window start",
+      "to": "Window end",
+      "window": "{{from}} – {{to}}"
+    }
+  }
+}

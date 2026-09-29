@@ -1,0 +1,694 @@
+{
+  "sidebar": {
+    "inbox": "受信箱",
+    "today": "今日",
+    "upcoming": "今後",
+    "anytime": "いつでも",
+    "someday": "いつか",
+    "logbook": "ログブック",
+    "lists": "リスト",
+    "areas": "エリア",
+    "newList": "新規リスト",
+    "newArea": "新規エリア",
+    "settings": "アカウントと設定",
+    "trash": "ゴミ箱"
+  },
+  "view": {
+    "loading": "読み込み中…",
+    "toDos": "{{count}} 件のToDo",
+    "remaining": "残り {{count}} 件",
+    "completed": "{{count}} 件完了",
+    "scheduled": "{{count}} 件予定",
+    "todayEmpty": "今日の作業はもうありません。楽しんで！",
+    "inboxEmpty": "受信箱は空です。素晴らしい！",
+    "upcomingEmpty": "今後の予定はありません。",
+    "somedayEmpty": "いつかの夢はまだありません。",
+    "trashEmpty": "ゴミ箱は空です",
+    "emptyTrash": "ゴミ箱を空にする",
+    "restore": "元に戻す",
+    "thisEvening": "今夜",
+    "tomorrow": "明日",
+    "noProject": "リストなし",
+    "thisWeek": "今週",
+    "earlier": "以前",
+    "projects": "リスト",
+    "toDosSection": "ToDo",
+    "noListsInArea": "このエリアにリストはありません。",
+    "all": "すべて",
+    "open": "未完了",
+    "openCount": "未完了 {{count}} 件"
+  },
+  "task": {
+    "when": "いつ",
+    "deadline": "締め切り",
+    "tags": "タグ",
+    "move": "移動",
+    "today": "今日",
+    "tomorrow": "明日",
+    "evening": "今夜",
+    "someday": "いつか",
+    "clear": "クリア",
+    "clearDeadline": "締め切りを解除",
+    "cancel": "キャンセル",
+    "reopen": "再開",
+    "delete": "削除",
+    "checklistItem": "チェックリスト項目",
+    "notes": "メモ",
+    "remaining": "残り {{count}} 件",
+    "lists": "リスト",
+    "areas": "エリア"
+  },
+  "dialog": {
+    "newTodo": "新規ToDo",
+    "newTodoDesc": "新しいToDoを作成",
+    "add": "追加",
+    "cancel": "キャンセル",
+    "newList": "新規リスト",
+    "newListDesc": "関連するToDoをプロジェクトにまとめます。",
+    "newArea": "新規エリア",
+    "newAreaDesc": "リストをまとめる広いカテゴリです。",
+    "listName": "リスト名",
+    "areaName": "エリア名",
+    "noArea": "エリアなし",
+    "inbox": "受信箱"
+  },
+  "toolbar": {
+    "newTodo": "新規ToDo ⌘N",
+    "checklist": "チェックリスト項目 ⌥⌘N",
+    "schedule": "いつ… ⌥⌘T",
+    "deadline": "締め切り… ⌥⌘D",
+    "quickFind": "クイック検索 ⌥Space"
+  },
+  "toast": {
+    "completed": "完了しました",
+    "undo": "元に戻す",
+    "added": "ToDoを追加しました",
+    "listCreated": "リストを作成しました",
+    "areaCreated": "エリアを作成しました",
+    "trashed": "ゴミ箱へ移動しました",
+    "restored": "元に戻しました",
+    "todayClear": "今日はクリアしました 🎉",
+    "trashEmptied": "ゴミ箱を空にしました",
+    "error": "エラーが発生しました"
+  },
+  "quickfind": {
+    "placeholder": "ToDo・リスト・エリア・タグを検索…",
+    "noResults": "結果がありません。",
+    "searching": "検索中…",
+    "typeToSearch": "入力してすべてを検索。",
+    "tasks": "ToDo",
+    "projects": "リスト",
+    "areas": "エリア",
+    "tags": "タグ"
+  },
+  "menu": {
+    "settings": "アカウントと設定",
+    "tags": "タグを管理",
+    "api": "APIドキュメント",
+    "language": "言語"
+  },
+  "clinic": {
+    "common": {
+      "none": "— なし",
+      "collapse": "折りたたむ",
+      "expand": "広げる",
+      "more": "+{{count}} 件",
+      "select": "選択"
+    },
+    "severity": {
+      "N": "正常",
+      "H": "高",
+      "L": "低",
+      "HH": "危急高",
+      "LL": "危急低",
+      "A": "異常"
+    },
+    "allergy": {
+      "label": "アレルギー",
+      "hasAllergies": "アレルギーあり",
+      "noKnown": "薬物アレルギーなし",
+      "confirmedAt": "{{date}} 確認済み",
+      "notRecorded": "アレルギー記録なし",
+      "record": "アレルギーを記録",
+      "review": "確認",
+      "severity": {
+        "mild": "軽度",
+        "moderate": "中度",
+        "severe": "重度"
+      }
+    },
+    "patient": {
+      "mrn": "MRN",
+      "dob": "生年月日",
+      "age": "年齢",
+      "sex": "性別",
+      "sexLabel": {
+        "male": "男性",
+        "female": "女性",
+        "other": "その他",
+        "unknown": "不明"
+      },
+      "alerts": "注意情報",
+      "phone": "電話番号"
+    },
+    "queue": {
+      "arrived": "来院",
+      "accepted": "受付済",
+      "held": "保留",
+      "done": "完了",
+      "cancelled": "キャンセル",
+      "pending": "待機",
+      "in-room": "診察中",
+      "info": "情報",
+      "waitMinutes": "{{minutes}} 分",
+      "title": "待合キュー",
+      "refresh": "更新",
+      "urgency": "緊急度",
+      "name": "名前",
+      "wait": "待ち時間",
+      "status": "ステータス",
+      "note": "備考"
+    },
+    "urgency": {
+      "routine": "通常",
+      "rush": "至急",
+      "urgent": "緊急"
+    },
+    "age": {
+      "y": "歳",
+      "m": "ヶ月",
+      "d": "日"
+    },
+    "panel": {
+      "meta": "情報",
+      "status": {
+        "ok": "OK",
+        "warn": "注意",
+        "critical": "危急"
+      }
+    },
+    "table": {
+      "empty": "記録はありません",
+      "loading": "読み込み中…"
+    },
+    "form": {
+      "unsaved": "未保存の変更",
+      "saving": "保存中…",
+      "cancel": "キャンセル",
+      "confirm": "確認",
+      "actions": "フォーム操作"
+    },
+    "toolbar": {
+      "label": "操作",
+      "more": "その他の操作"
+    },
+    "search": {
+      "placeholder": "コードまたは用語を検索",
+      "noResults": "一致するコードはありません",
+      "searching": "検索中…",
+      "favorites": "よく使う",
+      "recents": "最近使用",
+      "results": "検索結果",
+      "useFreeText": "テキストをそのまま使用",
+      "typeToSearch": "入力して検索",
+      "clear": "選択を解除"
+    },
+    "appt": {
+      "actions": "予定の操作",
+      "status": {
+        "scheduled": "予定",
+        "confirmed": "確認済み",
+        "checked-in": "受付済み",
+        "in-room": "診察中",
+        "checked-out": "完了",
+        "no-show": "不来院"
+      },
+      "action": {
+        "completed": "完了",
+        "notCompleted": "未完了",
+        "discharged": "退院",
+        "edit": "編集"
+      }
+    },
+    "cal": {
+      "label": "カレンダー"
+    },
+    "grouped": {
+      "arrangedBy": "並び替え"
+    },
+    "pager": {
+      "label": "ページ送り",
+      "items": "{{total}} 件",
+      "rows": "{{total}} 行",
+      "page": "{{page}} / {{pageCount}} ページ",
+      "prev": "前のページ",
+      "next": "次のページ"
+    },
+    "keyhint": {
+      "shortcutIs": "ショートカット: {{shortcut}}"
+    },
+    "tasks": {
+      "label": "タスク"
+    },
+    "reception": {
+      "title": "受付 — 登録と待合キュー",
+      "findPatient": "患者を検索",
+      "searchPatient": "名前またはMRNで検索",
+      "patientRecord": "患者登録",
+      "identity": "基本情報",
+      "given": "名",
+      "family": "姓",
+      "dob": "生年月日",
+      "phone": "電話番号",
+      "address": "住所",
+      "houseNo": "番地",
+      "moo": "ムー",
+      "road": "通り",
+      "subdistrict": "町域",
+      "district": "区",
+      "postcode": "郵便番号",
+      "visit": "受診",
+      "newPatient": "新患",
+      "saveSend": "保存して診察へ送る",
+      "printOpd": "OPDカード印刷",
+      "invalidReason": "必須項目が未入力です。"
+    },
+    "vitals": {
+      "derived": "算出",
+      "abnormal": "異常値",
+      "cc": "主訴"
+    },
+    "result": {
+      "analyte": "検査項目",
+      "value": "値",
+      "flag": "フラグ",
+      "range": "基準範囲",
+      "uom": "単位",
+      "status": "状態",
+      "final": "確定",
+      "collected": "採取日"
+    },
+    "flow": {
+      "encounters": "受診 {{shown}} / {{total}} 回",
+      "plot": "{{count}}件をグラフ化",
+      "measure": "測定項目",
+      "rows": "{{count}} 行"
+    },
+    "trend": {
+      "range": "期間",
+      "reference": "正常範囲"
+    },
+    "range": {
+      "all": "すべて"
+    },
+    "legend": {
+      "label": "カテゴリ",
+      "layers": "レイヤー ({{count}})"
+    },
+    "timeline": {
+      "when": "時期",
+      "cluster": "{{count}}件のイベント",
+      "noDetail": "詳細なし",
+      "today": "今日"
+    },
+    "med": {
+      "show": "表示",
+      "current": "現在使用中",
+      "all": "すべて",
+      "label": "薬剤",
+      "status": {
+        "active": "使用中",
+        "stopped": "中止",
+        "held": "保留"
+      }
+    },
+    "problem": {
+      "alert": "警告",
+      "priority": "優先度",
+      "priority.primary": "主",
+      "priority.secondary": "副",
+      "code": "コード",
+      "description": "病名",
+      "onset": "発症",
+      "modified": "更新",
+      "note": "備考"
+    },
+    "medlist": {
+      "interaction": "相互作用警告",
+      "info": "情報",
+      "start": "開始",
+      "drug": "薬剤",
+      "drugInfo": "薬剤情報",
+      "lastRefill": "最終処方",
+      "prescriber": "処方者",
+      "group.current": "現在使用中",
+      "group.historical": "過去"
+    },
+    "gap": {
+      "measure": "項目",
+      "interval": "間隔",
+      "today": "本日",
+      "previous": "前回",
+      "previousDate": "前回日",
+      "allMet": "すべての項目が基準内です"
+    },
+    "summary": {
+      "reviewed": "確認 {{date}}",
+      "reattestHint": "クリックで本日再確認",
+      "add": "追加",
+      "status": "状態",
+      "mine": "自分",
+      "total": "合計",
+      "row.scheduled": "予定",
+      "row.checked-in": "受付",
+      "row.checked-out": "完了",
+      "row.no-show": "不来院"
+    },
+    "nested": {
+      "add": "+ 追加"
+    },
+    "findings": {
+      "allNormal": "すべて正常",
+      "abnx": "異常"
+    },
+    "sig": {
+      "direction": "用法コード",
+      "pickCode": "コードを選択…",
+      "preview": "用法（編集可）",
+      "edited": "手入力"
+    },
+    "lineitem": {
+      "actions": "行の操作",
+      "edit": "行を編集",
+      "duplicate": "行を複製",
+      "delete": "行を削除",
+      "ok": "正常",
+      "warn": "注意"
+    },
+    "orderset": {
+      "apply": "セット適用",
+      "save": "セット保存",
+      "scope.mine": "自分のセット",
+      "scope.clinic": "医院のセット"
+    },
+    "drugtree": {
+      "warning": "警告",
+      "favorite": "お気に入り",
+      "filter.route": "投与経路",
+      "filter.dosage": "剤形",
+      "filter.strength": "規格",
+      "filter.autoExpand": "自動展開"
+    },
+    "order": {
+      "kind.drug": "薬剤",
+      "kind.lab": "検査",
+      "kind.imaging": "画像",
+      "kind.procedure": "処置",
+      "indication": "適応",
+      "qty": "数量",
+      "days": "日数",
+      "normalRange": "基準範囲",
+      "min": "下限",
+      "max": "上限",
+      "to": "〜",
+      "criticalValue": "臨界値",
+      "criticalHint": "この値を超える結果は危険としてフラグされます",
+      "relatedProblems": "関連病名",
+      "cost": "原価",
+      "modality": "モダリティ",
+      "delete": "削除",
+      "save": "保存"
+    },
+    "card": {
+      "edit": "編集",
+      "delete": "削除"
+    },
+    "recipient": {
+      "role.staff": "スタッフ",
+      "role.physician": "医師",
+      "role.nurse": "看護師",
+      "role.pharmacist": "薬剤師",
+      "remove": "{{name}}を削除",
+      "add": "宛先を追加",
+      "search": "スタッフを検索"
+    },
+    "msg": {
+      "re": "Re",
+      "chart": "カルテ",
+      "unread": "未読",
+      "from": "差出人",
+      "sent": "送信日時",
+      "to": "宛先",
+      "subject": "件名",
+      "read": "既読 {{time}}",
+      "delivered": "配信済み",
+      "attachments": "添付",
+      "body": "メッセージ",
+      "write": "メッセージを入力… (⌘↵で送信)",
+      "attach": "添付",
+      "importance": "重要度",
+      "importance.normal": "通常",
+      "importance.high": "高",
+      "importance.low": "低",
+      "more": "その他",
+      "convertToTask": "タスクに変換",
+      "send": "送信",
+      "removeAttachment": "添付を削除"
+    },
+    "rail": {
+      "label": "モジュール"
+    },
+    "launcher": {
+      "label": "アプリのショートカット",
+      "open": "アプリランチャーを開く",
+      "search": "アプリを検索",
+      "noResults": "アプリが見つかりません",
+      "pin": "ツールバーにピン留め",
+      "unpin": "ツールバーのピン留めを解除"
+    },
+    "recon": {
+      "item": "項目",
+      "decision": "判断",
+      "keep": "継続",
+      "stop": "中止",
+      "inactivate": "非アクティブ化",
+      "undecided": "未決定",
+      "kind": {
+        "allergy": "アレルギー",
+        "medication": "薬剤",
+        "problem": "問題リスト"
+      },
+      "empty": "照合する項目はありません",
+      "items": "件",
+      "pending": "未決定",
+      "reviewed": "確認済みにする",
+      "preview": "プレビュー",
+      "save": "保存"
+    },
+    "notehistory": {
+      "empty": "履歴なし"
+    },
+    "codepicker": {
+      "lookup": "コードを検索…"
+    },
+    "template": {
+      "select": "診療記録テンプレート",
+      "placeholder": "テンプレートを選択…",
+      "none": "テンプレートなし",
+      "generated": "自動生成",
+      "jump": "この文を生成した入力欄へ移動"
+    },
+    "audit": {
+      "modified": "{{at}} に {{name}} が更新",
+      "created": "{{at}} に {{name}} が作成",
+      "createdLabel": "作成",
+      "modifiedLabel": "更新",
+      "revision": "リビジョン",
+      "viewHistory": "履歴を表示",
+      "historyTitle": "記録履歴",
+      "historyDesc": "この記録への変更の追記専用監査ログ。"
+    },
+    "inbox": {
+      "empty": "新着なし"
+    },
+    "msglist": {
+      "empty": "メッセージなし"
+    },
+    "ops": {
+      "print": "印刷",
+      "period": "期間",
+      "config": "設定",
+      "series": "チャート系列",
+      "ackTop": "先頭を確認",
+      "ackAll": "すべて確認",
+      "ackOne": "確認済みにする",
+      "alerts": "未確認アラート",
+      "noAlerts": "アラートなし",
+      "critical": "致命的",
+      "warn": "警告",
+      "events": "イベント — {{label}}",
+      "scorecard": "サイトスコアカード"
+    },
+    "compliance": {
+      "category": "カテゴリ",
+      "met": "達成",
+      "unmet": "未達成",
+      "partial": "一部達成",
+      "na": "対象外"
+    },
+    "em": {
+      "level": "E/M レベル",
+      "desktopOnly": "コーディング マトリクスにはデスクトップ画面が必要です。"
+    },
+    "fishbone": {
+      "chem7": "CHEM-7 フィッシュボーン",
+      "cbc": "CBC フィッシュボーン",
+      "desktopOnly": "図表示にはデスクトップが必要です。結果テーブルをご利用ください。"
+    },
+    "bodymap": {
+      "empty": "所見のマークなし",
+      "view": "図を表示",
+      "dialogTitle": "身体ダイアグラム",
+      "dialogDesc": "領域をタップして所見を付け外しします。"
+    },
+    "anatomy": {
+      "title": "解剖インスペクター",
+      "mode": "脈管系",
+      "arterial": "動脈",
+      "venous": "静脈",
+      "desktopOnly": "デスクトップ画面が必要です。"
+    },
+    "vaccine": {
+      "vaccine": "ワクチン",
+      "dose": "接種",
+      "dateGiven": "接種日",
+      "nextDue": "次回予定",
+      "site": "部位",
+      "route": "経路",
+      "reaction": "反応",
+      "record": "接種を記録: {{vaccine}}",
+      "recordShort": "記録",
+      "empty": "シリーズなし",
+      "dialogTitle": "ワクチン接種の記録",
+      "lot": "ロット番号",
+      "givenBy": "接種者",
+      "notes": "メモ",
+      "save": "保存"
+    },
+    "query": {
+      "field": "フィールド",
+      "op": "演算子",
+      "value": "値",
+      "remove": "条件を削除",
+      "addRule": "条件を追加",
+      "criteria": "OR 条件",
+      "or": "or",
+      "run": "実行",
+      "results": "{{count}} 件",
+      "noResults": "該当なし",
+      "bulkHint": "件選択中",
+      "desktopOnly": "条件エディターにはデスクトップが必要です。結果は表示されます。",
+      "drag": "ドラッグで並べ替え",
+      "moveUp": "条件を上へ移動",
+      "moveDown": "条件を下へ移動"
+    },
+    "cohort": {
+      "alignLabel": "整列",
+      "align": {
+        "dates": "実日付",
+        "first-event": "初回イベント"
+      },
+      "empty": "該当患者なし",
+      "patients": "患者",
+      "desktopOnly": "デスクトップ画面が必要です。"
+    },
+    "shell": {
+      "context": "コンテキスト",
+      "inspector": "インスペクタ",
+      "openRail": "モジュールを開く"
+    },
+    "chartnav": {
+      "label": "カルテセクション"
+    },
+    "status": {
+      "label": "ステータス"
+    },
+    "psearch": {
+      "placeholder": "名前・MRN・電話番号で検索…",
+      "results": "患者"
+    },
+    "picker": {
+      "title": "患者を選択",
+      "select": "選択",
+      "count": "{{count}} 件該当"
+    },
+    "identity": {
+      "address": "住所",
+      "insurance": "保険",
+      "changePhoto": "写真を変更"
+    },
+    "sched": {
+      "prev": "前へ",
+      "next": "次へ",
+      "today": "今日",
+      "hint": "空き枠をクリックで作成 · ブロックを右クリックで操作"
+    },
+    "resource": {
+      "selectAll": "すべて",
+      "clear": "クリア"
+    },
+    "zoom": {
+      "label": "ズーム",
+      "day": "日",
+      "week": "週",
+      "month": "月"
+    },
+    "paper": {
+      "document": "文書"
+    },
+    "rx": {
+      "interactionsPending": "相互作用確認待ち",
+      "pendingWatermark": "確認待ち",
+      "rxSymbol": "Rx",
+      "license": "免許",
+      "drug": "薬剤",
+      "sig": "用法",
+      "dispense": "調剤",
+      "refills": "回数",
+      "voidUntil": "有効期限",
+      "diagnosis": "診断",
+      "to": "宛先",
+      "sigLine": "署名",
+      "send": "送信",
+      "sendTitle": "この処方を送信しますか？",
+      "sendDesc": "送信すると薬局へ発注され取り消せません。",
+      "sendConfirm": "送信する"
+    },
+    "report": {
+      "requisition": "依頼番号",
+      "accession": "受付番号",
+      "collected": "採取",
+      "reported": "報告",
+      "patient": "患者",
+      "viewHl7": "HL7ファイルを表示"
+    },
+    "doc": {
+      "actions": "文書の操作",
+      "zoomIn": "ズームイン",
+      "zoomOut": "ズームアウト",
+      "rotate": "回転",
+      "crop": "切り抜き",
+      "print": "印刷",
+      "download": "ダウンロード",
+      "resendFax": "FAX再送",
+      "externalContent": "外部コンテンツ",
+      "id": "ID"
+    },
+    "minimap": {
+      "label": "タイムライン密度",
+      "from": "期間の開始",
+      "to": "期間の終了",
+      "window": "{{from}} – {{to}}"
+    }
+  }
+}

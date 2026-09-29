@@ -1,0 +1,694 @@
+{
+  "sidebar": {
+    "inbox": "กล่องขาเข้า",
+    "today": "วันนี้",
+    "upcoming": "ที่จะถึง",
+    "anytime": "เมื่อไหร่ก็ได้",
+    "someday": "สักวันหนึ่ง",
+    "logbook": "บันทึก",
+    "lists": "รายการ",
+    "areas": "พื้นที่",
+    "newList": "รายการใหม่",
+    "newArea": "พื้นที่ใหม่",
+    "settings": "บัญชีและการตั้งค่า",
+    "trash": "ถังขยะ"
+  },
+  "view": {
+    "loading": "กำลังโหลด…",
+    "toDos": "{{count}} งาน",
+    "remaining": "เหลืออีก {{count}}",
+    "completed": "เสร็จแล้ว {{count}}",
+    "scheduled": "นัดหมาย {{count}}",
+    "todayEmpty": "วันนี้ไม่มีงานแล้ว สบายใจไป!",
+    "inboxEmpty": "กล่องขาเข้าว่างเปล่า เยี่ยม!",
+    "upcomingEmpty": "ไม่มีนัดหมายข้างหน้า",
+    "somedayEmpty": "ยังไม่มีความฝันสักวันหนึ่ง",
+    "trashEmpty": "ถังขยะว่างเปล่า",
+    "emptyTrash": "ล้างถังขยะ",
+    "restore": "กู้คืน",
+    "thisEvening": "ค่ำนี้",
+    "tomorrow": "พรุ่งนี้",
+    "noProject": "ไม่มีรายการ",
+    "thisWeek": "สัปดาห์นี้",
+    "earlier": "ก่อนหน้า",
+    "projects": "รายการ",
+    "toDosSection": "งาน",
+    "noListsInArea": "ไม่มีรายการในพื้นที่นี้",
+    "all": "ทั้งหมด",
+    "open": "ค้างอยู่",
+    "openCount": "ค้างอยู่ {{count}}"
+  },
+  "task": {
+    "when": "กำหนดเมื่อ",
+    "deadline": "เส้นตาย",
+    "tags": "ป้ายกำกับ",
+    "move": "ย้าย",
+    "today": "วันนี้",
+    "tomorrow": "พรุ่งนี้",
+    "evening": "ค่ำนี้",
+    "someday": "สักวันหนึ่ง",
+    "clear": "ล้าง",
+    "clearDeadline": "ล้างเส้นตาย",
+    "cancel": "ยกเลิกงาน",
+    "reopen": "เปิดใหม่",
+    "delete": "ลบ",
+    "checklistItem": "รายการย่อย",
+    "notes": "โน้ต",
+    "remaining": "เหลือ {{count}} รายการ",
+    "lists": "รายการ",
+    "areas": "พื้นที่"
+  },
+  "dialog": {
+    "newTodo": "งานใหม่",
+    "newTodoDesc": "สร้างงานใหม่",
+    "add": "เพิ่ม",
+    "cancel": "ยกเลิก",
+    "newList": "รายการใหม่",
+    "newListDesc": "รวมงานที่เกี่ยวข้องไว้เป็นโปรเจกต์",
+    "newArea": "พื้นที่ใหม่",
+    "newAreaDesc": "หมวดหมู่กว้าง ๆ ที่ใช้รวมรายการ",
+    "listName": "ชื่อรายการ",
+    "areaName": "ชื่อพื้นที่",
+    "noArea": "ไม่มีพื้นที่",
+    "inbox": "กล่องขาเข้า"
+  },
+  "toolbar": {
+    "newTodo": "งานใหม่ ⌘N",
+    "checklist": "รายการย่อยใหม่ ⌥⌘N",
+    "schedule": "กำหนดเมื่อ… ⌥⌘T",
+    "deadline": "เส้นตาย… ⌥⌘D",
+    "quickFind": "ค้นหา ⌥Space"
+  },
+  "toast": {
+    "completed": "เสร็จแล้ว",
+    "undo": "เลิกทำ",
+    "added": "เพิ่มงานแล้ว",
+    "listCreated": "สร้างรายการแล้ว",
+    "areaCreated": "สร้างพื้นที่แล้ว",
+    "trashed": "ย้ายไปถังขยะแล้ว",
+    "restored": "กู้คืนแล้ว",
+    "todayClear": "วันนี้เคลียร์แล้ว 🎉",
+    "trashEmptied": "ล้างถังขยะแล้ว",
+    "error": "เกิดข้อผิดพลาด"
+  },
+  "quickfind": {
+    "placeholder": "ค้นหางาน รายการ พื้นที่ ป้ายกำกับ…",
+    "noResults": "ไม่พบผลลัพธ์",
+    "searching": "กำลังค้นหา…",
+    "typeToSearch": "พิมพ์เพื่อค้นหาทุกอย่าง",
+    "tasks": "งาน",
+    "projects": "รายการ",
+    "areas": "พื้นที่",
+    "tags": "ป้ายกำกับ"
+  },
+  "menu": {
+    "settings": "บัญชีและการตั้งค่า",
+    "tags": "จัดการป้ายกำกับ",
+    "api": "เอกสาร API",
+    "language": "ภาษา"
+  },
+  "clinic": {
+    "common": {
+      "none": "— ไม่มี",
+      "collapse": "ย่อ",
+      "expand": "ขยาย",
+      "more": "+อีก {{count}}",
+      "select": "เลือก"
+    },
+    "severity": {
+      "N": "ปกติ",
+      "H": "สูง",
+      "L": "ต่ำ",
+      "HH": "สูงวิกฤต",
+      "LL": "ต่ำวิกฤต",
+      "A": "ผิดปกติ"
+    },
+    "allergy": {
+      "label": "ประวัติแพ้",
+      "hasAllergies": "แพ้ยา/สาร",
+      "noKnown": "ไม่มีประวัติแพ้ยา",
+      "confirmedAt": "ยืนยันเมื่อ {{date}}",
+      "notRecorded": "ยังไม่ได้บันทึกประวัติแพ้",
+      "record": "บันทึกประวัติแพ้",
+      "review": "ตรวจทาน",
+      "severity": {
+        "mild": "เล็กน้อย",
+        "moderate": "ปานกลาง",
+        "severe": "รุนแรง"
+      }
+    },
+    "patient": {
+      "mrn": "MRN",
+      "dob": "เกิด",
+      "age": "อายุ",
+      "sex": "เพศ",
+      "sexLabel": {
+        "male": "ชาย",
+        "female": "หญิง",
+        "other": "อื่น ๆ",
+        "unknown": "ไม่ทราบ"
+      },
+      "alerts": "ข้อควรระวัง",
+      "phone": "โทรศัพท์"
+    },
+    "queue": {
+      "arrived": "มา",
+      "accepted": "รับ",
+      "held": "อั้น",
+      "done": "เสร็จ",
+      "cancelled": "ยกเลิก",
+      "pending": "รอ",
+      "in-room": "ในห้องตรวจ",
+      "info": "ข้อมูล",
+      "waitMinutes": "{{minutes}} นาที",
+      "title": "คิวตรวจ",
+      "refresh": "รีเฟรช",
+      "urgency": "ด่วน-ไม่ด่วน",
+      "name": "ชื่อ",
+      "wait": "รอ",
+      "status": "สถานะ",
+      "note": "หมายเหตุ"
+    },
+    "urgency": {
+      "routine": "ปกติ",
+      "rush": "รีบ",
+      "urgent": "ด่วน"
+    },
+    "age": {
+      "y": "ปี",
+      "m": "ด.",
+      "d": "ว."
+    },
+    "panel": {
+      "meta": "ข้อมูล",
+      "status": {
+        "ok": "ปกติ",
+        "warn": "ระวัง",
+        "critical": "วิกฤต"
+      }
+    },
+    "table": {
+      "empty": "ไม่มีรายการ",
+      "loading": "กำลังโหลด…"
+    },
+    "form": {
+      "unsaved": "ยังไม่ได้บันทึก",
+      "saving": "กำลังบันทึก…",
+      "cancel": "ยกเลิก",
+      "confirm": "ยืนยัน",
+      "actions": "การกระทำของฟอร์ม"
+    },
+    "toolbar": {
+      "label": "การกระทำ",
+      "more": "การกระทำเพิ่มเติม"
+    },
+    "search": {
+      "placeholder": "ค้นหารหัสหรือชื่อ",
+      "noResults": "ไม่พบรหัสที่ตรงกัน",
+      "searching": "กำลังค้นหา…",
+      "favorites": "รายการโปรด",
+      "recents": "ใช้ล่าสุด",
+      "results": "ผลการค้นหา",
+      "useFreeText": "ใช้ข้อความตรง ๆ",
+      "typeToSearch": "พิมพ์เพื่อค้นหา",
+      "clear": "ล้างที่เลือก"
+    },
+    "appt": {
+      "actions": "การกระทำของการนัดหมาย",
+      "status": {
+        "scheduled": "กำหนดนัด",
+        "confirmed": "ยืนยันแล้ว",
+        "checked-in": "เช็คอินแล้ว",
+        "in-room": "ในห้องตรวจ",
+        "checked-out": "เสร็จสิ้น",
+        "no-show": "ไม่มา"
+      },
+      "action": {
+        "completed": "เสร็จแล้ว",
+        "notCompleted": "ยังไม่เสร็จ",
+        "discharged": "จำหน่าย",
+        "edit": "แก้ไข"
+      }
+    },
+    "cal": {
+      "label": "ปฏิทิน"
+    },
+    "grouped": {
+      "arrangedBy": "จัดกลุ่มตาม"
+    },
+    "pager": {
+      "label": "การแบ่งหน้า",
+      "items": "{{total}} รายการ",
+      "rows": "{{total}} แถว",
+      "page": "หน้า {{page}} จาก {{pageCount}}",
+      "prev": "หน้าก่อน",
+      "next": "หน้าถัดไป"
+    },
+    "keyhint": {
+      "shortcutIs": "ทางลัด: {{shortcut}}"
+    },
+    "tasks": {
+      "label": "งาน"
+    },
+    "reception": {
+      "title": "ส่วนหน้า — ลงทะเบียนและคิว",
+      "findPatient": "ค้นหาผู้ป่วย",
+      "searchPatient": "ค้นชื่อหรือ MRN",
+      "patientRecord": "ทะเบียนผู้ป่วย",
+      "identity": "ข้อมูลส่วนตัว",
+      "given": "ชื่อ",
+      "family": "นามสกุล",
+      "dob": "วันเดือนปีเกิด",
+      "phone": "โทรศัพท์",
+      "address": "ที่อยู่",
+      "houseNo": "เลขที่",
+      "moo": "หมู่ที่",
+      "road": "ถนน",
+      "subdistrict": "แขวง/ตำบล",
+      "district": "เขต/อำเภอ",
+      "postcode": "รหัสไปรษณีย์",
+      "visit": "การรักษา",
+      "newPatient": "ผู้ป่วยใหม่",
+      "saveSend": "บันทึก/ส่งตรวจ",
+      "printOpd": "พิมพ์บัตร OPD",
+      "invalidReason": "กรอกข้อมูลที่จำเป็นยังไม่ครบ"
+    },
+    "vitals": {
+      "derived": "คำนวณ",
+      "abnormal": "ค่าผิดปกติ",
+      "cc": "CC (อาการสำคัญ)"
+    },
+    "result": {
+      "analyte": "รายการตรวจ",
+      "value": "ค่า",
+      "flag": "ผิดปกติ",
+      "range": "ช่วงอ้างอิง",
+      "uom": "หน่วย",
+      "status": "สถานะ",
+      "final": "สมบูรณ์",
+      "collected": "เก็บตัวอย่าง"
+    },
+    "flow": {
+      "encounters": "การมาตรวจ {{shown}} จาก {{total}} ครั้ง",
+      "plot": "พล็อตกราฟ {{count}} รายการ",
+      "measure": "รายการวัด",
+      "rows": "{{count}} แถว"
+    },
+    "trend": {
+      "range": "ช่วงเวลา",
+      "reference": "ช่วงค่าปกติ"
+    },
+    "range": {
+      "all": "ทั้งหมด"
+    },
+    "legend": {
+      "label": "หมวดหมู่",
+      "layers": "ชั้นข้อมูล ({{count}})"
+    },
+    "timeline": {
+      "when": "เมื่อ",
+      "cluster": "{{count}} เหตุการณ์",
+      "noDetail": "ไม่มีรายละเอียด",
+      "today": "วันนี้"
+    },
+    "med": {
+      "show": "แสดง",
+      "current": "ปัจจุบัน",
+      "all": "ทั้งหมด",
+      "label": "ยา",
+      "status": {
+        "active": "ใช้งาน",
+        "stopped": "หยุดแล้ว",
+        "held": "ระงับ"
+      }
+    },
+    "problem": {
+      "alert": "แจ้งเตือน",
+      "priority": "ลำดับ",
+      "priority.primary": "หลัก",
+      "priority.secondary": "รอง",
+      "code": "รหัส",
+      "description": "รายการ",
+      "onset": "เริ่มป่วย",
+      "modified": "แก้ไข",
+      "note": "หมายเหตุ"
+    },
+    "medlist": {
+      "interaction": "มีปฏิกิริยายา",
+      "info": "ข้อมูล",
+      "start": "เริ่ม",
+      "drug": "ยา",
+      "drugInfo": "ข้อมูลยา",
+      "lastRefill": "จ่ายล่าสุด",
+      "prescriber": "ผู้สั่งยา",
+      "group.current": "ที่ใช้ปัจจุบัน",
+      "group.historical": "ย้อนอดีต"
+    },
+    "gap": {
+      "measure": "รายการ",
+      "interval": "ช่วงเวลา",
+      "today": "วันนี้",
+      "previous": "ครั้งก่อน",
+      "previousDate": "วันที่ก่อน",
+      "allMet": "ทุกรายการเป็นไปตามเกณฑ์"
+    },
+    "summary": {
+      "reviewed": "ตรวจทาน {{date}}",
+      "reattestHint": "คลิกเพื่อยืนยันซ้ำวันนี้",
+      "add": "เพิ่ม",
+      "status": "สถานะ",
+      "mine": "ของฉัน",
+      "total": "ทั้งหมด",
+      "row.scheduled": "นัดหมาย",
+      "row.checked-in": "เช็คอิน",
+      "row.checked-out": "เสร็จสิ้น",
+      "row.no-show": "ไม่มา"
+    },
+    "nested": {
+      "add": "+ เพิ่ม"
+    },
+    "findings": {
+      "allNormal": "ปกติทั้งหมด",
+      "abnx": "ผิดปกติ"
+    },
+    "sig": {
+      "direction": "รหัสวิธีใช้",
+      "pickCode": "เลือกรหัส…",
+      "preview": "วิธีใช้ (แก้ไขได้)",
+      "edited": "แก้ไขเอง"
+    },
+    "lineitem": {
+      "actions": "การกระทำแถว",
+      "edit": "แก้ไขแถว",
+      "duplicate": "ทำสำเนา",
+      "delete": "ลบแถว",
+      "ok": "ปกติ",
+      "warn": "ระวัง"
+    },
+    "orderset": {
+      "apply": "สั่งสูตร",
+      "save": "บันทึกสูตร",
+      "scope.mine": "สูตรของฉัน",
+      "scope.clinic": "สูตรคลินิก"
+    },
+    "drugtree": {
+      "warning": "คำเตือน",
+      "favorite": "รายการโปรด",
+      "filter.route": "วิธีให้ยา",
+      "filter.dosage": "รูปแบบ",
+      "filter.strength": "ความแรง",
+      "filter.autoExpand": "ขยายอัตโนมัติ"
+    },
+    "order": {
+      "kind.drug": "ยา",
+      "kind.lab": "การตรวจแล็บ",
+      "kind.imaging": "ภาพรังสี",
+      "kind.procedure": "หัตถการ",
+      "indication": "ข้อบ่งใช้",
+      "qty": "จำนวน",
+      "days": "จำนวนวัน",
+      "normalRange": "ค่าปกติ",
+      "min": "ต่ำสุด",
+      "max": "สูงสุด",
+      "to": "ถึง",
+      "criticalValue": "ค่าอันตราย",
+      "criticalHint": "ผลตรวจที่สูงกว่าค่านี้จะถูกระบุว่าอยู่ในระดับวิกฤต",
+      "relatedProblems": "ปัญหาที่เกี่ยวข้อง",
+      "cost": "ทุน",
+      "modality": "ชนิดภาพ",
+      "delete": "ลบ",
+      "save": "บันทึก"
+    },
+    "card": {
+      "edit": "แก้ไข",
+      "delete": "ลบ"
+    },
+    "recipient": {
+      "role.staff": "เจ้าหน้าที่",
+      "role.physician": "แพทย์",
+      "role.nurse": "พยาบาล",
+      "role.pharmacist": "เภสัชกร",
+      "remove": "ลบ {{name}}",
+      "add": "เพิ่มผู้รับ",
+      "search": "ค้นหาบุคลากร"
+    },
+    "msg": {
+      "re": "เรื่อง",
+      "chart": "เวชระเบียน",
+      "unread": "ยังไม่อ่าน",
+      "from": "จาก",
+      "sent": "ส่งเมื่อ",
+      "to": "ถึง",
+      "subject": "หัวเรื่อง",
+      "read": "อ่านแล้ว {{time}}",
+      "delivered": "ส่งถึงแล้ว",
+      "attachments": "ไฟล์แนบ",
+      "body": "ข้อความ",
+      "write": "เขียนข้อความ… (⌘↵ ส่ง)",
+      "attach": "แนบ",
+      "importance": "ความสำคัญ",
+      "importance.normal": "ปกติ",
+      "importance.high": "สูง",
+      "importance.low": "ต่ำ",
+      "more": "เพิ่มเติม",
+      "convertToTask": "สร้างเป็นงาน",
+      "send": "ส่ง",
+      "removeAttachment": "ลบไฟล์แนบ"
+    },
+    "rail": {
+      "label": "โมดูล"
+    },
+    "launcher": {
+      "label": "ทางลัดแอป",
+      "open": "เปิดรายการแอป",
+      "search": "ค้นหาแอป",
+      "noResults": "ไม่พบแอป",
+      "pin": "ปักหมุดไว้ที่แถบเครื่องมือ",
+      "unpin": "เลิกปักหมุดจากแถบเครื่องมือ"
+    },
+    "recon": {
+      "item": "รายการ",
+      "decision": "การตัดสินใจ",
+      "keep": "ใช้ต่อ",
+      "stop": "หยุด",
+      "inactivate": "ยกเลิกการใช้",
+      "undecided": "ยังไม่ตัดสิน",
+      "kind": {
+        "allergy": "การแพ้",
+        "medication": "ยา",
+        "problem": "ปัญหาสุขภาพ"
+      },
+      "empty": "ไม่มีรายการให้กระทบ",
+      "items": "รายการ",
+      "pending": "ยังไม่ตัดสิน",
+      "reviewed": "ทำเครื่องหมายว่าตรวจแล้ว",
+      "preview": "ดูตัวอย่าง",
+      "save": "บันทึก"
+    },
+    "notehistory": {
+      "empty": "ไม่มีประวัติ"
+    },
+    "codepicker": {
+      "lookup": "ค้นหารหัส…"
+    },
+    "template": {
+      "select": "เทมเพลตเอกสาร",
+      "placeholder": "เลือกเทมเพลต…",
+      "none": "ไม่มีเทมเพลต",
+      "generated": "สร้างอัตโนมัติ",
+      "jump": "ไปยังช่องที่สร้างข้อความนี้"
+    },
+    "audit": {
+      "modified": "แก้ไข {{at}} โดย {{name}}",
+      "created": "สร้าง {{at}} โดย {{name}}",
+      "createdLabel": "สร้าง",
+      "modifiedLabel": "แก้ไข",
+      "revision": "ฉบับที่",
+      "viewHistory": "ดูประวัติ",
+      "historyTitle": "ประวัติรายการ",
+      "historyDesc": "บันทึกการเปลี่ยนแปลงแบบอ่านอย่างเดียว"
+    },
+    "inbox": {
+      "empty": "ไม่มีรายการใหม่"
+    },
+    "msglist": {
+      "empty": "ไม่มีข้อความ"
+    },
+    "ops": {
+      "print": "พิมพ์",
+      "period": "ช่วงเวลา",
+      "config": "การตั้งค่า",
+      "series": "ชุดข้อมูลในกราฟ",
+      "ackTop": "รับทราบรายการแรก",
+      "ackAll": "รับทราบทั้งหมด",
+      "ackOne": "รับทราบ",
+      "alerts": "การแจ้งเตือนที่ยังไม่รับทราบ",
+      "noAlerts": "ไม่มีการแจ้งเตือน",
+      "critical": "วิกฤต",
+      "warn": "เตือนภัย",
+      "events": "เหตุการณ์ — {{label}}",
+      "scorecard": "สรุปตัวชี้วัด"
+    },
+    "compliance": {
+      "category": "หมวดหมู่",
+      "met": "ผ่าน",
+      "unmet": "ไม่ผ่าน",
+      "partial": "ผ่านบางส่วน",
+      "na": "ไม่มีผล"
+    },
+    "em": {
+      "level": "ระดับ E/M",
+      "desktopOnly": "ตาราง coding ต้องใช้หน้าจอขนาดเดสก์ท็อป"
+    },
+    "fishbone": {
+      "chem7": "แผนภาพ CHEM-7",
+      "cbc": "แผนภาพ CBC",
+      "desktopOnly": "มุมมองแผนภาพต้องใช้เดสก์ท็อป — ดูตารางผล"
+    },
+    "bodymap": {
+      "empty": "ยังไม่มีจุดที่บันทึก",
+      "view": "ดูแผนภาพ",
+      "dialogTitle": "แผนภาพร่างกาย",
+      "dialogDesc": "แตะบริเวณเพื่อบันทึกหรือลบจุด"
+    },
+    "anatomy": {
+      "title": "ตัวตรวจสอบกายวิภาค",
+      "mode": "ระบบหลอดเลือด",
+      "arterial": "หลอดเลือดแดง",
+      "venous": "หลอดเลือดดำ",
+      "desktopOnly": "ต้องใช้เดสก์ท็อป"
+    },
+    "vaccine": {
+      "vaccine": "วัคซีน",
+      "dose": "โดส",
+      "dateGiven": "วันที่ฉีด",
+      "nextDue": "กำหนดถัดไป",
+      "site": "ตำแหน่ง",
+      "route": "วิธีให้",
+      "reaction": "อาการข้างเคียง",
+      "record": "บันทึกโดส: {{vaccine}}",
+      "recordShort": "บันทึก",
+      "empty": "ไม่มีซีรีส์",
+      "dialogTitle": "บันทึกโดสวัคซีน",
+      "lot": "เลขล็อต",
+      "givenBy": "ผู้ฉีด",
+      "notes": "หมายเหตุ",
+      "save": "บันทึกโดส"
+    },
+    "query": {
+      "field": "ฟิลด์",
+      "op": "ตัวดำเนินการ",
+      "value": "ค่า",
+      "remove": "ลบเงื่อนไข",
+      "addRule": "เพิ่มเงื่อนไข",
+      "criteria": "เงื่อนไขแบบ OR",
+      "or": "หรือ",
+      "run": "สั่งทำงาน",
+      "results": "{{count}} ผลลัพธ์",
+      "noResults": "ไม่พบรายการ",
+      "bulkHint": "รายการที่เลือก",
+      "desktopOnly": "ตัวแก้ไขเงื่อนไขต้องใช้เดสก์ท็อป",
+      "drag": "ลากเพื่อจัดลำดับ",
+      "moveUp": "ย้ายขึ้น",
+      "moveDown": "ย้ายลง"
+    },
+    "cohort": {
+      "alignLabel": "จัดเรียงตาม",
+      "align": {
+        "dates": "วันที่จริง",
+        "first-event": "เหตุการณ์แรก"
+      },
+      "empty": "ไม่มีผู้ป่วยที่ตรง",
+      "patients": "ผู้ป่วย",
+      "desktopOnly": "ต้องใช้เดสก์ท็อป"
+    },
+    "shell": {
+      "context": "แผงบริบท",
+      "inspector": "แผงข้าง",
+      "openRail": "เปิดโมดูล"
+    },
+    "chartnav": {
+      "label": "ส่วนของเวชระเบียน"
+    },
+    "status": {
+      "label": "สถานะระบบ"
+    },
+    "psearch": {
+      "placeholder": "ค้นชื่อ เลขที่ MRN โทรศัพท์…",
+      "results": "ผู้ป่วย"
+    },
+    "picker": {
+      "title": "เลือกผู้ป่วย",
+      "select": "เลือก",
+      "count": "พบ {{count}} ราย"
+    },
+    "identity": {
+      "address": "ที่อยู่",
+      "insurance": "สิทธิการรักษา",
+      "changePhoto": "เปลี่ยนรูปถ่าย"
+    },
+    "sched": {
+      "prev": "ก่อนหน้า",
+      "next": "ถัดไป",
+      "today": "วันนี้",
+      "hint": "คลิกช่องว่างเพื่อสร้าง · คลิกขวาที่บล็อกเพื่อดูการกระทำ"
+    },
+    "resource": {
+      "selectAll": "ทั้งหมด",
+      "clear": "ล้าง"
+    },
+    "zoom": {
+      "label": "ซูม",
+      "day": "วัน",
+      "week": "สัปดาห์",
+      "month": "เดือน"
+    },
+    "paper": {
+      "document": "เอกสาร"
+    },
+    "rx": {
+      "interactionsPending": "รอตรวจปฏิกิริยายา",
+      "pendingWatermark": "รอตรวจสอบ",
+      "rxSymbol": "Rx",
+      "license": "ใบอนุญาต",
+      "drug": "ยา",
+      "sig": "วิธีใช้",
+      "dispense": "จ่าย",
+      "refills": "จ่ายซ้ำ",
+      "voidUntil": "ใช้ได้ถึง",
+      "diagnosis": "การวินิจฉัย",
+      "to": "ถึง",
+      "sigLine": "ลายเซ็น",
+      "send": "ส่ง",
+      "sendTitle": "ส่งใบสั่งยานี้?",
+      "sendDesc": "การส่งจะส่งคำสั่งไปยังร้านยาและย้อนกลับไม่ได้",
+      "sendConfirm": "ส่งเลย"
+    },
+    "report": {
+      "requisition": "เลขที่คำขอ",
+      "accession": "เลขที่รับตัวอย่าง",
+      "collected": "เก็บตัวอย่าง",
+      "reported": "รายงาน",
+      "patient": "ผู้ป่วย",
+      "viewHl7": "ดูไฟล์ HL7"
+    },
+    "doc": {
+      "actions": "การกระทำเอกสาร",
+      "zoomIn": "ซูมเข้า",
+      "zoomOut": "ซูมออก",
+      "rotate": "หมุน",
+      "crop": "ครอป",
+      "print": "พิมพ์",
+      "download": "ดาวน์โหลด",
+      "resendFax": "ส่งแฟกซ์ซ้ำ",
+      "externalContent": "เนื้อหาจากภายนอก",
+      "id": "ID"
+    },
+    "minimap": {
+      "label": "ความหนาแน่นไทม์ไลน์",
+      "from": "จุดเริ่มช่วง",
+      "to": "จุดสิ้นสุดช่วง",
+      "window": "{{from}} – {{to}}"
+    }
+  }
+}
