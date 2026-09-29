@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { SigBuilder } from "./SigBuilder"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureDirectionCodes } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof SigBuilder> = {
   title: "Medical/Medical Component/Sig Builder",
@@ -10,10 +11,7 @@ const meta: Meta<typeof SigBuilder> = {
   component: SigBuilder,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Dose, route, frequency \u2014 assembled into a human sentence as you pick: \"Take 1 tablet by mouth twice daily for 10 days\". The sentence is the source of truth the pharmacist will read, built from structured parts the system can check.\n\n**Watch out:** if a combination can't make a sane sentence, refuse it here \u2014 a garbled sig that reaches print is the worst-case scenario this component exists to prevent.",
+    docs: { description: { component: docsDesc("SigBuilder"),
       },
     },
   },

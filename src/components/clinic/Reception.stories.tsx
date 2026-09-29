@@ -14,6 +14,7 @@ import { QueueTable } from "./QueueTable"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureQueue, patientB } from "@/fixtures/clinic"
 import type { CodedConcept } from "./types"
+import { docsDesc } from "@/lib/docs-desc"
 
 // Blueprint 1 — Front desk: registration & queue (05 §1). Assembly-only, per
 // the blueprint rule: nobody builds <ReceptionScreen> as a catalog component.
@@ -27,10 +28,7 @@ const meta: Meta<typeof QueueTable> = {
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The reception desk blueprint: patient search always reachable, the queue one glance away, check-in one click. It composes PatientSearchCombobox, QueueTable and company into the front-desk workflow.\n\n**Watch out:** reception is a high-throughput, low-tolerance surface \u2014 count clicks to check-in and defend every one you add.",
+    docs: { description: { component: docsDesc("Reception"),
       },
     },
   },

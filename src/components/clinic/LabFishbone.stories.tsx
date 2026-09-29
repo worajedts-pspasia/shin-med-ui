@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { LabFishbone } from "./LabFishbone"
 import { fixtureFishboneCbc, fixtureFishboneChem7 } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof LabFishbone> = {
   title: "Medical/Medical Component/Lab Fishbone",
@@ -8,10 +9,7 @@ const meta: Meta<typeof LabFishbone> = {
   component: LabFishbone,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The CHEM-7 and CBC skeleton diagram clinicians draw on napkins \u2014 spine, bones, values at the tips, flagged values in amber or red ink. Beloved, fast to read, and meaningless to anyone who never drew one.\n\n**Watch out:** it's an *alternate* view of the panel, never the only one \u2014 ResultTable is the accessible, sortable, copyable default. Desktop-only; below lg it says so.",
+    docs: { description: { component: docsDesc("LabFishbone"),
       },
     },
   },

@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ComplianceBoard } from "./ComplianceBoard"
 import { fixtureCompliance, fixtureComplianceTiers } from "@/fixtures/clinic"
 import { Monochrome } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ComplianceBoard> = {
   title: "Medical/Medical Component/Compliance Board",
@@ -9,10 +10,7 @@ const meta: Meta<typeof ComplianceBoard> = {
   component: ComplianceBoard,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Meaningful Use, or any quality-measure grid: categories down, measures across, each cell a met/partial/unmet chip with its glyph \u2014 \u2713, \u26a0, \u2715 \u2014 so the board survives grayscale and still reads.\n\n**Watch out:** partial is a legitimate state, not a failure to decide. Hide N/A cells' tooltips only if the measure truly doesn't apply.",
+    docs: { description: { component: docsDesc("ComplianceBoard"),
       },
     },
   },
@@ -31,7 +29,7 @@ export const Playground: Story = {
 
 export const MonochromeStory: Story = {
   name: "Monochrome",
-  parameters: { docs: { description: { story: "Glyphs carry the state without colour." } } },
+  parameters: { docs: { description: { story: docsDesc("ComplianceBoard::MonochromeStory") } } },
   render: () => (
     <Monochrome>
       <div className="max-w-3xl">

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Kbd, KbdGroup } from "@/components/ui/kbd"
+import i18n from "@/i18n"
 
 const meta: Meta<typeof Kbd> = {
   title: "UI/Display/Kbd",
@@ -13,7 +14,7 @@ const meta: Meta<typeof Kbd> = {
         <Kbd>{children}</Kbd>
         <Kbd>N</Kbd>
       </KbdGroup>
-      <span className="text-[13px] text-things-gray-2">New To-Do</span>
+      <span className="text-[13px] text-things-gray-2">{i18n.t("dialog.newTodo")}</span>
     </div>
   ),
 }

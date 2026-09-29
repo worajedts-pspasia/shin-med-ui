@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { VitalsList } from "./VitalsList"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof VitalsList> = {
   title: "Medical/Medical Component/Vitals List",
@@ -8,10 +9,7 @@ const meta: Meta<typeof VitalsList> = {
   component: VitalsList,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The vitals a nurse reads off in order \u2014 label, value with unit, most-recent timestamp \u2014 stacked and calm. It's the display side; editing lives in VitalsStrip.\n\n**Watch out:** \"most recent\" must actually be the most recent. A stale timestamp next to a fresh value is a chart error wearing a UI costume.",
+    docs: { description: { component: docsDesc("VitalsList"),
       },
     },
   },
@@ -48,7 +46,7 @@ export const Default: Story = {
 }
 
 export const Unknown: Story = {
-  parameters: { docs: { description: { story: "Unknown renders —, never blank." } } },
+  parameters: { docs: { description: { story: docsDesc("VitalsList::Unknown") } } },
   render: () => (
     <div className="max-w-sm rounded-md border border-things-hairline bg-card py-1">
       <VitalsList items={[{ id: "a", label: "SpO₂", unit: "%" }, { id: "b", label: "Pain score" }]} />

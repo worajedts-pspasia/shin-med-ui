@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { TopNCard } from "./TopNCard"
 import { fixtureTopDowntime } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof TopNCard> = {
   title: "Medical/Medical Component/Top N Card",
@@ -9,10 +10,7 @@ const meta: Meta<typeof TopNCard> = {
   component: TopNCard,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The \"Top Five Downtime\" pattern: ranked horizontal bars in operations-amber, click a bar to highlight it and its event list syncs beneath \u2014 the summary and the evidence in one card.\n\n**Watch out:** amber is this component's *attention* color (operations pain), not clinical severity \u2014 don't co-locate it with lab flags or the two ambers will collide.",
+    docs: { description: { component: docsDesc("TopNCard"),
       },
     },
   },

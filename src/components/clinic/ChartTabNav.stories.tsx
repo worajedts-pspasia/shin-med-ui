@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ChartTabNav } from "./ChartTabNav"
 import { chartSections } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ChartTabNav> = {
   title: "Medical/Medical Shell/Chart Tab Nav",
@@ -9,10 +10,7 @@ const meta: Meta<typeof ChartTabNav> = {
   component: ChartTabNav,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Vertical section navigation for the chart \u2014 Problems, Meds, Allergies, Vitals \u2014 with counts as quiet badges so the nav itself reports workload. Active section carries the blue indicator; counts cap at 99+.\n\n**Watch out:** the nav expects to scroll *with* or *to* sections \u2014 wire it to your scroll container or the active state is decorative.",
+    docs: { description: { component: docsDesc("ChartTabNav"),
       },
     },
   },

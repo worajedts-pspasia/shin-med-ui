@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { CollapsiblePanel } from "./CollapsiblePanel"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof CollapsiblePanel> = {
   title: "Medical/Medical Shell/Collapsible Panel",
@@ -8,10 +9,7 @@ const meta: Meta<typeof CollapsiblePanel> = {
   component: CollapsiblePanel,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The universal titled panel that opens and closes: header with title, meta and its chevron, content that collapses with a height animation you never have to think about. Open state can be controlled; the chevron rotates, the header stays clickable.\n\n**Watch out:** panels host content, they don't own it \u2014 actions live in the header's trailing slot, not floating inside the body.",
+    docs: { description: { component: docsDesc("CollapsiblePanel"),
       },
     },
   },

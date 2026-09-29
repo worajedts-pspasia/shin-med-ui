@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { BodyMapAnnotator, type BodyMarker } from "./BodyMapAnnotator"
 import { fixtureBodyMarkers } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof BodyMapAnnotator> = {
   title: "Medical/Medical Component/Body Map Annotator",
@@ -9,10 +10,7 @@ const meta: Meta<typeof BodyMapAnnotator> = {
   component: BodyMapAnnotator,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Mark findings on a body: click a region to drop a \u2295 marker (tone = clinical judgment), click again to remove. The silhouette is schematic \u2014 a stand-in for a designed asset \u2014 but the region names and interactions are the real contract.\n\n**Watch out:** desktop canvas by design; below md it becomes the findings list plus a \"view diagram\" dialog. Marker tones are severity \u2014 keep them honest.",
+    docs: { description: { component: docsDesc("BodyMapAnnotator"),
       },
     },
   },

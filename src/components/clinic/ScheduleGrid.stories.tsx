@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ScheduleGrid } from "./ScheduleGrid"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureGridSlots, scheduleResources } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ScheduleGrid> = {
   title: "Medical/Medical Component/Schedule Grid",
@@ -9,10 +10,7 @@ const meta: Meta<typeof ScheduleGrid> = {
   component: ScheduleGrid,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The day/week resource calendar: resources as columns, time down, appointment blocks colored by *type* with status as a glyph \u2014 the two channels never compete. Overlaps split the column automatically; below md it gives up on pixels entirely and becomes an agenda list, because a 5-column grid at 390px is a lie.\n\n**Watch out:** type colors come from the category palette. And the agenda degradation is not a downgrade to fix \u2014 it's the design.",
+    docs: { description: { component: docsDesc("ScheduleGrid"),
       },
     },
   },
@@ -45,7 +43,7 @@ export const Playground: Story = {
 export const DayView: Story = { name: "Day (desktop)", parameters: { viewport: { defaultViewport: "desktop1280" } }, render: () => <Demo view="day" /> }
 export const WeekView: Story = { name: "Week (desktop)", parameters: { viewport: { defaultViewport: "desktop1280" } }, render: () => <Demo view="week" /> }
 export const Mobile: Story = {
-  parameters: { viewport: { defaultViewport: "mobile390" }, docs: { description: { story: "Below md the grid becomes an agenda of AppointmentCards grouped by day." } } },
+  parameters: { viewport: { defaultViewport: "mobile390" }, docs: { description: { story: docsDesc("ScheduleGrid::Mobile") } } },
   render: () => <Demo view="week" />,
 }
 export const Thai: Story = {

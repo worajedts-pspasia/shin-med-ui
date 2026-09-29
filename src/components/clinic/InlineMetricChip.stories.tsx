@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { InlineMetricChip } from "./InlineMetricChip"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof InlineMetricChip> = {
   title: "Medical/Medical UI/Inline Metric Chip",
@@ -8,10 +9,7 @@ const meta: Meta<typeof InlineMetricChip> = {
   component: InlineMetricChip,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "A measured value as a wearable \u2014 small, tinted, unit attached. `BP 128/78`, `SpO\u2082 96%`, `HbA1c 6.8` \u2014 each a compact chip that colors by tone (ok/amber/red) while keeping the number in tabular figures.\n\n**Watch out:** tone means clinical judgment, not decoration. If you can't defend why a value is amber, ship it neutral.",
+    docs: { description: { component: docsDesc("InlineMetricChip"),
       },
     },
   },

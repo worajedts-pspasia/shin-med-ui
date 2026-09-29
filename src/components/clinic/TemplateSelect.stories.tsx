@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { GeneratedSummaryPanel, TemplateSelect } from "./TemplateSelect"
 import { fixtureSummarySegments, fixtureTemplates } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof TemplateSelect> = {
   title: "Medical/Medical Component/Template Select",
@@ -9,10 +10,7 @@ const meta: Meta<typeof TemplateSelect> = {
   component: TemplateSelect,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Template-driven documentation: pick the template, and the narrative writes itself \u2014 each underlined phrase is a live link back to the control that produced it, so the prose can never drift from the structured data. Editing the field rewrites the sentence.\n\n**Watch out:** the panel is read-only by design \u2014 if users start typing into it, the template is wrong, not the component. Derived text is the whole point.",
+    docs: { description: { component: docsDesc("TemplateSelect"),
       },
     },
   },
@@ -50,7 +48,7 @@ function Demo() {
 export const Playground: Story = { render: () => <Demo /> }
 
 export const NoTemplate: Story = {
-  parameters: { docs: { description: { story: "Nothing selected — the panel still renders its empty header state." } } },
+  parameters: { docs: { description: { story: docsDesc("TemplateSelect::NoTemplate") } } },
   render: () => (
     <div className="mx-auto max-w-2xl">
       <TemplateSelect templates={fixtureTemplates} onSelect={() => {}} />

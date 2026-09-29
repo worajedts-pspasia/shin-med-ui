@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { VitalsStrip } from "./VitalsStrip"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureVitals } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof VitalsStrip> = {
   title: "Medical/Medical Component/Vitals Strip",
@@ -9,10 +10,7 @@ const meta: Meta<typeof VitalsStrip> = {
   component: VitalsStrip,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The compact editable vitals row: one line, every value inline-editable, abnormal entries toning as you type \u2014 designed for the room, where the computer is between you and the patient.\n\n**Watch out:** it's for *capture*, not history \u2014 once saved, values move to VitalsList and the trend. And keep the row single-line; wrapping defeats the whole point.",
+    docs: { description: { component: docsDesc("VitalsStrip"),
       },
     },
   },

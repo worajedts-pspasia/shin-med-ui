@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { TaskRow } from "@/components/things/TaskRow"
 import { fixtureTasks } from "@/fixtures"
+import { docsDesc } from "@/lib/docs-desc"
 
 const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } })
 
@@ -17,10 +18,7 @@ const meta: Meta<typeof TaskRow> = {
   parameters: {
     layout: "padded",
     viewport: { defaultViewport: "mobile390" },
-    docs: {
-      description: {
-        component:
-          "A single to-do. Collapsed shows title + chips (reminder, deadline, tags); expanded opens the inline editor. Toggle every state from Controls.",
+    docs: { description: { component: docsDesc("TaskRow"),
       },
     },
   },

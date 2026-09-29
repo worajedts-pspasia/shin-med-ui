@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
 import { RangeToggle } from "./RangeToggle"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof RangeToggle> = {
   title: "Medical/Medical UI/Range Toggle",
@@ -9,7 +10,7 @@ const meta: Meta<typeof RangeToggle> = {
   component: RangeToggle,
   parameters: {
     layout: "padded",
-    docs: { description: { component: "3m \u00b7 6m \u00b7 1y \u00b7 2y \u00b7 All \u2014 the period switcher that trend charts and flowsheets share. Deliberately trivial: it holds no state, it just speaks the choice.\n\n**Watch out:** pass the options you actually support \u2014 hiding \"2y\" is better than offering it and rendering an empty chart." } },
+    docs: { description: { component: docsDesc("RangeToggle") } },
   },
   decorators: [(Story) => <AtDensity density="compact"><Story /></AtDensity>],
 }

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { PrescriptionPreview } from "./PrescriptionPreview"
 import { ForcedLocale } from "./story-utils"
 import { fixturePharmacy, fixturePrescriber, fixtureRx, patientA } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof PrescriptionPreview> = {
   title: "Medical/Medical Component/Prescription Preview",
@@ -10,10 +11,7 @@ const meta: Meta<typeof PrescriptionPreview> = {
   component: PrescriptionPreview,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The Rx exactly as it will print, on the paper surface with its warmer ink \u2014 sig, quantity, refills, prescriber block. Unverified interactions keep the watermark on and Send disabled: the pending state is visible on the document itself.\n\n**Watch out:** what you see is what prints \u2014 no post-processing between preview and paper. And the watermark is a state, not a decoration; it clears only when verification clears.",
+    docs: { description: { component: docsDesc("PrescriptionPreview"),
       },
     },
   },
@@ -50,7 +48,7 @@ export const Playground: Story = {
 }
 export const Default: Story = { name: "Default", render: () => <Demo /> }
 export const PendingInteractions: Story = {
-  parameters: { docs: { description: { story: "Watermark + amber badge; Send disabled until verified." } } },
+  parameters: { docs: { description: { story: docsDesc("PrescriptionPreview::PendingInteractions") } } },
   render: () => <Demo interactionsVerified={false} />,
 }
 export const Thai: Story = {

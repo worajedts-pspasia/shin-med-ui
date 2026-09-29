@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { SummaryOfCareTable } from "./Paper"
 import { AtDensity } from "./story-utils"
 import { fixtureSocSections, patientA } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof SummaryOfCareTable> = {
   title: "Medical/Medical Component/Summary Of Care Table",
@@ -9,10 +10,7 @@ const meta: Meta<typeof SummaryOfCareTable> = {
   component: SummaryOfCareTable,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The striped label/value clinical summary for referrals and transitions: full-width label bands, values in readable columns, emphasis where the next provider's eyes should land first.\n\n**Watch out:** it's a *communication* document \u2014 written for someone who doesn't have your chart. If it only makes sense with the chart open, it has failed.",
+    docs: { description: { component: docsDesc("SummaryOfCareTable"),
       },
     },
   },

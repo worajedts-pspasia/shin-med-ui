@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { InboxTile, InboxTileRow } from "./InboxTile"
 import { fixtureInboxTiles } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof InboxTile> = {
   title: "Medical/Medical Component/Inbox Tile",
@@ -8,10 +9,7 @@ const meta: Meta<typeof InboxTile> = {
   component: InboxTile,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The portal home's module tiles: Messages (0), Chart (3), Appointments (1) \u2014 count as a quiet \"(n)\" beside the title *and* a red badge on the icon when there's news, exactly the portal's own dual pattern. Previews list the newest dated items with source tags.\n\n**Watch out:** zero-count tiles get the empty label (\"No New Messages\"), not a hidden tile \u2014 the portal's promise is \"nothing needs you\", stated out loud.",
+    docs: { description: { component: docsDesc("InboxTile"),
       },
     },
   },
@@ -35,7 +33,7 @@ export const Playground: Story = {
 }
 
 export const PortalRow: Story = {
-  parameters: { docs: { description: { story: "The portal home: Messages (0) / Chart (3) / Appointments (1) / Announcements (0) — grid-cols-1 sm:2 lg:4." } } },
+  parameters: { docs: { description: { story: docsDesc("InboxTile::PortalRow") } } },
   render: () => <InboxTileRow tiles={fixtureInboxTiles} />,
 }
 

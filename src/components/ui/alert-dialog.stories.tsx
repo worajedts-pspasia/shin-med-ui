@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 import { Button } from "@/components/ui/button"
+import i18n from "@/i18n"
 
 const meta: Meta = {
   title: "UI/Containers/AlertDialog",
@@ -26,8 +27,8 @@ export const Playground: StoryObj = {
             <AlertDialogDescription>This removes the list and every to-do inside it.</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction variant={destructive ? "destructive" : "default"}>Delete</AlertDialogAction>
+            <AlertDialogCancel>{i18n.t("dialog.cancel")}</AlertDialogCancel>
+            <AlertDialogAction variant={destructive ? "destructive" : "default"}>{i18n.t("task.delete")}</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
@@ -47,8 +48,8 @@ export const DeleteList: StoryObj = {
           <AlertDialogDescription>This removes the list and every to-do inside it.</AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction variant="destructive">Delete</AlertDialogAction>
+          <AlertDialogCancel>{i18n.t("dialog.cancel")}</AlertDialogCancel>
+          <AlertDialogAction variant="destructive">{i18n.t("task.delete")}</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

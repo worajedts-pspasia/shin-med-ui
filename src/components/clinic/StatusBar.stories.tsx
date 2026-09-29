@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { StatusBar } from "./StatusBar"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof StatusBar> = {
   title: "Medical/Medical Shell/Status Bar",
@@ -7,10 +8,7 @@ const meta: Meta<typeof StatusBar> = {
   component: StatusBar,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The quiet strip along the bottom: connection state, sync freshness, the current user, maybe a global shortcut hint. It's ambient \u2014 present in every peripheral vision, read once an hour.\n\n**Watch out:** if something here *demands* attention, it's in the wrong component \u2014 alerts belong in banners or the ticker, not the status furniture.",
+    docs: { description: { component: docsDesc("StatusBar"),
       },
     },
   },

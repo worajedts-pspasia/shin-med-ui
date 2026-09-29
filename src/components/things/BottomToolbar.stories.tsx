@@ -6,6 +6,7 @@ import { BottomToolbar } from "@/components/things/BottomToolbar"
 import { NewTodoDialog } from "@/components/things/NewTodoDialog"
 import { TaskRow } from "@/components/things/TaskRow"
 import { fixtureTasks } from "@/fixtures"
+import { docsDesc } from "@/lib/docs-desc"
 
 const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } })
 
@@ -15,10 +16,7 @@ const meta: Meta<typeof BottomToolbar> = {
   component: BottomToolbar,
   parameters: {
     layout: "fullscreen",
-    docs: {
-      description: {
-        component:
-          "The bottom toolbar. Tools (checklist / schedule / deadline) act on the selected task and are disabled until one is selected.",
+    docs: { description: { component: docsDesc("BottomToolbar"),
       },
     },
   },

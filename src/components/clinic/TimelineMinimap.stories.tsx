@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { TimelineMinimap } from "./TimelineMinimap"
 import { AtDensity } from "./story-utils"
 import { fixtureMinimapBuckets } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof TimelineMinimap> = {
   title: "Medical/Medical Component/Timeline Minimap",
@@ -10,10 +11,7 @@ const meta: Meta<typeof TimelineMinimap> = {
   component: TimelineMinimap,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The two-year histogram as a time brush: every bar is a month's event count, the window is draggable by its edges (or centers on a bar click), and what you select is what the main timeline shows. Hidden below lg.\n\n**Watch out:** the brush must *actually* drive the timeline \u2014 a decorative minimap trains users to ignore it, and this component is too useful to waste on that.",
+    docs: { description: { component: docsDesc("TimelineMinimap"),
       },
     },
   },

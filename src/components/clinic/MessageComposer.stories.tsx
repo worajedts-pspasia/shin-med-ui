@@ -4,6 +4,7 @@ import { MessageComposer } from "./MessageComposer"
 import type { AttachmentRef } from "./AttachmentChip"
 import { AtDensity } from "./story-utils"
 import { fixtureDirectory } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof MessageComposer> = {
   title: "Medical/Medical Component/Message Composer",
@@ -11,10 +12,7 @@ const meta: Meta<typeof MessageComposer> = {
   component: MessageComposer,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The compose surface: recipient tokens up top, subject, body, attachments as chips \u2014 with send guarded while interactions are unverified (the pending state is a *feature* of clinical messaging).\n\n**Watch out:** blocking send must tell the user why and what resolves it. A disabled button with no reason is how people find workarounds.",
+    docs: { description: { component: docsDesc("MessageComposer"),
       },
     },
   },

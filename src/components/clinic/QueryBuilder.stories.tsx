@@ -8,6 +8,7 @@ import {
   fixtureQueryRulesSeed,
 } from "@/fixtures/clinic"
 import type { DataTableColumn } from "./DataTable"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof QueryBuilder> = {
   title: "Medical/Medical Component/Query Builder",
@@ -15,10 +16,7 @@ const meta: Meta<typeof QueryBuilder> = {
   component: QueryBuilder,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The reporting rule editor: field / operator / value rows (drag the grip or use the up/down buttons to reorder), OR'd criteria chips showing the plain-language query, Run, then results with bulk actions. Built for the administrator who asks \"give me all diabetics over 60 due for A1c\".\n\n**Watch out:** the chips are the query's *contract* \u2014 they must read exactly what will run. Editor is desktop-only; results render anywhere.",
+    docs: { description: { component: docsDesc("QueryBuilder"),
       },
     },
   },

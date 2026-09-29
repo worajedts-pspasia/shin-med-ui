@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar"
+import i18n from "@/i18n"
 
 const meta: Meta = {
   title: "UI/Navigation/Menubar",
@@ -38,15 +39,15 @@ export const FileMenu: StoryObj = {
       <MenubarMenu>
         <MenubarTrigger>File</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>New To-Do</MenubarItem>
+          <MenubarItem>{i18n.t("dialog.newTodo")}</MenubarItem>
           <MenubarItem>New List…</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>View</MenubarTrigger>
         <MenubarContent>
-          <MenubarItem>Today</MenubarItem>
-          <MenubarItem>Logbook</MenubarItem>
+          <MenubarItem>{i18n.t("task.today")}</MenubarItem>
+          <MenubarItem>{i18n.t("sidebar.logbook")}</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { NestedPanel } from "./NestedPanel"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof NestedPanel> = {
   title: "Medical/Medical Shell/Nested Panel",
   tags: ["autodocs"],
   component: NestedPanel,
-  parameters: { layout: "padded", docs: { description: { component: "The titled sub-panel for adding *one more thing* inside a form \u2014 a header, a single add action, then the growing list of what was added. It answers \"where does the second diagnosis go?\" without a modal.\n\n**Watch out:** it's for homogeneous repeatable entries (findings, codes, line items). Heterogeneous content wants CollapsiblePanel." } } },
+  parameters: { layout: "padded", docs: { description: { component: docsDesc("NestedPanel") } } },
   decorators: [(Story) => <AtDensity density="compact"><Story /></AtDensity>],
 }
 export default meta

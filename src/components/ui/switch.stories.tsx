@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
+import i18n from "@/i18n"
 
 const meta: Meta<typeof Switch> = {
   title: "UI/Input/Switch",
@@ -14,7 +15,7 @@ const meta: Meta<typeof Switch> = {
   render: ({ defaultChecked, disabled }) => (
     <div className="flex items-center gap-2">
       <Switch id="sw" defaultChecked={defaultChecked} disabled={disabled} />
-      <Label htmlFor="sw">This Evening</Label>
+      <Label htmlFor="sw">{i18n.t("view.thisEvening")}</Label>
     </div>
   ),
 }

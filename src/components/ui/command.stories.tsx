@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
+import i18n from "@/i18n"
 
 const meta: Meta = {
   title: "UI/Input/Command",
@@ -18,7 +19,7 @@ export const Playground: StoryObj = {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading={heading}>
-            <CommandItem>New To-Do</CommandItem>
+            <CommandItem>{i18n.t("dialog.newTodo")}</CommandItem>
             <CommandItem>New List</CommandItem>
             <CommandItem>Quick Find</CommandItem>
           </CommandGroup>
@@ -35,7 +36,7 @@ export const InlinePalette: StoryObj = {
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
-          <CommandItem>New To-Do</CommandItem>
+          <CommandItem>{i18n.t("dialog.newTodo")}</CommandItem>
           <CommandItem>New List</CommandItem>
           <CommandItem>Quick Find</CommandItem>
         </CommandGroup>

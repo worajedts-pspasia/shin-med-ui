@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { PaginationFooter } from "./PaginationFooter"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof PaginationFooter> = {
   title: "Medical/Medical UI/Pagination Footer",
@@ -9,10 +10,7 @@ const meta: Meta<typeof PaginationFooter> = {
   component: PaginationFooter,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "\"50 Items \u00b7 1 of 3\" \u2014 the pager six screens share. Item count in tabular figures on the left, page x of y with prev/next chevrons on the right. Nothing more, and that's the point.\n\n**Watch out:** unit is variable (\"rows\" vs \"items\") and the count is the *total*, not the page size \u2014 both are common wiring mistakes.",
+    docs: { description: { component: docsDesc("PaginationFooter"),
       },
     },
   },

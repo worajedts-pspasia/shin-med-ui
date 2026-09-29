@@ -3,6 +3,12 @@ import type { Preview } from "@storybook/react-vite"
 import i18n, { setLocale, type Locale } from "../src/i18n"
 import "../src/index.css"
 
+// Language the preview iframe's modules were evaluated in. Docs descriptions
+// resolve once at module load, so when the effective locale differs (URL
+// globals, a first flip), the iframe reloads once to re-resolve them; after
+// the reload bootLocale equals the locale and the reload stops.
+const bootLocale: string = i18n.language
+
 const preview: Preview = {
   parameters: {
     layout: "fullscreen",
@@ -50,11 +56,16 @@ const preview: Preview = {
       },
     },
   },
-  initialGlobals: { locale: "en" },
+  initialGlobals: { locale: localStorage.getItem("things3-locale") ?? "en" },
   decorators: [
     (Story, context) => {
       const locale = ((context.globals.locale as Locale) ?? "en") satisfies Locale
       useEffect(() => {
+        if (locale !== bootLocale) {
+          setLocale(locale)
+          window.location.reload()
+          return
+        }
         if (i18n.language !== locale) void setLocale(locale)
       }, [locale])
       return <Story />

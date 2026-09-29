@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Save, Send } from "lucide-react"
 import { KeyHintButton } from "./KeyHintButton"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof KeyHintButton> = {
   title: "Medical/Medical UI/Key Hint Button",
@@ -9,10 +10,7 @@ const meta: Meta<typeof KeyHintButton> = {
   component: KeyHintButton,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "A button that shows its keyboard shortcut right on its face \u2014 \u2318K, /, G then D \u2014 so power features teach themselves. The hint renders in a subtle kbd style that whispers instead of shouts.\n\n**Watch out:** the hint is a promise. Bind the actual key or take the hint off; a lying shortcut is worse than none.",
+    docs: { description: { component: docsDesc("KeyHintButton"),
       },
     },
   },

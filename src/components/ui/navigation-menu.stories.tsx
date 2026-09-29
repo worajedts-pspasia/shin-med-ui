@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu"
+import i18n from "@/i18n"
 
 const meta: Meta = {
   title: "UI/Navigation/NavigationMenu",
@@ -12,12 +13,15 @@ export const Playground: StoryObj = {
   argTypes: { items: { control: { type: "range", min: 2, max: 6, step: 1 } } },
   render: (args: { items?: number }) => {
     const { items = 3 } = args
-    const labels = ["Today", "Upcoming", "Anytime", "Someday", "Logbook", "Areas"]
+    const labels: [string, string][] = [
+      ["task.today", "Today"], ["sidebar.upcoming", "Upcoming"], ["sidebar.anytime", "Anytime"],
+      ["task.someday", "Someday"], ["sidebar.logbook", "Logbook"], ["sidebar.areas", "Areas"],
+    ]
     return (
       <NavigationMenu>
         <NavigationMenuList>
-          {labels.slice(0, items).map((l) => (
-            <NavigationMenuItem key={l}><NavigationMenuLink href="#">{l}</NavigationMenuLink></NavigationMenuItem>
+          {labels.slice(0, items).map(([key, en]) => (
+            <NavigationMenuItem key={en}><NavigationMenuLink href="#">{i18n.t(key)}</NavigationMenuLink></NavigationMenuItem>
           ))}
         </NavigationMenuList>
       </NavigationMenu>
@@ -29,9 +33,9 @@ export const Views: StoryObj = {
   render: () => (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem><NavigationMenuLink href="#">Today</NavigationMenuLink></NavigationMenuItem>
-        <NavigationMenuItem><NavigationMenuLink href="#">Upcoming</NavigationMenuLink></NavigationMenuItem>
-        <NavigationMenuItem><NavigationMenuLink href="#">Anytime</NavigationMenuLink></NavigationMenuItem>
+        <NavigationMenuItem><NavigationMenuLink href="#">{i18n.t("task.today")}</NavigationMenuLink></NavigationMenuItem>
+        <NavigationMenuItem><NavigationMenuLink href="#">{i18n.t("sidebar.upcoming")}</NavigationMenuLink></NavigationMenuItem>
+        <NavigationMenuItem><NavigationMenuLink href="#">{i18n.t("sidebar.anytime")}</NavigationMenuLink></NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   ),

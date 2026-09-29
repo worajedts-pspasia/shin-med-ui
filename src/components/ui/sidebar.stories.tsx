@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import i18n from "@/i18n"
 
 const meta: Meta = {
   title: "UI/Containers/Sidebar",
@@ -23,8 +24,8 @@ export const Playground: StoryObj = {
               <SidebarGroupLabel>Views</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
-                  <SidebarMenuItem><SidebarMenuButton isActive={active === "Today"}>Today</SidebarMenuButton></SidebarMenuItem>
-                  <SidebarMenuItem><SidebarMenuButton isActive={active === "Upcoming"}>Upcoming</SidebarMenuButton></SidebarMenuItem>
+                  <SidebarMenuItem><SidebarMenuButton isActive={active === "Today"}>{i18n.t("task.today")}</SidebarMenuButton></SidebarMenuItem>
+                  <SidebarMenuItem><SidebarMenuButton isActive={active === "Upcoming"}>{i18n.t("sidebar.upcoming")}</SidebarMenuButton></SidebarMenuItem>
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>
@@ -49,8 +50,8 @@ export const AppShellPreview: StoryObj = {
             <SidebarGroupLabel>Views</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                <SidebarMenuItem><SidebarMenuButton isActive>Today</SidebarMenuButton></SidebarMenuItem>
-                <SidebarMenuItem><SidebarMenuButton>Upcoming</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton isActive>{i18n.t("task.today")}</SidebarMenuButton></SidebarMenuItem>
+                <SidebarMenuItem><SidebarMenuButton>{i18n.t("sidebar.upcoming")}</SidebarMenuButton></SidebarMenuItem>
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>

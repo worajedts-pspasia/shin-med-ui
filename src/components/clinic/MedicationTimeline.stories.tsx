@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { MedicationTimeline } from "./MedicationTimeline"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { bpTrendSeries, fixtureMeds } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof MedicationTimeline> = {
   title: "Medical/Medical Component/Medication Timeline",
@@ -10,10 +11,7 @@ const meta: Meta<typeof MedicationTimeline> = {
   component: MedicationTimeline,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Therapy as a Gantt: one bar per drug from first fill to last, gaps visible at a glance, clamped eras flat-edged so \"we don't know when this ended\" is legible. Day/Week/Month zoom tightens the window instead of shrinking bars into noise.\n\n**Watch out:** the window is bounded (a 2019 aspirin will not stretch the axis to 75,000 pixels \u2014 that bug is dead, but it taught us). Bars are category-colored; status rides as glyph.",
+    docs: { description: { component: docsDesc("MedicationTimeline"),
       },
     },
   },

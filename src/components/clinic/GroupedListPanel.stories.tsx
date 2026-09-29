@@ -5,6 +5,7 @@ import { GroupedListPanel } from "./GroupedListPanel"
 import { PaginationFooter } from "./PaginationFooter"
 import { AtDensity } from "./story-utils"
 import { fixtureFaxes, type FixtureFax } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof GroupedListPanel<FixtureFax>> = {
   title: "Medical/Medical Component/Grouped List Panel",
@@ -12,10 +13,7 @@ const meta: Meta<typeof GroupedListPanel<FixtureFax>> = {
   component: GroupedListPanel,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The \"Arranged By:\" panel from the documents console: items grouped under sticky headers (by date, by type, by sender), each group collapsible, the whole thing calm and scannable.\n\n**Watch out:** groups are for *scanning*, not hiding \u2014 collapsed-by-default groups that users must open to find today's item defeat the purpose.",
+    docs: { description: { component: docsDesc("GroupedListPanel"),
       },
     },
   },

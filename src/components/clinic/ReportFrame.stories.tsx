@@ -10,6 +10,7 @@ import {
   fixtureOpsSeries,
   fixtureReportPeriods,
 } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ReportFrame> = {
   title: "Medical/Medical Component/Report Frame",
@@ -17,10 +18,7 @@ const meta: Meta<typeof ReportFrame> = {
   component: ReportFrame,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Three report types, one frame: title and Print up top, a period dropdown, the chart canvas as the hero, and a config rail (range, series, calendar) that wraps below the canvas on narrow screens. You bring the chart; the frame brings the chrome.\n\n**Watch out:** the canvas is a slot, not a dependency \u2014 bind your own chart to the same series visibility the config rail edits, or the rail lies.",
+    docs: { description: { component: docsDesc("ReportFrame"),
       },
     },
   },

@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { StepTabs } from "./StepTabs"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof StepTabs> = {
   title: "Medical/Medical Shell/Step Tabs",
@@ -9,10 +10,7 @@ const meta: Meta<typeof StepTabs> = {
   component: StepTabs,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Numbered wizard tabs \u2014 the visual contract of \"three steps and you're done.\" Done steps get their check, the current one its blue, future ones stay quiet; clicking a done step goes back, clicking a future one does nothing.\n\n**Watch out:** the numbers promise sequence. If your flow allows skipping, this component is lying \u2014 use plain tabs instead.",
+    docs: { description: { component: docsDesc("StepTabs"),
       },
     },
   },

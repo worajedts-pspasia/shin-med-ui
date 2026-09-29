@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next"
 import { AppointmentCard, type ApptStatus } from "./AppointmentCard"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureAppointments } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof AppointmentCard> = {
   title: "Medical/Medical Component/Appointment Card",
@@ -10,10 +11,7 @@ const meta: Meta<typeof AppointmentCard> = {
   component: AppointmentCard,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "One appointment, appointment-shaped: patient, time range, type and reason, with status as a glyph rather than a colored fill \u2014 because the type already owns the color. Selected state is a blue left edge on a soft tint, matching the task-row language users already know.\n\n**Watch out:** at 320px the time moves under the name \u2014 that reflow is intentional; don't fight it with a min-width.",
+    docs: { description: { component: docsDesc("AppointmentCard"),
       },
     },
   },

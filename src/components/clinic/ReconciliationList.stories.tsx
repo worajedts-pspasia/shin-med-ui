@@ -8,6 +8,7 @@ import {
 } from "./ReconciliationList"
 import { fixtureReconItems } from "@/fixtures/clinic"
 import { ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ReconciliationList> = {
   title: "Medical/Medical Component/Reconciliation List",
@@ -15,10 +16,7 @@ const meta: Meta<typeof ReconciliationList> = {
   component: ReconciliationList,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Medication reconciliation as decisions, not labels: every item from the outside record gets a Keep / Stop / Inactivate control \u2014 colored like the verdict it will produce (ok/critical/warn) \u2014 with a compact select below md. The footer's Mark as Reviewed + Preview + Save completes the ritual.\n\n**Watch out:** the decision must *be* a control; rendering it as static colored text (the source app's sin) hides that it's changeable. Inactivate is amber because it's reversible \u2014 Stop is the red one.",
+    docs: { description: { component: docsDesc("ReconciliationList"),
       },
     },
   },
@@ -60,7 +58,7 @@ export const Playground: Story = {
 }
 
 export const MedicationsOnly: Story = {
-  parameters: { docs: { description: { story: "One section — the classic med-rec view." } } },
+  parameters: { docs: { description: { story: docsDesc("ReconciliationList::MedicationsOnly") } } },
   render: () => <Demo sections={["medication"]} />,
 }
 

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { LineItemTable } from "./LineItemTable"
 import { AtDensity } from "./story-utils"
 import { fixtureLineItems } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof LineItemTable> = {
   title: "Medical/Medical Component/Line Item Table",
@@ -10,10 +11,7 @@ const meta: Meta<typeof LineItemTable> = {
   component: LineItemTable,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Editable charge rows with a totals footer: quantity, unit price, amount \u2014 amount computed, not typed, and the totals row forever honest about the sum. One malformed row explains itself inline instead of breaking the math.\n\n**Watch out:** totals must recompute from the visible rows, always \u2014 a footer that lies once is a billing dispute.",
+    docs: { description: { component: docsDesc("LineItemTable"),
       },
     },
   },

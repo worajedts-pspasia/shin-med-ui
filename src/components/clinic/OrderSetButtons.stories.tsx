@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { OrderSetButtons } from "./OrderSetButtons"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureOrderSets } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof OrderSetButtons> = {
   title: "Medical/Medical Component/Order Set Buttons",
@@ -9,9 +10,7 @@ const meta: Meta<typeof OrderSetButtons> = {
   component: OrderSetButtons,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component: "Apply a template or save the current one \u2014 the two buttons a clinic that treats the same five conditions all day actually lives on. Scope is explicit: *my* sets vs *clinic* sets.\n\n**Watch out:** applying a set is a bulk action with consequences; make the diff visible before it lands in the chart.",
+    docs: { description: { component: docsDesc("OrderSetButtons"),
       },
     },
   },

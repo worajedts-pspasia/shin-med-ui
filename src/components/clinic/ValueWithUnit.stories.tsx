@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ValueWithUnit } from "./ValueWithUnit"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ValueWithUnit> = {
   title: "Medical/Medical UI/Value With Unit",
@@ -8,10 +9,7 @@ const meta: Meta<typeof ValueWithUnit> = {
   component: ValueWithUnit,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "A clinical value is never a bare number \u2014 `6.8 %` with the unit in quiet gray, the value in tabular figures, an optional reference range beside. Columns of these align on the decimal point because humans compare downward.\n\n**Watch out:** units travel with values everywhere or nowhere. If one table strips units and another keeps them, clinicians stop trusting both.",
+    docs: { description: { component: docsDesc("ValueWithUnit"),
       },
     },
   },
@@ -53,6 +51,6 @@ export const Dense: StoryObj<typeof ValueWithUnit> = {
 }
 
 export const Thai: StoryObj<typeof ValueWithUnit> = {
-  parameters: { docs: { description: { story: "Values are locale-neutral; units remain Latin per clinical convention." } } },
+  parameters: { docs: { description: { story: docsDesc("ValueWithUnit::Thai") } } },
   render: () => <ValueWithUnit value={["140", "95"]} unit="mmHg" tone="warn" />,
 }

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { BarChart3, CalendarDays, FileText, MessageSquare, ReceiptText, Settings, UserRound } from "lucide-react"
 import { ModuleRail, type ModuleItem } from "./ModuleRail"
 import { Button } from "@/components/ui/button"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ModuleRail> = {
   title: "Medical/Medical Shell/Module Rail",
@@ -10,10 +11,7 @@ const meta: Meta<typeof ModuleRail> = {
   component: ModuleRail,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The left module switcher: icon + label + live counts, collapsing to icon-only with tooltips when space is tight. Active module reads as blue on the select tint; the count badge caps at 99+ and doubles as a tiny workload meter.\n\n**Watch out:** modules are fixed navigation with counts \u2014 user-pinnable app shortcuts are LauncherRail's job. The footer carries the user block, not modules.",
+    docs: { description: { component: docsDesc("ModuleRail"),
       },
     },
   },

@@ -3,12 +3,13 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ResourceFilterList } from "./ScheduleLists"
 import { AtDensity } from "./story-utils"
 import { fixtureResourceGroups } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ResourceFilterList> = {
   title: "Medical/Medical Component/Resource Filter List",
   tags: ["autodocs"],
   component: ResourceFilterList,
-  parameters: { layout: "padded", docs: { description: { component: "Providers and rooms as checkbox groups with their schedule colors as swatches \u2014 check who to show on the grid, per-group select-all for the morning rush. Colors here *are* the grid's colors; the swatch is the promise.\n\n**Watch out:** filter state must actually drive the grid. A filter that lies once is dismissed forever." } } },
+  parameters: { layout: "padded", docs: { description: { component: docsDesc("ResourceFilterList") } } },
   decorators: [(Story) => <AtDensity density="compact"><Story /></AtDensity>],
 }
 export default meta

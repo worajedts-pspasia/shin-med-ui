@@ -17,6 +17,7 @@ import { VitalsStrip } from "./VitalsStrip"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { allergiesA, codedIcd10, fixtureDirectory, fixtureFindings, fixtureLineItems, fixtureProblems, fixtureQueue, fixtureVitals, patientA } from "@/fixtures/clinic"
 import type { CodedConcept } from "./types"
+import { docsDesc } from "@/lib/docs-desc"
 
 // Blueprint 3 — the exam room (05 §3): where the redesign happens. The source
 // uses tabs (you cannot see the diagnosis while prescribing for it); we adopt
@@ -32,10 +33,7 @@ const meta: Meta<typeof QueueTable> = {
   tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
-    docs: {
-      description: {
-        component:
-          "The exam-room workspace blueprint: patient header up top, vitals editable inline, summary column beside the chart \u2014 the layout a clinician keeps open all day. Built entirely from catalog components; it exists to prove they compose.\n\n**Watch out:** the interesting part is what is *not* here \u2014 no bespoke styling. If you find yourself patching it with custom CSS, the missing feature belongs in a component.",
+    docs: { description: { component: docsDesc("ExamRoom"),
       },
     },
   },

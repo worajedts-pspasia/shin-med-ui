@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { NestedPanel } from "./NestedPanel"
 import { ProcedureEntryCard } from "./ProcedureEntryCard"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ProcedureEntryCard> = {
   title: "Medical/Medical Component/Procedure Entry Card",
@@ -9,10 +10,7 @@ const meta: Meta<typeof ProcedureEntryCard> = {
   component: ProcedureEntryCard,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The modern clinical-record card: one procedure with its coded details, findings checklist, nested add-actions and inline metrics \u2014 a whole small form that still reads as one card.\n\n**Watch out:** it's a *card*, not a page \u2014 three of these side by side is fine, a dozen means you want a table.",
+    docs: { description: { component: docsDesc("ProcedureEntryCard"),
       },
     },
   },

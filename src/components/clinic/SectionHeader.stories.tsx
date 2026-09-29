@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { SectionHeader } from "./SectionHeader"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof SectionHeader> = {
   title: "Medical/Medical UI/Section Header",
@@ -8,10 +9,7 @@ const meta: Meta<typeof SectionHeader> = {
   component: SectionHeader,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The flat, gradient-free title bar that replaced the screenshot era's gradient banners: title, optional meta, one trailing action. It divides without shouting.\n\n**Watch out:** one per section \u2014 and its trailing slot is for *one* primary action. A row of five buttons here means the toolbar below is missing work.",
+    docs: { description: { component: docsDesc("SectionHeader"),
       },
     },
   },

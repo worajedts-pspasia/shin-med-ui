@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { PatientAge } from "./PatientAge"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { FIXTURE_AS_OF, patientA, patientB } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof PatientAge> = {
   title: "Medical/Medical UI/Patient Age",
@@ -9,10 +10,7 @@ const meta: Meta<typeof PatientAge> = {
   component: PatientAge,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "An age that tells the truth in three locales \u2014 \"46y\" in English, \"42 \u0e1b\u0e35 6 \u0e40\u0e14\u0e37\u0e2d\u0e19\" in Thai, years-and-months precision for pediatric ranges, all computed from DOB against a fixed reference so tests never flake.\n\n**Watch out:** never hand-format ages from raw strings; the pediatric month precision and locale rules live here for a reason.",
+    docs: { description: { component: docsDesc("PatientAge"),
       },
     },
   },
@@ -44,7 +42,7 @@ export const AllStates: StoryObj<typeof PatientAge> = {
 }
 
 export const Thai: StoryObj<typeof PatientAge> = {
-  parameters: { docs: { description: { story: "42 ปี 6 ด. 8 ว. — matches the 02.1 screenshot exactly." } } },
+  parameters: { docs: { description: { story: docsDesc("PatientAge::Thai") } } },
   render: () => (
     <ForcedLocale locale="th">
       <PatientAge dob={patientB.dob} asOf={FIXTURE_AS_OF} precision="ymd" />

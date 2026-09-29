@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { AllergyBanner } from "./AllergyBanner"
 import { AtDensity, ForcedLocale, Monochrome } from "./story-utils"
 import { allergiesA, allergiesB } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof AllergyBanner> = {
   title: "Medical/Medical UI/Allergy Banner",
@@ -9,10 +10,7 @@ const meta: Meta<typeof AllergyBanner> = {
   component: AllergyBanner,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The loudest thing on the screen, on purpose. A soft red band with the siren icon and one chip per allergen (substance \u2192 reaction), sitting directly under the patient header where nobody can scroll past it. Three honest states: confirmed allergies (red), **no known allergies** (calm gray \u2014 never red), and *not recorded* (amber dashed outline that begs for action).\n\n**Watch out:** it is deliberately not dismissible \u2014 that absence is a feature, not an oversight.",
+    docs: { description: { component: docsDesc("AllergyBanner"),
       },
     },
   },
@@ -64,7 +62,7 @@ export const Grayscale: StoryObj<typeof AllergyBanner> = {
 }
 
 export const Thai: StoryObj<typeof AllergyBanner> = {
-  parameters: { docs: { description: { story: "แพ้ยา banner in Thai; no-known reads ไม่มีประวัติแพ้ยา — gray, not red." } } },
+  parameters: { docs: { description: { story: docsDesc("AllergyBanner::Thai") } } },
   render: () => (
     <ForcedLocale locale="th">
       <div className="flex w-full max-w-[420px] flex-col gap-3">

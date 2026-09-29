@@ -4,6 +4,7 @@ import { QueueTable } from "./QueueTable"
 import { PaginationFooter } from "./PaginationFooter"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureQueue } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof QueueTable> = {
   title: "Medical/Medical Component/Queue Table",
@@ -11,10 +12,7 @@ const meta: Meta<typeof QueueTable> = {
   component: QueueTable,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The waiting queue, two axes visible at once: urgency (the triage tone) and flow state (the status dot) \u2014 because \"who's been waiting\" and \"how sick\" are different questions on the same rows. Compact by default; wait times in tabular figures.\n\n**Watch out:** never collapse the two axes into one color. And the queue is a living surface \u2014 stale timestamps here erode trust faster than anywhere else in the app.",
+    docs: { description: { component: docsDesc("QueueTable"),
       },
     },
   },

@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { TriageDot, TriageLegend } from "./TriageDot"
 import { AtDensity, ForcedLocale, Monochrome } from "./story-utils"
 import type { Urgency } from "./types"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof TriageDot> = {
   title: "Medical/Medical UI/Triage Dot",
@@ -9,10 +10,7 @@ const meta: Meta<typeof TriageDot> = {
   component: TriageDot,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Clinical urgency with a shape channel: routine is a circle, rush a square, urgent a triangle *and* red. The shape means the scale still works in grayscale, on a bad monitor, at 2 a.m.\n\n**Watch out:** urgency is a clinical judgment (routine/rush/urgent) \u2014 do not borrow it for queue position or wait time; that is StatusDot's job.",
+    docs: { description: { component: docsDesc("TriageDot"),
       },
     },
   },
@@ -47,7 +45,7 @@ export const AllStates: StoryObj<typeof TriageDot> = {
 
 export const Grayscale: StoryObj<typeof TriageDot> = {
   name: "Monochrome",
-  parameters: { docs: { description: { story: "Grayscale — the shape channel (hollow / half / filled) still reads." } } },
+  parameters: { docs: { description: { story: docsDesc("TriageDot::Grayscale") } } },
   render: () => (
     <Monochrome>
       <TriageLegend />
@@ -56,7 +54,7 @@ export const Grayscale: StoryObj<typeof TriageDot> = {
 }
 
 export const Thai: StoryObj<typeof TriageDot> = {
-  parameters: { docs: { description: { story: "ปกติ · รีบ · ด่วน — the adjudicated queue legend reading (00-corrections §1)." } } },
+  parameters: { docs: { description: { story: docsDesc("TriageDot::Thai") } } },
   render: () => (
     <ForcedLocale locale="th">
       <TriageLegend />

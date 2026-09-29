@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label"
 import { VaccineScheduleTable } from "./VaccineScheduleTable"
 import { FormGrid } from "./FormGrid"
 import { fixtureVaccineSeries } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof VaccineScheduleTable> = {
   title: "Medical/Medical Component/Vaccine Schedule Table",
@@ -22,10 +23,7 @@ const meta: Meta<typeof VaccineScheduleTable> = {
   component: VaccineScheduleTable,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Immunizations as a schedule: series rows \u00d7 dose columns \u2014 date given, next due, site, route, reaction \u2014 scroll-locked with the vaccine name pinned. Pending doses carry their \"Record\" action; the dose dialog is the composition story in the story.\n\n**Watch out:** national schedules differ and change \u2014 this table renders *your* series data and owns none of the rules. Reaction cells are amber because they're context, not alarms.",
+    docs: { description: { component: docsDesc("VaccineScheduleTable"),
       },
     },
   },

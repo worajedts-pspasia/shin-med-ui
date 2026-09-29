@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { TimelinePill } from "./TimelinePill"
 import { CATEGORY_COLORS } from "./tokens"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof TimelinePill> = {
   title: "Medical/Medical UI/Timeline Pill",
@@ -9,10 +10,7 @@ const meta: Meta<typeof TimelinePill> = {
   component: TimelinePill,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "A labeled event bar for lanes and Gantt rows \u2014 colored by category, time attached, label truncating from the end. The building block that ScheduleGrid and MedicationTimeline lay out.\n\n**Watch out:** the pill's color is its category; the status glyph rides separately. Never bake status into the fill.",
+    docs: { description: { component: docsDesc("TimelinePill"),
       },
     },
   },

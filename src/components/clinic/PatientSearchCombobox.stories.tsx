@@ -4,6 +4,7 @@ import { PatientSearchCombobox } from "./PatientSearchCombobox"
 import { ForcedLocale } from "./story-utils"
 import { patientCorpus } from "@/fixtures/clinic"
 import type { PatientIdentity } from "./types"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof PatientSearchCombobox> = {
   title: "Medical/Medical UI/Patient Search Combobox",
@@ -11,10 +12,7 @@ const meta: Meta<typeof PatientSearchCombobox> = {
   component: PatientSearchCombobox,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Find a patient by name or MRN in one box \u2014 results show name, DOB and MRN together, because two \"\u0e2a\u0e21\u0e0a\u0e32\u0e22 \u0e17\u0e14\u0e2a\u0e2d\u0e1a\" exist and only the numbers disambiguate. Enter selects an exact match; arrow keys walk the list.\n\n**Watch out:** duplicate names are the normal case, not the edge case. If your result rows ever drop the MRN, this component has failed at its one job.",
+    docs: { description: { component: docsDesc("PatientSearchCombobox"),
       },
     },
   },

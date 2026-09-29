@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
+import i18n from "@/i18n"
 
 const meta: Meta<any> = {
   title: "UI/Containers/DropdownMenu",
@@ -43,7 +44,7 @@ export const TaskMenu: StoryObj = {
         <DropdownMenuItem>Profile</DropdownMenuItem>
         <DropdownMenuItem>Billing</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
+        <DropdownMenuItem variant="destructive">{i18n.t("task.delete")}</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   ),

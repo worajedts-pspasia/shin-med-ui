@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { AlertTicker } from "./AlertTicker"
 import { fixtureOpsAlerts } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof AlertTicker> = {
   title: "Medical/Medical Component/Alert Ticker",
@@ -9,10 +10,7 @@ const meta: Meta<typeof AlertTicker> = {
   component: AlertTicker,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The alarm strip from the operations world, now minding the clinic: severity-worded alert chips with counters (\"CRITICAL Freezer A temp \u00d73\"), running as one horizontal ticker on wide screens and stacking into banners below md. Ack Top / Ack All, one click each.\n\n**Watch out:** the severity *word* is always visible \u2014 color is never the only channel. Acknowledging is a commitment; make sure something records it.",
+    docs: { description: { component: docsDesc("AlertTicker"),
       },
     },
   },

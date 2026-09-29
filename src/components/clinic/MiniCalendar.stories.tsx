@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { MiniCalendar } from "./MiniCalendar"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { calMarkers } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof MiniCalendar> = {
   title: "Medical/Medical UI/Mini Calendar",
@@ -10,10 +11,7 @@ const meta: Meta<typeof MiniCalendar> = {
   component: MiniCalendar,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The month grid that earns its place in a sidebar: today wears the clinic-today highlight, and days with appointments carry density dots so the calendar forecasts the workload, not just the date. Controlled selection, month navigation, locale-correct.\n\n**Watch out:** `markers` is what makes this useful \u2014 a MiniCalendar without markers is just a date picker wearing a lab coat.",
+    docs: { description: { component: docsDesc("MiniCalendar"),
       },
     },
   },

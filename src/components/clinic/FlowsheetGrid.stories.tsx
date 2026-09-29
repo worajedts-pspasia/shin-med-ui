@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FlowsheetGrid } from "./FlowsheetGrid"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { flowColumns, flowSections, flowValues } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof FlowsheetGrid> = {
   title: "Medical/Medical Component/Flowsheet Grid",
@@ -10,10 +11,7 @@ const meta: Meta<typeof FlowsheetGrid> = {
   component: FlowsheetGrid,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Measures down, encounters across \u2014 the flowsheet that shows a patient's trajectory at a glance: BP, weight, A1c column by column. Sticky header row *and* first column, because both axes matter equally, and abnormal cells carry their tone.\n\n**Watch out:** wide time spans scroll horizontally by design. Column headers must stay encounter-dated or the \"trajectory\" story breaks.",
+    docs: { description: { component: docsDesc("FlowsheetGrid"),
       },
     },
   },

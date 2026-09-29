@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { CodePickerAccordion } from "./CodePickerAccordion"
 import { fixtureCodeGroups } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof CodePickerAccordion> = {
   title: "Medical/Medical Component/Code Picker Accordion",
@@ -9,10 +10,7 @@ const meta: Meta<typeof CodePickerAccordion> = {
   component: CodePickerAccordion,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Browse codes by group \u2014 the superbill's daily driver where you *know* the five codes you bill and want to tap them, not type them. Selected codes get the check and a soft blue row; each group ends in a lookup row for the one-off.\n\n**Watch out:** `multiple=false` makes a group radio-like. Selection state should be controlled (`value`) or it resets when the accordion closes.",
+    docs: { description: { component: docsDesc("CodePickerAccordion"),
       },
     },
   },
@@ -44,7 +42,7 @@ export const Playground: Story = {
 }
 
 export const SeededOnly: Story = {
-  parameters: { docs: { description: { story: "Uncontrolled — each code's `selected` seed applies." } } },
+  parameters: { docs: { description: { story: docsDesc("CodePickerAccordion::SeededOnly") } } },
   render: () => (
     <div className="mx-auto max-w-xl">
       <CodePickerAccordion groups={fixtureCodeGroups} onToggle={() => {}} />

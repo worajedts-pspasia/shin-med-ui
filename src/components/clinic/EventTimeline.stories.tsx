@@ -5,6 +5,7 @@ import { EventTimeline } from "./EventTimeline"
 import { CATEGORY_COLORS } from "./tokens"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureTimelineEvents, fixtureTimelineLanes } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof EventTimeline> = {
   title: "Medical/Medical Component/Event Timeline",
@@ -12,10 +13,7 @@ const meta: Meta<typeof EventTimeline> = {
   component: EventTimeline,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The longitudinal backbone: swimlanes per category (meds, labs, notes\u2026), dates across, today as a gold line, and events as pills, dots or thumbnails per variant. Same-lane neighbors cluster into a \"+N\" chip with a hover list, so a busy month never becomes a blob.\n\n**Watch out:** the whole axis scrolls horizontally by design (sticky labels make it navigable). Lane colors are categories; severity would turn this chart into an alarm.",
+    docs: { description: { component: docsDesc("EventTimeline"),
       },
     },
   },

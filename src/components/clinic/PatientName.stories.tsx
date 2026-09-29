@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { PatientName } from "./PatientName"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { patientA, patientB } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof PatientName> = {
   title: "Medical/Medical UI/Patient Name",
@@ -9,10 +10,7 @@ const meta: Meta<typeof PatientName> = {
   component: PatientName,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Names are locale puzzles \u2014 Thai needs title given family, Japanese wants family first, Western names get middle initials and suffixes. This formatter renders them all correctly from structured parts, with a compact mode that drops the middle name before it ever drops the family name.\n\n**Watch out:** it takes `parts`, never a pre-joined string. Once you concatenate a name yourself, localization is gone forever.",
+    docs: { description: { component: docsDesc("PatientName"),
       },
     },
   },
@@ -45,7 +43,7 @@ export const AllStates: StoryObj<typeof PatientName> = {
 }
 
 export const Thai: StoryObj<typeof PatientName> = {
-  parameters: { docs: { description: { story: "นาย วรวุฒิ ศิริธรรม — title given family order." } } },
+  parameters: { docs: { description: { story: docsDesc("PatientName::Thai") } } },
   render: () => (
     <ForcedLocale locale="th">
       <PatientName parts={patientB.name} />

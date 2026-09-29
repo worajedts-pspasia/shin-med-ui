@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { TriangleAlert } from "lucide-react"
 import { PaperSurface } from "./PaperSurface"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof PaperSurface> = {
   title: "Medical/Medical Shell/Paper Surface",
@@ -9,10 +10,7 @@ const meta: Meta<typeof PaperSurface> = {
   component: PaperSurface,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The printable-document container: a paper-colored sheet with its own warmer ink, an edge that reads as a physical page, watermarks, an optional toolbar \u2014 and print styles that mean what you see is what prints. A4/Letter/auto sizing.\n\n**Watch out:** content on paper follows print conventions, not app conventions \u2014 serif option, no hover states, and text sits at the paper tier, not the UI tier.",
+    docs: { description: { component: docsDesc("PaperSurface"),
       },
     },
   },

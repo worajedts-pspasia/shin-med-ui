@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { SeriesToggle } from "./SeriesToggle"
 import { fixtureOpsSeries } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof SeriesToggle> = {
   title: "Medical/Medical UI/Series Toggle",
@@ -9,10 +10,7 @@ const meta: Meta<typeof SeriesToggle> = {
   component: SeriesToggle,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "A checkbox list bound to chart-series visibility, with color swatch squares that preview the stroke \u2014 an unchecked series reads as an empty box, a checked one fills with its series color. Built for report config rails.\n\n**Watch out:** visibility comes from the `value` array, in `series` order \u2014 not selection order. Bind it straight into your chart's series filter.",
+    docs: { description: { component: docsDesc("SeriesToggle"),
       },
     },
   },

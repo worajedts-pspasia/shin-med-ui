@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { MetaGrid } from "./MetaGrid"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof MetaGrid> = {
   title: "Medical/Medical UI/Meta Grid",
@@ -8,10 +9,7 @@ const meta: Meta<typeof MetaGrid> = {
   component: MetaGrid,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Label-over-value pairs in columns \u2014 the single most repeated structure in clinical UI (order detail, specimen info, insurance blocks). Labels gray-xs, values ink-sm, tabular numerals for anything countable. Columns collapse as space disappears; wide items span, then un-span gracefully.\n\n**Watch out:** `span` values only engage where their columns exist \u2014 on a phone everything stacks. Feed values through the formatters (PatientName, dates) rather than raw strings.",
+    docs: { description: { component: docsDesc("MetaGrid"),
       },
     },
   },

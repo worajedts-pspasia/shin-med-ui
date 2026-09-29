@@ -4,6 +4,7 @@ import { TrendChart } from "./TrendChart"
 import { RangeToggle } from "./RangeToggle"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { bpAnnotations, bpTrendSeries } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof TrendChart> = {
   title: "Medical/Medical Component/Trend Chart",
@@ -11,10 +12,7 @@ const meta: Meta<typeof TrendChart> = {
   component: TrendChart,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Multi-series clinical time series with the works: reference bands for normal ranges, annotations for dose changes, a range toggle, and points that never overlap their labels. Systolic and diastolic get their own colors because clinicians read them as a pair.\n\n**Watch out:** the y-domain pads from the data and the bands \u2014 a trend that starts at zero flattens every clinical signal into noise. Let the axis lie only when you can defend it.",
+    docs: { description: { component: docsDesc("TrendChart"),
       },
     },
   },
@@ -57,7 +55,7 @@ export const Playground: Story = {
 export const Default: Story = { name: "Default", render: () => <Demo /> }
 
 export const NoBands: Story = {
-  parameters: { docs: { description: { story: "Without reference bands the chart is decorative — compare with Default." } } },
+  parameters: { docs: { description: { story: docsDesc("TrendChart::NoBands") } } },
   render: () => <Demo withBands={false} withAnnotations={false} />,
 }
 

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { CategoryLegend } from "./CategoryLegend"
 import { CohortTimeline } from "./CohortTimeline"
 import { fixtureCohortPatients } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof CohortTimeline> = {
   title: "Medical/Medical Component/Cohort Timeline",
@@ -10,10 +11,7 @@ const meta: Meta<typeof CohortTimeline> = {
   component: CohortTimeline,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Population health at a glance: one swimlane per patient, events as category-colored dots along a shared time axis, de-stacked into rows when they collide so every event stays countable. Align by calendar dates or each patient's first event; rank by name or onset.\n\n**Watch out:** desktop-only by design (below lg it reports counts). Dots use the *category* palette \u2014 this view never encodes severity.",
+    docs: { description: { component: docsDesc("CohortTimeline"),
       },
     },
   },

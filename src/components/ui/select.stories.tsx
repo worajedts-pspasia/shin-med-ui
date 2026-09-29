@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import i18n from "@/i18n"
 
 const meta: Meta<any> = {
   title: "UI/Input/Select",
@@ -19,7 +20,7 @@ export const Playground: StoryObj = {
       <Select defaultValue="inbox" disabled={disabled}>
         <SelectTrigger className="w-44"><SelectValue /></SelectTrigger>
         <SelectContent>
-          <SelectItem value="inbox">Inbox</SelectItem>
+          <SelectItem value="inbox">{i18n.t("sidebar.inbox")}</SelectItem>
           <SelectItem value="house">House</SelectItem>
           <SelectItem value="trip">Trip to Chiang Mai</SelectItem>
         </SelectContent>
@@ -36,7 +37,7 @@ export const Destination: StoryObj = {
       <Select defaultValue="inbox">
         <SelectTrigger className="w-44"><SelectValue /></SelectTrigger>
         <SelectContent>
-          <SelectItem value="inbox">Inbox</SelectItem>
+          <SelectItem value="inbox">{i18n.t("sidebar.inbox")}</SelectItem>
           <SelectItem value="house">House</SelectItem>
           <SelectItem value="trip">Trip to Chiang Mai</SelectItem>
         </SelectContent>

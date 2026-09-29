@@ -8,6 +8,7 @@ import { FormActionBar } from "./FormActionBar"
 import { FormGrid, FormRow, FormSection, readOnlyFieldClass, RequiredMark } from "./FormGrid"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { patientA } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof FormGrid> = {
   title: "Medical/Medical UI/Form Grid",
@@ -15,10 +16,7 @@ const meta: Meta<typeof FormGrid> = {
   component: FormGrid,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The form layout kit: labels *above* fields (Thai labels are long \u2014 beside never fits), 1\u20133 responsive columns, help text in gray-xs, and a soft-blue fill that marks read-only \"already recorded\" values. Pairs with MetaGrid, which displays what this edits.\n\n**Watch out:** fixed rows (the address cascade) keep their columns on a phone; don't fight that \u2014 it mirrors the paper form clinicians know.",
+    docs: { description: { component: docsDesc("FormGrid"),
       },
     },
   },

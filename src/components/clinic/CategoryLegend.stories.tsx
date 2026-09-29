@@ -4,6 +4,7 @@ import { CategoryLegend } from "./CategoryLegend"
 import { CATEGORY_COLORS } from "./tokens"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureTimelineLanes, fixtureTimelineEvents } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof CategoryLegend> = {
   title: "Medical/Medical UI/Category Legend",
@@ -11,10 +12,7 @@ const meta: Meta<typeof CategoryLegend> = {
   component: CategoryLegend,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The color key for every timeline lane, event chip and chart series \u2014 nine fixed category colors, once, in one component. As a legend it explains; give it `value`/`onChange` and it becomes a live visibility filter with counts. Swatch + label + count always travel together.\n\n**Watch out:** these are *category* colors (notes blue, labs teal\u2026), never severity \u2014 red means something very different one row over. Toggle a category off and every visualization that respects the palette should follow.",
+    docs: { description: { component: docsDesc("CategoryLegend"),
       },
     },
   },

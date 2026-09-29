@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { AbnormalFlag } from "./AbnormalFlag"
 import { AtDensity, ForcedLocale, Monochrome } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof AbnormalFlag> = {
   title: "Medical/Medical UI/Abnormal Flag",
@@ -8,10 +9,7 @@ const meta: Meta<typeof AbnormalFlag> = {
   component: AbnormalFlag,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "A lab result never floats around naked \u2014 it wears its flag. `H`/`L` step up in amber, `HH`/`LL` invert to white-on-red, `N` stays calm and green. The letter itself is the signal, so the flag survives grayscale, color-blindness and a tired night shift. Reach for it inside any result cell, table or tooltip.\n\n**Watch out:** flags are *severity* \u2014 they may never borrow category colors, and a bare number without its flag is a bug in this system.",
+    docs: { description: { component: docsDesc("AbnormalFlag"),
       },
     },
   },
@@ -42,7 +40,7 @@ export const AllStates: StoryObj<typeof AbnormalFlag> = {
 
 export const Grayscale: StoryObj<typeof AbnormalFlag> = {
   name: "Monochrome",
-  parameters: { docs: { description: { story: "Grayscale — letter + glyph still distinguish every state." } } },
+  parameters: { docs: { description: { story: docsDesc("AbnormalFlag::Grayscale") } } },
   render: () => (
     <Monochrome>
       <div className="flex flex-wrap items-center gap-2">

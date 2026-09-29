@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FileStack, FolderCheck, MessagesSquare, ShieldPlus } from "lucide-react"
 import { TaskCountList } from "./TaskCountList"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof TaskCountList> = {
   title: "Medical/Medical Shell/Task Count List",
@@ -9,10 +10,7 @@ const meta: Meta<typeof TaskCountList> = {
   component: TaskCountList,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The worklist with live counts \u2014 Tasks (12), Results to review (5), Refills (3) \u2014 each row a destination, each count a heartbeat. Counts cap at 99+ and stale counts are worse than no counts.\n\n**Watch out:** this list answers \"where is the work?\" \u2014 the numbers must come from the same source the destinations show, or users stop trusting the whole rail.",
+    docs: { description: { component: docsDesc("TaskCountList"),
       },
     },
   },
@@ -51,7 +49,7 @@ export const Default: Story = { name: "Default", render: () => <div className="m
 export const Chips: Story = { render: () => <Demo variant="chips" activeId="messages" /> }
 
 export const ZeroCounts: Story = {
-  parameters: { docs: { description: { story: "Zero renders muted — never hidden." } } },
+  parameters: { docs: { description: { story: docsDesc("TaskCountList::ZeroCounts") } } },
   render: () => <Demo />,
 }
 

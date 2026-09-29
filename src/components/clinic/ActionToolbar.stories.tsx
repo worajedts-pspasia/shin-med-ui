@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FilePlus2, Printer, Save, Send, Trash2, UserPlus } from "lucide-react"
 import { ActionToolbar, type ToolbarAction } from "./ActionToolbar"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ActionToolbar> = {
   title: "Medical/Medical Shell/Action Toolbar",
@@ -9,10 +10,7 @@ const meta: Meta<typeof ActionToolbar> = {
   component: ActionToolbar,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The icon toolbar that sits above content and does things *to* it: related actions as icon buttons, split buttons where one action has variants, and an overflow kebab menu instead of a degrading button pile. Tooltips are mandatory, not optional \u2014 an unlabeled icon is a riddle.\n\n**Watch out:** this is an *object* toolbar (acts on what's below). Navigating somewhere else is a job for tabs or a menu, not a button here.",
+    docs: { description: { component: docsDesc("ActionToolbar"),
       },
     },
   },

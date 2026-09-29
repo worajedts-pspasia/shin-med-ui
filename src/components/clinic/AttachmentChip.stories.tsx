@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { AttachmentChip, type AttachmentRef } from "./AttachmentChip"
 import { AtDensity } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof AttachmentChip> = {
   title: "Medical/Medical UI/Attachment Chip",
@@ -8,10 +9,7 @@ const meta: Meta<typeof AttachmentChip> = {
   component: AttachmentChip,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "A little pill that says \"something is attached\" without caring what it is \u2014 a PDF from today or a lab order from the chart. File attachments show name + size; entity attachments (an order, a problem, a med) get a typed icon instead. Trailing X removes when removal makes sense.\n\n**Watch out:** chips reference things; they never open viewers themselves. Wire `onOpen` for that, and keep the entity kind in the icon so mixed lists stay scannable.",
+    docs: { description: { component: docsDesc("AttachmentChip"),
       },
     },
   },

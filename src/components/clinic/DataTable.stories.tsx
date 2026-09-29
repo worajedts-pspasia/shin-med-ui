@@ -5,6 +5,7 @@ import { DataTable, type DataTableColumn } from "./DataTable"
 import { StatusDot } from "./StatusDot"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { fixtureVisits, type VisitRow } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 /** Month label via Intl so the group row localizes with the story locale. */
 function monthLabel(iso: string, locale: string) {
@@ -43,10 +44,7 @@ const meta: Meta<typeof DataTable> = {
   component: DataTable,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The dense table everything else is built on \u2014 sticky header, optional sticky first column, zebra, group rows, per-row severity tints, numeric columns in tabular figures, sub-rows for interpretive notes, and windowed rendering past 200 rows. Eleven organisms compose this instead of reskinning tables.\n\n**Watch out:** wrap it in a `min-w-0` flex/grid child or the table refuses to shrink (the classic CSS grid trap), and set an ancestor `data-density` \u2014 row heights are token-driven, not hardcoded.",
+    docs: { description: { component: docsDesc("DataTable"),
       },
     },
   },

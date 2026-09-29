@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { NewTodoDialog } from "@/components/things/NewTodoDialog"
 import { TaskRow } from "@/components/things/TaskRow"
 import { fixtureTasks } from "@/fixtures"
+import { docsDesc } from "@/lib/docs-desc"
 
 const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } })
 
@@ -34,10 +35,7 @@ const meta: Meta<typeof NewTodoDialog> = {
   component: NewTodoDialog,
   parameters: {
     layout: "fullscreen",
-    docs: {
-      description: {
-        component:
-          "Quick entry for a new to-do: title, When shortcut, and destination list. Rendered over a mock Today page to show the dimmed backdrop in context.",
+    docs: { description: { component: docsDesc("NewTodoDialog"),
       },
     },
   },

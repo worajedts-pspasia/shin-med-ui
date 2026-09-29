@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import i18n from "@/i18n"
 
 const meta: Meta = {
   title: "UI/Containers/Card",
@@ -29,7 +30,7 @@ export const Playground: StoryObj = {
         {withFooter && (
           <CardFooter className="gap-2">
             <Button size="sm">Save</Button>
-            <Button size="sm" variant="ghost">Cancel</Button>
+            <Button size="sm" variant="ghost">{i18n.t("dialog.cancel")}</Button>
           </CardFooter>
         )}
       </Card>
@@ -47,7 +48,7 @@ export const SettingsCard: StoryObj = {
       <CardContent />
       <CardFooter className="gap-2">
         <Button size="sm">Save</Button>
-        <Button size="sm" variant="ghost">Cancel</Button>
+        <Button size="sm" variant="ghost">{i18n.t("dialog.cancel")}</Button>
       </CardFooter>
     </Card>
   ),

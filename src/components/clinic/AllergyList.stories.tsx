@@ -2,12 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { AllergyList } from "./ClinicalLists"
 import { AtDensity, Monochrome } from "./story-utils"
 import { allergiesA } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof AllergyList> = {
   title: "Medical/Medical Component/Allergy List",
   tags: ["autodocs"],
   component: AllergyList,
-  parameters: { layout: "padded", docs: { description: { component: "The chart's allergy section: allergen \u2192 reaction \u2192 severity \u2192 when recorded, in a calm table that groups by nothing and hides nothing. It's the reference a prescriber scans before signing.\n\n**Watch out:** severity here is clinical grading, and the not-recorded case still needs to *say so* \u2014 silence in an allergy list reads as \"none\", which is a dangerous assumption." } } },
+  parameters: { layout: "padded", docs: { description: { component: docsDesc("AllergyList") } } },
   decorators: [(Story) => <AtDensity density="compact"><Story /></AtDensity>],
 }
 export default meta

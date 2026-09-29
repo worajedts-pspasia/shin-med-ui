@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { PatientHeaderBar } from "./PatientHeaderBar"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { allergiesA, FIXTURE_AS_OF, patientA, patientB } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof PatientHeaderBar> = {
   title: "Medical/Medical Component/Patient Header Bar",
@@ -9,10 +10,7 @@ const meta: Meta<typeof PatientHeaderBar> = {
   component: PatientHeaderBar,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The identity banner that never scrolls away: photo, name, MRN, age/sex, the allergy flag \u2014 everything you must not mistake about *who is on screen*, pinned above the chart for the entire session.\n\n**Watch out:** MRN always renders, in every density and every locale, and the allergy state here must match the AllergyBanner below it \u2014 a disagreement between the two is worse than either being wrong.",
+    docs: { description: { component: docsDesc("PatientHeaderBar"),
       },
     },
   },
@@ -59,7 +57,7 @@ export const AllStates: StoryObj<typeof PatientHeaderBar> = {
 }
 
 export const Thai: StoryObj<typeof PatientHeaderBar> = {
-  parameters: { docs: { description: { story: "Thai chart with Buddhist-era DOB and the Thai age composite." } } },
+  parameters: { docs: { description: { story: docsDesc("PatientHeaderBar::Thai") } } },
   render: () => (
     <ForcedLocale locale="th">
       <PatientHeaderBar

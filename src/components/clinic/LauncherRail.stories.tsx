@@ -7,6 +7,7 @@ import {
   fixtureLauncherPinned,
 } from "@/fixtures/clinic"
 import { ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof LauncherRail> = {
   title: "Medical/Medical Shell/Launcher Rail",
@@ -14,10 +15,7 @@ const meta: Meta<typeof LauncherRail> = {
   component: LauncherRail,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The MS-cloud side-toolbar pattern in clinic dress: a 9-dot waffle pinned top-left opens a grouped, searchable app launcher; pinning a tile adds it to the rail as a Tooltip shortcut. Rail styling matches ModuleRail collapsed \u2014 same width, same short active bar.\n\n**Watch out:** the rail shows *user-pinned* shortcuts; it is not the module list (that's ModuleRail). Tile tints come from the category palette \u2014 severity colors never appear on navigation.",
+    docs: { description: { component: docsDesc("LauncherRail"),
       },
     },
   },
@@ -67,12 +65,12 @@ export const Playground: Story = {
 
 export const AllPinned: Story = {
   name: "All Pinned",
-  parameters: { docs: { description: { story: "Every module pinned — the rail scrolls instead of growing." } } },
+  parameters: { docs: { description: { story: docsDesc("LauncherRail::AllPinned") } } },
   render: () => <Demo initialActive="settings" pinned={fixtureLauncherApps.map((a) => a.id)} />,
 }
 
 export const Thai: Story = {
-  parameters: { docs: { description: { story: "Flyout chrome strings (search, pin labels, empty state) localize." } } },
+  parameters: { docs: { description: { story: docsDesc("LauncherRail::Thai") } } },
   render: () => (
     <ForcedLocale locale="th">
       <Demo />

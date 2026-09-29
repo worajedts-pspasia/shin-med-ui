@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FormActionBar } from "./FormActionBar"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof FormActionBar> = {
   title: "Medical/Medical UI/Form Action Bar",
@@ -8,10 +9,7 @@ const meta: Meta<typeof FormActionBar> = {
   component: FormActionBar,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The bottom of every form: actions left, primary Save right, sticky above the fold so it survives long scrolls. Handles required-count and pending states, and secondary actions stay ghost-quiet so one button wins the eye.\n\n**Watch out:** it is *sticky*, not fixed \u2014 it needs a scrollable ancestor. Disabling Save? Say why next to it; a dead button with no reason reads as a bug.",
+    docs: { description: { component: docsDesc("FormActionBar"),
       },
     },
   },

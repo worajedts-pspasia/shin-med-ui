@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { MetricTile } from "./MetricTile"
 import { AtDensity, ForcedLocale } from "./story-utils"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof MetricTile> = {
   title: "Medical/Medical UI/Metric Tile",
@@ -8,10 +9,7 @@ const meta: Meta<typeof MetricTile> = {
   component: MetricTile,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "One number, large and proud \u2014 the \"38 visits today\" glance. Label on top, big tabular value with its unit, optional timestamp, tone for the at-a-glance verdict, plus sparkline and footnote rows for trend context.\n\n**Watch out:** a tile answers one question. If it needs a paragraph of explanation, it wants to be a card, not a tile.",
+    docs: { description: { component: docsDesc("MetricTile"),
       },
     },
   },

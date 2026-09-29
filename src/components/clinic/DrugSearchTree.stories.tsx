@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { DrugSearchTree, type DrugTreeFilters } from "./DrugSearchTree"
 import { AtDensity } from "./story-utils"
 import { fixtureDrugTree } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof DrugSearchTree> = {
   title: "Medical/Medical Component/Drug Search Tree",
@@ -10,10 +11,7 @@ const meta: Meta<typeof DrugSearchTree> = {
   component: DrugSearchTree,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The hierarchical drug picker: drill class \u2192 subclass \u2192 agent, searching anywhere in the tree, with the full path shown at the leaf so \"Metformin\" always says where it came from.\n\n**Watch out:** leaves return structured drug references, not strings. And the tree is the safety net for spelling \u2014 keep search and browse in sync or prescribers lose trust in both.",
+    docs: { description: { component: docsDesc("DrugSearchTree"),
       },
     },
   },

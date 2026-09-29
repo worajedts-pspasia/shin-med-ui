@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { FindingsChecklistGroup } from "./FindingsChecklistGroup"
 import { AtDensity } from "./story-utils"
 import { fixtureFindings } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof FindingsChecklistGroup> = {
   title: "Medical/Medical Component/Findings Checklist Group",
@@ -10,9 +11,7 @@ const meta: Meta<typeof FindingsChecklistGroup> = {
   component: FindingsChecklistGroup,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component: "The physical-exam checklist: one group per system, each item a checkbox, and the \"All Normal\" master that ticks the whole group in one move \u2014 the single biggest time-saver in the exam room.\n\n**Watch out:** \"All Normal\" is a clinical assertion. Unchecking one item after a bulk-normal must *un-assert* the master, not just disagree with it.",
+    docs: { description: { component: docsDesc("FindingsChecklistGroup"),
       },
     },
   },

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import i18n from "@/i18n"
 
 const meta: Meta = {
   title: "UI/Containers/Accordion",
@@ -15,13 +16,20 @@ export const Playground: StoryObj = {
   },
   render: (args: { collapsible?: boolean; items?: number }) => {
     const { collapsible = true, items = 3 } = args
-    const entries = [["Inbox", "Everything that arrives without a home."], ["Today", "Your focus for the day."], ["Upcoming", "Scheduled ahead."], ["Anytime", "Remaining, unscheduled."], ["Logbook", "Completed and canceled."]].slice(0, items)
+    const all: [string, string, string][] = [
+      ["inbox", i18n.t("sidebar.inbox"), i18n.t("design.ui.accD1")],
+      ["today", i18n.t("task.today"), i18n.t("design.ui.accD2")],
+      ["upcoming", i18n.t("sidebar.upcoming"), i18n.t("design.ui.accD3")],
+      ["anytime", i18n.t("sidebar.anytime"), i18n.t("design.ui.accD4")],
+      ["logbook", i18n.t("sidebar.logbook"), i18n.t("design.ui.accD5")],
+    ]
+    const entries = all.slice(0, items)
     return (
       <Accordion type="single" collapsible={collapsible} className="w-full max-w-sm">
-        {entries.map(([t, d]) => (
-          <AccordionItem key={t} value={t}>
-            <AccordionTrigger>{t}</AccordionTrigger>
-            <AccordionContent>{d}</AccordionContent>
+        {entries.map(([id, title, desc]) => (
+          <AccordionItem key={id} value={id}>
+            <AccordionTrigger>{title}</AccordionTrigger>
+            <AccordionContent>{desc}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
@@ -33,12 +41,12 @@ export const Single: StoryObj = {
   render: () => (
     <Accordion type="single" collapsible className="w-full max-w-sm">
       <AccordionItem value="a">
-        <AccordionTrigger>Inbox</AccordionTrigger>
-        <AccordionContent>Everything that arrives without a home.</AccordionContent>
+        <AccordionTrigger>{i18n.t("sidebar.inbox")}</AccordionTrigger>
+        <AccordionContent>{i18n.t("design.ui.accD1")}</AccordionContent>
       </AccordionItem>
       <AccordionItem value="b">
-        <AccordionTrigger>Today</AccordionTrigger>
-        <AccordionContent>Your focus for the day.</AccordionContent>
+        <AccordionTrigger>{i18n.t("task.today")}</AccordionTrigger>
+        <AccordionContent>{i18n.t("design.ui.accD2")}</AccordionContent>
       </AccordionItem>
     </Accordion>
   ),

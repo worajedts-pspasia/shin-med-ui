@@ -5,6 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { EventDetailPopover } from "./EventDetailPopover"
 import { AtDensity } from "./story-utils"
 import { fixtureTimelineEvents } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof EventDetailPopover> = {
   title: "Medical/Medical Component/Event Detail Popover",
@@ -12,10 +13,7 @@ const meta: Meta<typeof EventDetailPopover> = {
   component: EventDetailPopover,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The anchored detail card for one timeline event: title, timestamp, lane and its icon, then the label\u2192value pairs that explain the event \u2014 order sets, result components, referral targets.\n\n**Watch out:** it's a popover, so it disappears. Anything a user must copy or compare belongs in a panel, not here.",
+    docs: { description: { component: docsDesc("EventDetailPopover"),
       },
     },
   },

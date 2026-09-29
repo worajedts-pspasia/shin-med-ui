@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from "@/components/ui/button-group"
 import { Button } from "@/components/ui/button"
+import i18n from "@/i18n"
 
 const meta: Meta = {
   title: "UI/Input/ButtonGroup",
@@ -29,10 +30,10 @@ export const Playground: StoryObj = {
 export const Segmented: StoryObj = {
   render: () => (
     <ButtonGroup>
-      <Button variant="outline">All</Button>
+      <Button variant="outline">{i18n.t("view.all")}</Button>
       <Button variant="outline">Open</Button>
       <ButtonGroupSeparator />
-      <ButtonGroupText>Scheduled</ButtonGroupText>
+      <ButtonGroupText>{i18n.t("clinic.appt.status.scheduled")}</ButtonGroupText>
     </ButtonGroup>
   ),
 }

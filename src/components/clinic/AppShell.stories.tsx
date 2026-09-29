@@ -13,6 +13,7 @@ import { PatientIdentityCard } from "./PatientIdentityCard"
 import { QueueTable } from "./QueueTable"
 import { StatusBar } from "./StatusBar"
 import { allergiesA, chartSections, fixtureQueue, moduleItemsData, patientA, patientB, summaryAllergies } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof AppShell> = {
   title: "Medical/Medical Shell/App Shell",
@@ -20,10 +21,7 @@ const meta: Meta<typeof AppShell> = {
   component: AppShell,
   parameters: {
     layout: "fullscreen",
-    docs: {
-      description: {
-        component:
-          "The four-pane clinic frame: context rail left, workspace center, inspector right, status bar pinned at the bottom \u2014 resizable, layout persisted to localStorage, and honest about breakpoints. The inspector collapses to an edge-tab drawer on tablets; below that the rail moves into a sheet and the shell becomes a stacked canvas.\n\n**Watch out:** panes are percent-sized strings in this layout engine \u2014 numeric sizes are silently *pixels*. And bump the localStorage key when you change defaults, or old layouts haunt your users.",
+    docs: { description: { component: docsDesc("AppShell"),
       },
     },
   },

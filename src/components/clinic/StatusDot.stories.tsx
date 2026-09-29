@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { StatusDot, StatusLegend } from "./StatusDot"
 import { AtDensity } from "./story-utils"
 import type { VisitStatus } from "./types"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof StatusDot> = {
   title: "Medical/Medical UI/Status Dot",
@@ -9,10 +10,7 @@ const meta: Meta<typeof StatusDot> = {
   component: StatusDot,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The semantic dot for visit and processing states \u2014 arrived, accepted, in-room, done \u2014 each with its flow tone and an optional short label. Flow, not severity: gold means \"waiting\", not \"warning\".\n\n**Watch out:** these dots answer *where is the patient in the flow*, never *how sick*. For sick, see TriageDot. The legend variant doubles as a filter with counts.",
+    docs: { description: { component: docsDesc("StatusDot"),
       },
     },
   },

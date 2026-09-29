@@ -4,6 +4,7 @@ import { OrderEntryForm, type OrderDraft } from "./OrderEntryForm"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { codedDrugs, codedIcd10, fixtureOrderSets } from "@/fixtures/clinic"
 import type { CodedConcept } from "./types"
+import { docsDesc } from "@/lib/docs-desc"
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 const searchIcd = async (q: string): Promise<CodedConcept[]> => {
@@ -23,10 +24,7 @@ const meta: Meta<typeof OrderEntryForm> = {
   component: OrderEntryForm,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The one-row order: pick the drug/lab/imaging, dose, route, frequency, with the sig preview building itself as you choose. Diagnoses attach for medical necessity, and the form's job is to be faster than the paper it replaced.\n\n**Watch out:** every choice feeds the sig sentence \u2014 if a combination produces nonsense (\"apply 2 tablets topically\"), block it at the field, not at submit.",
+    docs: { description: { component: docsDesc("OrderEntryForm"),
       },
     },
   },

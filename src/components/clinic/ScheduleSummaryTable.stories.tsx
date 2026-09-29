@@ -2,12 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { ScheduleSummaryTable } from "./ScheduleLists"
 import { AtDensity } from "./story-utils"
 import { fixtureSummaryRows } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof ScheduleSummaryTable> = {
   title: "Medical/Medical Component/Schedule Summary Table",
   tags: ["autodocs"],
   component: ScheduleSummaryTable,
-  parameters: { layout: "padded", docs: { description: { component: "Six numbers that answer \"how is today going\": Scheduled / Checked-in / Checked-out / No-shows \u00d7 Mine and Total, tabular and clickable \u2014 every cell is a shortcut into the filtered queue.\n\n**Watch out:** the cells are links in disguise; wire the click or remove the affordance. Totals must reconcile with the grid above or one of them is wrong." } } },
+  parameters: { layout: "padded", docs: { description: { component: docsDesc("ScheduleSummaryTable") } } },
   decorators: [(Story) => <AtDensity density="compact"><Story /></AtDensity>],
 }
 export default meta

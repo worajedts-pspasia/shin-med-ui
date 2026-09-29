@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
+import i18n from "@/i18n"
 
 const meta: Meta<any> = {
   title: "UI/Containers/Dialog",
@@ -26,7 +27,7 @@ export const Playground: StoryObj = {
             <DialogDescription>This action cannot be undone in the demo.</DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button variant="ghost">Cancel</Button>
+            <Button variant="ghost">{i18n.t("dialog.cancel")}</Button>
             <Button>Continue</Button>
           </DialogFooter>
         </DialogContent>
@@ -46,7 +47,7 @@ export const Simple: StoryObj = {
           <DialogDescription>This action cannot be undone in the demo.</DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button variant="ghost">Cancel</Button>
+          <Button variant="ghost">{i18n.t("dialog.cancel")}</Button>
           <Button>Continue</Button>
         </DialogFooter>
       </DialogContent>

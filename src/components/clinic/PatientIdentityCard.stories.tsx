@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { PatientIdentityCard } from "./PatientIdentityCard"
 import { ForcedLocale } from "./story-utils"
 import { patientA, patientB, patientBAddress } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof PatientIdentityCard> = {
   title: "Medical/Medical UI/Patient Identity Card",
@@ -9,10 +10,7 @@ const meta: Meta<typeof PatientIdentityCard> = {
   component: PatientIdentityCard,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The who-am-I block: photo, name, the demographic grid beneath. It is the front page of a chart tab \u2014 MRN always present, age/sex/DOB rendered by the shared formatters.\n\n**Watch out:** like every identity surface here, the MRN is not optional. Compact mode shrinks the photo, never the identifiers.",
+    docs: { description: { component: docsDesc("PatientIdentityCard"),
       },
     },
   },

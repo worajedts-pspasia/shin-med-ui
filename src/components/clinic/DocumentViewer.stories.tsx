@@ -3,6 +3,7 @@ import { DocumentViewer } from "./DocumentViewer"
 import { PatientHeaderBar } from "./PatientHeaderBar"
 import { AtDensity } from "./story-utils"
 import { patientA } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof DocumentViewer> = {
   title: "Medical/Medical Component/Document Viewer",
@@ -10,10 +11,7 @@ const meta: Meta<typeof DocumentViewer> = {
   component: DocumentViewer,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "The document pane: images, PDFs and markup on one canvas, with zoom (50\u2013200%), crop and rotate for images, and actions that disable *visibly* when they don't apply (you can't re-fax a PDF). Floating chrome keeps the document the hero.\n\n**Watch out:** on phones the crop/rotate affordances hide \u2014 full-bleed beats a toolbar you can't reach. Disabled actions stay visible with their reason in a tooltip.",
+    docs: { description: { component: docsDesc("DocumentViewer"),
       },
     },
   },

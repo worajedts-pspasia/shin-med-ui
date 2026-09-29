@@ -4,6 +4,7 @@ import { CodedSearchInput } from "./CodedSearchInput"
 import { AtDensity, ForcedLocale } from "./story-utils"
 import { codedDrugs, codedIcd10 } from "@/fixtures/clinic"
 import type { CodedConcept } from "./types"
+import { docsDesc } from "@/lib/docs-desc"
 
 /** Deterministic fake async — resolves after a fixed delay, no randomness. */
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
@@ -28,10 +29,7 @@ const meta: Meta<typeof CodedSearchInput<CodedConcept>> = {
   component: CodedSearchInput,
   parameters: {
     layout: "padded",
-    docs: {
-      description: {
-        component:
-          "Type-ahead for anything with a code \u2014 ICD-10, CPT, LOINC, ATC. Each suggestion shows label + code + system so \"E11.9\" and \"Type 2 diabetes\" find each other, and picking one returns a structured concept, never a bare string. Debounced by default; you own the lookup function.\n\n**Watch out:** the component never invents codes. If your source has no match, show your own empty state \u2014 a wrong code in a chart is a clinical error, not a UI glitch.",
+    docs: { description: { component: docsDesc("CodedSearchInput"),
       },
     },
   },

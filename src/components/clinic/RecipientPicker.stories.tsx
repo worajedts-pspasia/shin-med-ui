@@ -3,12 +3,13 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { RecipientPicker } from "./RecipientPicker"
 import { AtDensity } from "./story-utils"
 import { fixtureDirectory } from "@/fixtures/clinic"
+import { docsDesc } from "@/lib/docs-desc"
 
 const meta: Meta<typeof RecipientPicker> = {
   title: "Medical/Medical UI/Recipient Picker",
   tags: ["autodocs"],
   component: RecipientPicker,
-  parameters: { layout: "padded", docs: { description: { component: "Choose message recipients from the directory as token chips \u2014 type to search, click to add, X to remove; tokens show name + role so \"Dr. Chen (Cardiology)\" is never ambiguous.\n\n**Watch out:** tokens are commitments \u2014 they go into the To: line. Keep the role context in the token, especially with common surnames." } } },
+  parameters: { layout: "padded", docs: { description: { component: docsDesc("RecipientPicker") } } },
   decorators: [(Story) => <AtDensity density="compact"><Story /></AtDensity>],
 }
 export default meta
