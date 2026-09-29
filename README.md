@@ -95,3 +95,24 @@ Both repos were **flattened to a single commit** by the owner's decision on
 2026-09-29 — the phased split history and the `pre-split` anchors no longer
 exist. Rollback from here means restoring from an external clone/backup, not
 git operations.
+
+## MCP server (AI agents)
+
+`tools/mcp-server.mjs` exposes the design system to local AI agents over the
+Model Context Protocol (stdio). Tools: `list_components`, `get_component`
+(files, docs, Watch-out, stories, props), `list_tokens` / `get_token` (CSS ↔
+design-tokens.json agreement), `search_docs` (the living spec), `verify`
+(typecheck, or the full suite with `{"full": true}` — needs both servers up).
+
+Register it with any MCP client, pointing at this checkout:
+
+```json
+{
+  "mcpServers": {
+    "shin-med-ui": { "command": "node", "args": ["/absolute/path/to/shin-med-ui/tools/mcp-server.mjs"] }
+  }
+}
+```
+
+(ZCode: Settings → MCP servers; Claude Desktop: `claude_desktop_config.json`;
+Cursor/Codex use the same `mcpServers` shape.)
