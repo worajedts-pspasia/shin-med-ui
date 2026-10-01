@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { BedDouble, ChevronDown, ChevronRight, Globe, KeyRound, LayoutGrid, List, Plus, RotateCw, Search, X } from "lucide-react"
+import { BedDouble, ChevronDown, ChevronRight, Globe, KeyRound, LayoutGrid, List, Plus, RotateCw, Search, Users, X } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { cn } from "@/lib/utils"
 import i18n, { setLocale, type Locale } from "@/i18n"
@@ -25,6 +25,7 @@ import { CategoryLegend } from "@/components/clinic/CategoryLegend"
 import { CollapsiblePanel } from "@/components/clinic/CollapsiblePanel"
 import { StatusDot } from "@/components/clinic/StatusDot"
 import { Card } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   Empty, EmptyContent, EmptyHeader, EmptyMedia, EmptyTitle,
 } from "@/components/ui/empty"
@@ -580,4 +581,127 @@ export const BedLayout: Story = {
 export const BedLayoutEmpty: Story = {
   parameters: { docs: { description: { story: "The empty branch with no rooms yet — bed icon and Add room." } } },
   render: () => <BedLayoutDemo zones={[]} />,
+}
+
+/* ——— 7. Resident gallery, nursing home (WF-02 SCR-029 Residents; D-082) ——— */
+
+interface GalleryResident {
+  id: string; bed: string; name: string; photo?: string
+  mine: boolean; away?: boolean
+  overdue: number; due: number; done: number; total: number
+}
+
+// Deterministic, PHI-free demo residents (made-up names, branch 01).
+const GALLERY: GalleryResident[] = [
+  { id: "r1", bed: "101-A", name: "Boonmee Saetang", mine: true, overdue: 0, due: 6, done: 7, total: 20 },
+  { id: "r2", bed: "102-A", name: "Lamai Chuenjit", mine: true, overdue: 0, due: 4, done: 6, total: 13 },
+  { id: "r3", bed: "103-A", name: "Prasit Wongsa", mine: true, overdue: 1, due: 7, done: 5, total: 17 },
+  { id: "r4", bed: "103-B", name: "Sompong Rattana", mine: true, overdue: 1, due: 5, done: 4, total: 13 },
+  { id: "r5", bed: "201-A", name: "Chaba Inthon", mine: false, overdue: 0, due: 3, done: 6, total: 14 },
+  { id: "r6", bed: "201-B", name: "Thawee Kaewmanee", mine: false, overdue: 0, due: 2, done: 5, total: 11 },
+  { id: "r7", bed: "202-A", name: "Ratana Phromma", mine: false, away: true, overdue: 0, due: 0, done: 0, total: 0 },
+  { id: "r8", bed: "202-B", name: "Wanna Srisawat", mine: false, overdue: 0, due: 2, done: 4, total: 9 },
+]
+
+const initials = (name: string) => name.split(" ").map((w) => w[0]).join("").slice(0, 2)
+
+function ResidentTile({ r, selected, onSelect }: { r: GalleryResident; selected: boolean; onSelect(): void }) {
+  const { t } = useTranslation()
+  const name = r.away
+    ? t("recipes.gallery.awayA11y", { bed: r.bed, name: r.name })
+    : t("recipes.gallery.a11y", { bed: r.bed, name: r.name, overdue: r.overdue, due: r.due, done: r.done, total: r.total })
+  return (
+    <button
+      type="button"
+      data-resident={r.id}
+      aria-label={name}
+      aria-pressed={selected || undefined}
+      onClick={onSelect}
+      className={cn(
+        "flex min-w-0 flex-col gap-1.5 rounded-md border bg-card p-2 text-left shadow-xs transition-colors hover:border-things-blue/50 focus-visible:outline-2 focus-visible:outline-things-blue",
+        selected ? "border-things-blue" : "border-things-hairline",
+        r.away && "opacity-60",
+      )}
+    >
+      <Avatar className="aspect-[4/3] h-auto w-full rounded-sm">
+        {r.photo && <AvatarImage src={r.photo} alt="" className="object-cover" />}
+        <AvatarFallback className="rounded-sm bg-things-blue-soft text-base font-semibold text-things-blue-dark">{initials(r.name)}</AvatarFallback>
+      </Avatar>
+      <span className="font-mono text-xs font-semibold text-things-title">{r.bed}</span>
+      <span className="truncate text-sm text-things-ink">{r.name}</span>
+      <span className="flex flex-wrap gap-1">
+        {r.away ? (
+          <Badge variant="outline" className="border-things-gold text-things-gold-dark">{t("recipes.gallery.away")}</Badge>
+        ) : (
+          <>
+            {r.overdue > 0 && <Badge variant="outline" className="clinic-num border-things-badge text-things-badge">{t("recipes.gallery.overdue", { n: r.overdue })}</Badge>}
+            {r.due > 0 && <Badge variant="outline" className="clinic-num border-things-blue text-things-blue-dark">{t("recipes.gallery.due", { n: r.due })}</Badge>}
+            <Badge variant="outline" className="clinic-num text-things-gray-2">{t("recipes.gallery.done", { done: r.done, total: r.total })}</Badge>
+          </>
+        )}
+      </span>
+    </button>
+  )
+}
+
+function ResidentGalleryDemo({ residents }: { residents: GalleryResident[] }) {
+  const { t } = useTranslation()
+  const [selected, setSelected] = useState<string | null>(null)
+  const groups = [
+    { id: "mine", label: t("recipes.gallery.mine"), items: residents.filter((r) => r.mine) },
+    { id: "others", label: t("recipes.gallery.others"), items: residents.filter((r) => !r.mine) },
+  ].filter((g) => g.items.length > 0)
+
+  if (residents.length === 0) {
+    return (
+      <Frame>
+        <div className="rounded-md border border-things-hairline bg-card p-6">
+          <Empty>
+            <EmptyHeader>
+              <EmptyMedia variant="icon"><Users aria-hidden="true" /></EmptyMedia>
+              <EmptyTitle>{t("recipes.gallery.empty")}</EmptyTitle>
+            </EmptyHeader>
+          </Empty>
+        </div>
+      </Frame>
+    )
+  }
+  return (
+    <Frame hint="Own residents first (rooms assigned to me this shift), then the others. Each tile is one button; tapping opens that resident's tasks only. Counts are part of the accessible name, never colour alone.">
+      <nav aria-label={t("recipes.gallery.label")} className="space-y-3">
+        {groups.map((g) => (
+          <section key={g.id} className="space-y-1.5">
+            <h3 className="flex items-baseline justify-between text-[11px] font-semibold tracking-wide text-things-gray-2 uppercase">
+              <span>{g.label}</span>
+              <span className="clinic-num">{g.items.length}</span>
+            </h3>
+            <div className="grid gap-2 [grid-template-columns:repeat(auto-fill,minmax(150px,1fr))]">
+              {g.items.map((r) => (
+                <ResidentTile key={r.id} r={r} selected={selected === r.id} onSelect={() => setSelected(r.id)} />
+              ))}
+            </div>
+          </section>
+        ))}
+      </nav>
+    </Frame>
+  )
+}
+
+export const ResidentGallery: Story = {
+  parameters: { docs: { description: { story: "Nursing home SCR-029 Residents (WF-02 D-082): a photo gallery of residents on the caregiver's phone; own residents first, then the others. Tapping a tile opens only that resident's tasks to record or mark done. Composition: Card-style buttons with Avatar (photo, initials fallback) and Badges for overdue, due and done counts; away residents dimmed with an Away Badge." } } },
+  render: () => <ResidentGalleryDemo residents={GALLERY} />,
+}
+
+export const ResidentGalleryMobile: Story = {
+  parameters: { docs: { description: { story: "Phone portrait (390 px), the width the caregiver uses (WF-02 D-081): two tiles per row, no horizontal scroll." } } },
+  render: () => (
+    <div className="max-w-[390px]">
+      <ResidentGalleryDemo residents={GALLERY} />
+    </div>
+  ),
+}
+
+export const ResidentGalleryEmpty: Story = {
+  parameters: { docs: { description: { story: "No residents in the branch yet." } } },
+  render: () => <ResidentGalleryDemo residents={[]} />,
 }

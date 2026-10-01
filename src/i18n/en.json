@@ -691,6 +691,25 @@
       "from": "Window start",
       "to": "Window end",
       "window": "{{from}} – {{to}}"
+    },
+    "camera": {
+      "viewfinder": "Camera view",
+      "open": "Open camera",
+      "close": "Close camera",
+      "takePhoto": "Take photo",
+      "requesting": "Waiting for camera permission…",
+      "denied": "Camera blocked",
+      "deniedHint": "Allow the camera for this app in the browser settings.",
+      "unsupported": "No camera available",
+      "unsupportedHint": "This browser or connection cannot use the camera.",
+      "count": "{{n}} of {{max}}",
+      "max": "Photo limit reached",
+      "photos": "Photos",
+      "photoN": "Photo {{n}}, {{time}}",
+      "remove": "Remove photo {{n}}",
+      "taken": "Photo {{n}} taken",
+      "required": "A photo is required for this finding",
+      "noGallery": "Photos stay in the app, never in the gallery"
     }
   },
   "design": {
@@ -848,6 +867,18 @@
       },
       "beds_one": "bed",
       "beds_other": "beds"
+    },
+    "gallery": {
+      "label": "Residents",
+      "mine": "My residents",
+      "others": "Other residents",
+      "overdue": "{{n}} overdue",
+      "due": "{{n}} due",
+      "done": "{{done}}/{{total}}",
+      "away": "Away",
+      "empty": "No residents in this branch",
+      "a11y": "{{bed}} {{name}}, {{overdue}} overdue, {{due}} due, {{done}} of {{total}} done",
+      "awayA11y": "{{bed}} {{name}}, away"
     }
   }
 }

@@ -899,6 +899,24 @@ references, not just files. File chips show doc icon + name + size; chart chips
 show a patient glyph + "Chart #9562" + meta. `onOpen`/`onRemove`; chips wrap in
 the composer, truncate with tooltip.
 
+### `CameraCapture` — evidence photos taken inside the app
+**P1** · nursing home floor app (Nursing Home Cloud WF-02 D-080) · `ui/button` · **Fluid**
+
+```ts
+type CameraState = "idle" | "requesting" | "live" | "denied" | "unsupported"
+interface CapturedPhoto { id: string; src: string; takenAt: string; blob?: Blob }
+// { photos, onCapture, onRemove?, maxPhotos = 3, required?, facingMode = "environment", simulated?, state?, clock? }
+```
+
+The camera feeds the app directly (getUserMedia); the shutter keeps a JPEG in
+the app's own storage and thumbnails show the time of capture. There is no
+file input and no "pick from gallery" fallback, so a resident's photo never
+lands in a staff member's phone gallery and every photo was taken at the time
+of recording. Denied and unsupported states explain what to do; `required`
+shows a warn-tone hint (glyph + text) until a photo exists; a photo limit
+disables the shutter. `simulated` draws a deterministic test card for stories
+and checks.
+
 ### `RecipientPicker` — directory lookup with tokens
 **P0** · recipients-as-directory-links pattern · `ui/command`, `ui/badge`, `ui/avatar` · **Fluid**
 `{ directory: { id, name, role?, avatarUrl? }[], selected, onChange, max? }`.

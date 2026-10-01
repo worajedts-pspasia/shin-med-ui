@@ -334,6 +334,8 @@ if (!SKIP_SB) {
     ["medical-medical-component-grouped-list-panel--default", "Medical/Medical Component/Grouped List Panel"],
     ["medical-medical-shell-reception-blueprint--default", "Medical/Medical Shell/Reception Blueprint"],
     ["medical-medical-component-vitals-strip--default", "Medical/Medical Component/Vitals Strip"],
+    ["medical-medical-component-camera-capture--all-states", "Medical/Medical Component/Camera Capture"],
+    ["recipes-clinic-recipes--resident-gallery", "Recipes/Clinic Recipes"],
     ["medical-medical-component-result-table--default", "Medical/Medical Component/Result Table"],
     ["medical-medical-component-flowsheet-grid--narrow", "Medical/Flowsheet Grid (narrow)"],
     ["medical-medical-component-trend-chart--default", "Medical/Medical Component/Trend Chart"],
