@@ -867,6 +867,18 @@
       },
       "beds_one": "bed",
       "beds_other": "beds"
+    },
+    "gallery": {
+      "label": "Residents",
+      "mine": "My residents",
+      "others": "Other residents",
+      "overdue": "{{n}} overdue",
+      "due": "{{n}} due",
+      "done": "{{done}}/{{total}}",
+      "away": "Away",
+      "empty": "No residents in this branch",
+      "a11y": "{{bed}} {{name}}, {{overdue}} overdue, {{due}} due, {{done}} of {{total}} done",
+      "awayA11y": "{{bed}} {{name}}, away"
     }
   }
 }

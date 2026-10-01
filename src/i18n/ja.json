@@ -865,6 +865,18 @@
         "occupied": "使用中",
         "out_of_service": "使用停止"
       }
+    },
+    "gallery": {
+      "label": "入居者",
+      "mine": "担当の入居者",
+      "others": "その他の入居者",
+      "overdue": "超過 {{n}}",
+      "due": "予定 {{n}}",
+      "done": "{{done}}/{{total}}",
+      "away": "不在",
+      "empty": "この拠点に入居者はいません",
+      "a11y": "{{bed}} {{name}}、超過 {{overdue}}、予定 {{due}}、完了 {{done}}/{{total}}",
+      "awayA11y": "{{bed}} {{name}}、不在"
     }
   }
 }
