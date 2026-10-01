@@ -28,6 +28,7 @@ export function AppShell({
   density = "compact",
   contextTitle,
   inspectorTitle,
+  edgeTabSize = "md",
   className,
 }: {
   rail: React.ReactNode
@@ -40,6 +41,8 @@ export function AppShell({
   /** Drawer/Sheet titles for the collapsed panes. */
   contextTitle?: string
   inspectorTitle?: string
+  /** Tablet edge-tab size: md (compact, icon) or lg (>=40x120px, icon + label — issue #1). */
+  edgeTabSize?: "md" | "lg"
   className?: string
 }) {
   const { t } = useTranslation()
@@ -84,9 +87,30 @@ export function AppShell({
     <div data-slot="app-shell" data-density={density} className={cn("flex h-full min-h-0 w-full flex-col bg-background font-sans", className)}>
       {header}
 
-      <div className="flex min-h-0 flex-1">
+      <div className="relative flex min-h-0 flex-1">
         {/* rail: fixed at ≥md, Sheet below */}
         {!isMobile && <div className="shrink-0 overflow-y-auto">{rail}</div>}
+
+        {/* md–lg: inspector as a right edge tab opening the Drawer (issue #1:
+            lg = >=40x120px target, icon + label, select tint, blue border) */}
+        {inspector && !isMobile && !isWide && (
+          <button
+            type="button"
+            data-slot="inspector-edge-tab"
+            data-size={edgeTabSize}
+            onClick={() => setInspectorOpen(true)}
+            aria-label={insTitle}
+            className={cn(
+              "absolute right-0 top-1/2 z-10 flex -translate-y-1/2 items-center justify-center gap-1.5 rounded-l-md border border-r-0 border-things-blue bg-things-select text-things-blue shadow-sm transition-colors hover:bg-things-blue hover:text-white",
+              edgeTabSize === "lg"
+                ? "h-[120px] w-10 [writing-mode:vertical-rl]"
+                : "h-24 w-8",
+            )}
+          >
+            <PanelRight className={cn("shrink-0", edgeTabSize === "lg" && "rotate-90")} aria-hidden="true" />
+            {edgeTabSize === "lg" && <span className="text-xs font-medium">{insTitle}</span>}
+          </button>
+        )}
 
         {isMobile ? (
           <div className="flex min-h-0 min-w-0 flex-1 flex-col">
