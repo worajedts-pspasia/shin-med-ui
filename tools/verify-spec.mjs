@@ -15,7 +15,11 @@
  *      count equals open Today tasks, mobile drawer opens, …).
  *   3. Storybook smoke — the stories that define the spec load without errors.
  *
- * Usage:  npm run verify:spec [-- --app http://localhost:3000 --storybook http://localhost:6006 --skip-storybook]
+ * Usage:  npm run verify:spec [-- --app URL --storybook URL --skip-storybook]
+ * Targets default to localhost:3000 (the Sample Tasks UI Rails app) and
+ * localhost:6006; override with --app/--storybook or the environment
+ * variables SPEC_TARGET_URL / SPEC_STORYBOOK_URL (issue #1: the clinic
+ * front end is a React app over a Rails API, so its target differs).
  * Needs:  Rails (bin/rails server) and Storybook (npm run storybook) running.
  */
 
@@ -30,8 +34,8 @@ const flag = (name, fallback) => {
   const i = args.indexOf(`--${name}`)
   return i >= 0 && args[i + 1] ? args[i + 1] : fallback
 }
-const APP = flag("app", "http://localhost:3000")
-const SB = flag("storybook", "http://localhost:6006")
+const APP = flag("app", process.env.SPEC_TARGET_URL ?? "http://localhost:3000")
+const SB = flag("storybook", process.env.SPEC_STORYBOOK_URL ?? "http://localhost:6006")
 const SKIP_SB = args.includes("--skip-storybook")
 
 // ——— 1. token mirror ———

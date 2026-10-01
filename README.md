@@ -13,7 +13,7 @@ Runs standalone in Storybook; consumed by apps as a package (first consumer:
 npm install
 npm run storybook        # http://localhost:6006
 npm run typecheck        # tsc --noEmit
-npm run verify:spec      # needs the Rails app (localhost:3000) + Storybook (6006) running
+npm run verify:spec      # targets via SPEC_TARGET_URL / SPEC_STORYBOOK_URL (default localhost:3000 / 6006)
 ```
 
 ## The sidebar map
