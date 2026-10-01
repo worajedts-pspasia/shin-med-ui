@@ -21,11 +21,13 @@ npm run verify:spec      # targets via SPEC_TARGET_URL / SPEC_STORYBOOK_URL (def
 | Group | What lives there |
 |---|---|
 | **Design System** | tokens, typography — the ground truth demo |
-| **Task Management** | the task-manager family (task rows, sidebar, dialogs…) |
+| **UI / Display · Input · Navigation · Containers · Chat** | the vendored shadcn primitives, bucketed |
+| **Charts** | Area, Bar, Line, Donut, Radial, Sparkline |
+| **Recipes** | compositions of existing components, registered as stories |
 | **Medical UI** | clinic atoms & molecules: formatters, flags, dots, pills, form kit, inputs, `DataTable` |
 | **Medical Shell** | frames: `AppShell`, both rails, panels, `PaperSurface`, the three screen blueprints |
 | **Medical Component** | clinic organisms: queues, schedules, results, timelines, orders, documents, messaging, specialist tools |
-| **UI / Display · Input · Navigation · Containers · Chat** | the vendored shadcn primitives, bucketed |
+| **Task Management** | the task-manager family (task rows, sidebar, dialogs…) |
 
 Every group sorts A–Z; every component has a Docs page (purpose, when to reach
 for it, a **Watch out** callout).

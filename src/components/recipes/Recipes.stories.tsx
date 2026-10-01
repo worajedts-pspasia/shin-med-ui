@@ -27,7 +27,9 @@ import { docsDesc } from "@/lib/docs-desc"
 // as components.
 
 const meta: Meta = {
-  title: "Recipes",
+  // two-level title so Recipes renders as its own sidebar section (a bare
+  // top-level title is pinned above every section, ignoring storySort)
+  title: "Recipes/Clinic Recipes",
   tags: ["autodocs"],
   parameters: {
     layout: "padded",
