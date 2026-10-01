@@ -818,6 +818,36 @@
     "codeHint": "Enter the 6-digit code we emailed you.",
     "codeLabel": "Email code",
     "resend": "Resend",
-    "passkey": "Sign in with a passkey"
+    "passkey": "Sign in with a passkey",
+    "bed": {
+      "layout": "Layout",
+      "list": "List",
+      "view": "View",
+      "search": "Search room or bed code",
+      "zone": "Zone",
+      "zoneAll": "All zones",
+      "addRoom": "Add room",
+      "noMatch": "No room matches",
+      "noRooms": "No rooms yet",
+      "room": "Room",
+      "type": "Type",
+      "beds": "beds",
+      "test": "Test",
+      "inactive": "Inactive",
+      "toolbar": "Rooms toolbar",
+      "meta": "{{rooms}} rooms · {{beds}} beds",
+      "gender": {
+        "female": "Female only",
+        "male": "Male only"
+      },
+      "state": {
+        "available": "Available",
+        "reserved": "Reserved",
+        "occupied": "Occupied",
+        "out_of_service": "Out of service"
+      },
+      "beds_one": "bed",
+      "beds_other": "beds"
+    }
   }
 }

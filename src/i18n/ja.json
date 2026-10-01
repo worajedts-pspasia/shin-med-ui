@@ -818,6 +818,34 @@
     "codeHint": "メールで送信した6桁のコードを入力してください。",
     "codeLabel": "メールコード",
     "resend": "再送信",
-    "passkey": "パスキーでサインイン"
+    "passkey": "パスキーでサインイン",
+    "bed": {
+      "layout": "レイアウト",
+      "list": "リスト",
+      "view": "表示",
+      "search": "部屋またはベッド番号を検索",
+      "zone": "ゾーン",
+      "zoneAll": "すべてのゾーン",
+      "addRoom": "部屋を追加",
+      "noMatch": "一致する部屋はありません",
+      "noRooms": "部屋がまだありません",
+      "room": "部屋",
+      "type": "タイプ",
+      "beds": "ベッド",
+      "test": "テスト",
+      "inactive": "無効",
+      "toolbar": "部屋ツールバー",
+      "meta": "{{rooms}} 部屋 · {{beds}} ベッド",
+      "gender": {
+        "female": "女性専用",
+        "male": "男性専用"
+      },
+      "state": {
+        "available": "空床",
+        "reserved": "予約済み",
+        "occupied": "使用中",
+        "out_of_service": "使用停止"
+      }
+    }
   }
 }
