@@ -1,6 +1,6 @@
 import { useState } from "react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { ChevronDown, ChevronRight, Globe, KeyRound, Plus, RotateCw, X } from "lucide-react"
+import { BedDouble, ChevronDown, ChevronRight, Globe, KeyRound, LayoutGrid, List, Plus, RotateCw, Search, X } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { cn } from "@/lib/utils"
 import i18n, { setLocale, type Locale } from "@/i18n"
@@ -20,6 +20,18 @@ import { Progress } from "@/components/ui/progress"
 import { Switch } from "@/components/ui/switch"
 import { DataTable, type DataTableColumn } from "@/components/clinic/DataTable"
 import { docsDesc } from "@/lib/docs-desc"
+import { ActionToolbar } from "@/components/clinic/ActionToolbar"
+import { CategoryLegend } from "@/components/clinic/CategoryLegend"
+import { CollapsiblePanel } from "@/components/clinic/CollapsiblePanel"
+import { StatusDot } from "@/components/clinic/StatusDot"
+import { Card } from "@/components/ui/card"
+import {
+  Empty, EmptyContent, EmptyHeader, EmptyMedia, EmptyTitle,
+} from "@/components/ui/empty"
+import {
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+} from "@/components/ui/select"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 // Recipes (issue #1) — compositions the clinic screens need that are NOT
 // components of their own. Each recipe is a story made only of existing
@@ -310,4 +322,262 @@ export const EmailCodeEntry: Story = {
       </Frame>
     )
   },
+}
+
+/* ——— 6. Bed layout, nursing home (SCR-007 Layout view; issue #4) ————— */
+
+type BedState = "available" | "reserved" | "occupied" | "out_of_service"
+interface BedLayoutBed { code: string; state: BedState }
+interface BedLayoutRoom {
+  id: string; code: string; name?: string; type: string
+  capacity: number; gender?: "female" | "male"; active: boolean; isTest?: boolean
+  beds: BedLayoutBed[]
+}
+interface BedLayoutZone { id: string; name: string; rooms: BedLayoutRoom[] }
+
+const BED_ZONES: BedLayoutZone[] = [
+  { id: "a", name: "Building A · Floor 1", rooms: [
+    { id: "r101", code: "Room 101", name: "Orchid", type: "Private", capacity: 1, gender: "female", active: true, beds: [{ code: "101-A", state: "occupied" }] },
+    { id: "r102", code: "Room 102", type: "Shared 4-bed", capacity: 4, active: true, beds: [
+      { code: "102-A", state: "occupied" }, { code: "102-B", state: "available" },
+      { code: "102-C", state: "occupied" }, { code: "102-D", state: "available" },
+    ] },
+    { id: "r103", code: "Room 103", name: "Training", type: "Shared 2-bed", capacity: 2, active: true, isTest: true, beds: [
+      { code: "103-A", state: "available" }, { code: "103-B", state: "reserved" },
+    ] },
+    { id: "r104", code: "Room 104", name: "Renovation", type: "Private", capacity: 1, active: false, beds: [{ code: "104-A", state: "out_of_service" }] },
+  ] },
+  { id: "b", name: "Building B · Floor 2", rooms: [
+    { id: "r201", code: "Room 201", name: "Bougainvillea", type: "Private", capacity: 1, gender: "male", active: true, beds: [{ code: "201-A", state: "available" }] },
+    { id: "r202", code: "Room 202", type: "Shared 2-bed", capacity: 2, active: true, beds: [
+      { code: "202-A", state: "reserved" }, { code: "202-B", state: "out_of_service" },
+    ] },
+  ] },
+]
+
+// State → tokens (issue #4 §3): colour NEVER alone — tooltip + legend counts
+// + strikethrough carry the state as well.
+const BED_STATE = {
+  available: { dot: "arrived" as const, chip: "bg-clinic-ok-soft", legend: "var(--color-clinic-ok)" },
+  reserved: { dot: "accepted" as const, chip: "bg-clinic-warn-soft", legend: "var(--color-things-gold)" },
+  occupied: { dot: "in-room" as const, chip: "bg-things-blue-soft", legend: "var(--color-things-blue)" },
+  out_of_service: { dot: "pending" as const, chip: "bg-things-chip-soft", legend: "var(--color-things-gray)" },
+}
+
+function BedChip({ bed }: { bed: BedLayoutBed }) {
+  const { t } = useTranslation()
+  const meta = BED_STATE[bed.state]
+  const oos = bed.state === "out_of_service"
+  return (
+    <span
+      title={t(`recipes.bed.state.${bed.state}`)}
+      className={cn(
+        "inline-flex items-center gap-1.5 rounded-full border border-things-hairline px-2 py-0.5 text-xs",
+        meta.chip,
+        oos && "text-things-gray-2 line-through",
+      )}
+    >
+      <StatusDot tone={meta.dot} size="sm" label="" />
+      <span className="font-mono">{bed.code}</span>
+    </span>
+  )
+}
+
+function BedChips({ room }: { room: BedLayoutRoom }) {
+  return (
+    <span className="flex flex-wrap gap-1">
+      {room.beds.map((b) => (
+        <BedChip key={b.code} bed={b} />
+      ))}
+    </span>
+  )
+}
+
+function roomA11yName(room: BedLayoutRoom, t: (k: string, opts?: { count?: number }) => string) {
+  const counts = new Map<BedState, number>()
+  for (const b of room.beds) counts.set(b.state, (counts.get(b.state) ?? 0) + 1)
+  const parts = [...counts.entries()].map(
+    ([state, n]) => `${n} ${t(`recipes.bed.state.${state}`)}`,
+  )
+  return `${room.code}, ${room.type}, ${room.beds.length} ${t("recipes.bed.beds", { count: room.beds.length })}: ${parts.join(", ")}`
+}
+
+function BedLayoutDemo({ zones }: { zones: BedLayoutZone[] }) {
+  const { t } = useTranslation()
+  const [view, setView] = useState<"layout" | "list">("layout")
+  const [query, setQuery] = useState("")
+  const [zoneId, setZoneId] = useState("all")
+  const [selected, setSelected] = useState<string | null>(null)
+
+  const q = query.trim().toLowerCase()
+  const match = (r: BedLayoutRoom) =>
+    !q ||
+    r.code.toLowerCase().includes(q) ||
+    (r.name ?? "").toLowerCase().includes(q) ||
+    r.beds.some((b) => b.code.toLowerCase().includes(q))
+  const visibleZones = zones
+    .filter((z) => zoneId === "all" || z.id === zoneId)
+    .map((z) => ({ ...z, rooms: z.rooms.filter(match) }))
+    .filter((z) => z.rooms.length > 0)
+  const totalRooms = visibleZones.reduce((n, z) => n + z.rooms.length, 0)
+  const totalBeds = visibleZones.reduce((n, z) => n + z.rooms.reduce((m, r) => m + r.beds.length, 0), 0)
+
+  const allBeds = zones.flatMap((z) => z.rooms.flatMap((r) => r.beds))
+  const legendCategories = (Object.keys(BED_STATE) as BedState[]).map((s) => ({
+    id: s,
+    label: t(`recipes.bed.state.${s}`),
+    color: BED_STATE[s].legend,
+    count: allBeds.filter((b) => b.state === s).length,
+  }))
+
+  const listRows = visibleZones.flatMap((z) => z.rooms.map((r) => ({ ...r, zone: z.name })))
+  const listColumns: Array<DataTableColumn<BedLayoutRoom & { zone: string }>> = [
+    { id: "room", header: t("recipes.bed.room"), sticky: "start", width: 120, cell: (r) => <span className="font-medium text-things-title">{r.code}</span> },
+    { id: "zone", header: t("recipes.bed.zone"), width: 170, priority: "secondary", cell: (r) => r.zone },
+    { id: "type", header: t("recipes.bed.type"), width: 120, cell: (r) => r.type },
+    { id: "beds", header: t("recipes.bed.beds"), cell: (r) => <BedChips room={r} /> },
+  ]
+
+  return (
+    <Frame hint="Zones are CollapsiblePanels; rooms are card-buttons (Enter/Space work); bed chips wrap and never steal tab stops; Layout ⇄ List switches to a DataTable. Try searching a bed code.">
+      <div className="space-y-3">
+        {/* toolbar: add action + search + zone filter */}
+        <div className="flex flex-wrap items-center gap-2">
+          <ActionToolbar
+            label={t("recipes.bed.toolbar")}
+            actions={[{ id: "add-room", icon: Plus, label: t("recipes.bed.addRoom") }]}
+          />
+          <InputGroup>
+            <InputGroupAddon>
+              <Search className="size-3.5 text-things-gray-3" aria-hidden="true" />
+            </InputGroupAddon>
+            <InputGroupInput
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={t("recipes.bed.search")}
+              aria-label={t("recipes.bed.search")}
+              className="h-8 w-52 text-sm"
+            />
+          </InputGroup>
+          <Select value={zoneId} onValueChange={setZoneId}>
+            <SelectTrigger size="sm" className="w-48" aria-label={t("recipes.bed.zone")}>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">{t("recipes.bed.zoneAll")}</SelectItem>
+              {zones.map((z) => (
+                <SelectItem key={z.id} value={z.id}>{z.name}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <ToggleGroup
+            type="single"
+            value={view}
+            onValueChange={(v) => { if (v) setView(v as "layout" | "list") }}
+            variant="outline"
+            size="sm"
+            aria-label={t("recipes.bed.view")}
+            className="ml-auto"
+          >
+            <ToggleGroupItem value="layout"><LayoutGrid className="size-3.5" aria-hidden="true" />{t("recipes.bed.layout")}</ToggleGroupItem>
+            <ToggleGroupItem value="list"><List className="size-3.5" aria-hidden="true" />{t("recipes.bed.list")}</ToggleGroupItem>
+          </ToggleGroup>
+        </div>
+
+        <CategoryLegend categories={legendCategories} value={legendCategories.map((c) => c.id)} />
+
+        {zones.length === 0 ? (
+          <div className="rounded-md border border-things-hairline bg-card p-6">
+            <Empty>
+              <EmptyHeader>
+                <EmptyMedia variant="icon">
+                  <BedDouble aria-hidden="true" />
+                </EmptyMedia>
+                <EmptyTitle>{t("recipes.bed.noRooms")}</EmptyTitle>
+              </EmptyHeader>
+              <EmptyContent>
+                <Button size="sm"><Plus className="size-3.5" aria-hidden="true" />{t("recipes.bed.addRoom")}</Button>
+              </EmptyContent>
+            </Empty>
+          </div>
+        ) : visibleZones.length === 0 ? (
+          <div className="rounded-md border border-things-hairline bg-card p-6">
+            <Empty>
+              <EmptyHeader>
+                <EmptyMedia variant="icon">
+                  <Search aria-hidden="true" />
+                </EmptyMedia>
+                <EmptyTitle>{t("recipes.bed.noMatch")}</EmptyTitle>
+              </EmptyHeader>
+            </Empty>
+          </div>
+        ) : view === "list" ? (
+          <DataTable columns={listColumns} rows={listRows} rowKey={(r) => r.id} className="rounded-md border border-things-hairline" />
+        ) : (
+          <div className="space-y-4">
+            {visibleZones.map((z) => (
+              <CollapsiblePanel
+                key={z.id}
+                variant="section"
+                title={
+                  <span className="flex flex-wrap items-baseline gap-2">
+                    {z.name}
+                    <span className="clinic-num text-xs font-normal text-things-gray-2">
+                      {t("recipes.bed.meta", { rooms: z.rooms.length, beds: z.rooms.reduce((n, r) => n + r.beds.length, 0) })}
+                    </span>
+                  </span>
+                }
+              >
+                <div className="grid gap-3 [grid-template-columns:repeat(auto-fill,minmax(210px,1fr))]">
+                  {z.rooms.map((r) => (
+                    <button
+                      key={r.id}
+                      type="button"
+                      data-room={r.id}
+                      aria-label={roomA11yName(r, t)}
+                      aria-pressed={selected === r.id || undefined}
+                      onClick={() => setSelected(r.id)}
+                      className={cn(
+                        "flex flex-col gap-2 rounded-md border bg-card p-3 text-left shadow-xs transition-colors hover:border-things-blue/50 focus-visible:outline-2 focus-visible:outline-things-blue",
+                        selected === r.id ? "border-things-blue" : "border-things-hairline",
+                        !r.active && "opacity-75",
+                      )}
+                    >
+                      <span className="flex w-full items-center gap-2">
+                        <span className="min-w-0 flex-1 truncate text-sm font-semibold text-things-title">{r.code}</span>
+                        <Badge variant="outline" className="shrink-0 text-things-gray-2">{r.type}</Badge>
+                      </span>
+                      <span className="text-xs text-things-gray-2">
+                        {[r.name, `${r.beds.length} ${t("recipes.bed.beds", { count: r.beds.length })}`, r.gender ? t(`recipes.bed.gender.${r.gender}`) : null].filter(Boolean).join(" · ")}
+                      </span>
+                      <BedChips room={r} />
+                      {(r.isTest || !r.active) && (
+                        <span className="flex gap-1.5">
+                          {r.isTest && <Badge variant="outline" className="text-things-gray-2">{t("recipes.bed.test")}</Badge>}
+                          {!r.active && <Badge variant="outline" className="border-clinic-critical/40 text-clinic-critical">{t("recipes.bed.inactive")}</Badge>}
+                        </span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </CollapsiblePanel>
+            ))}
+            <p data-bed-count className="clinic-num text-xs text-things-gray-3">
+              {t("recipes.bed.meta", { rooms: totalRooms, beds: totalBeds })}
+            </p>
+          </div>
+        )}
+      </div>
+    </Frame>
+  )
+}
+
+export const BedLayout: Story = {
+  parameters: { docs: { description: { story: "Nursing home SCR-007 Layout view (issue #4): zones → rooms → bed chips, read-mostly; occupancy is set by the admission workflow, not here. Colour never alone: state tooltips, legend counts, and strikethrough for out-of-service." } } },
+  render: () => <BedLayoutDemo zones={BED_ZONES} />,
+}
+
+export const BedLayoutEmpty: Story = {
+  parameters: { docs: { description: { story: "The empty branch with no rooms yet — bed icon and Add room." } } },
+  render: () => <BedLayoutDemo zones={[]} />,
 }
