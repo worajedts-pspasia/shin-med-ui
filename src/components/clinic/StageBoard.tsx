@@ -81,7 +81,7 @@ export function StageBoard({
           <div
             key={col.id}
             className={cn(
-              "flex min-w-48 flex-1 flex-col rounded-lg border bg-things-sidebar",
+              "flex min-w-48 flex-1 flex-col rounded-md border bg-things-sidebar",
               appendHere ? "border-things-blue ring-2 ring-things-blue/25" : "border-things-hairline",
             )}
           >
