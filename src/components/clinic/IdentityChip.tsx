@@ -55,7 +55,7 @@ export function IdentityChip({
       onClick={onClick}
       title={title ?? (variant === "menu" ? `Change ${role ?? "person"}` : undefined)}
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border border-things-box bg-white",
+        "inline-flex items-center gap-2 rounded-full border border-things-box bg-card",
         dense ? "h-6.5 gap-1.5 px-2" : "h-8 px-2.5",
         Tag === "button" && "cursor-pointer hover:bg-things-hover",
         add && "border-dashed border-things-box text-things-blue",
@@ -68,7 +68,7 @@ export function IdentityChip({
         <span
           className={cn(
             "flex items-center justify-center rounded-full font-bold",
-            dense ? "size-4.5 text-[8px]" : "size-5.5 text-[9px]",
+            dense ? "size-4 text-[8px]" : "size-5.5 text-[9px]",
             TONE[tone],
           )}
           aria-hidden="true"

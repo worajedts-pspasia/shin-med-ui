@@ -78,7 +78,7 @@ export function BoardCard({
       onDragEnd={onDragEnd}
       onClick={onClick}
       className={cn(
-        "rounded-md border border-things-border bg-white",
+        "rounded-md border border-things-border bg-card",
         selected ? "border-l-things-blue bg-things-blue-soft" : EDGE[status],
         dense ? "p-1.5" : "p-2",
         onClick && "cursor-pointer",

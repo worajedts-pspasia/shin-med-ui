@@ -13,7 +13,7 @@ Runs standalone in Storybook; consumed by apps as a package (first consumer:
 npm install
 npm run storybook        # http://localhost:6006
 npm run typecheck        # tsc --noEmit
-npm run verify:spec      # needs the Rails app (localhost:3000) + Storybook (6006) running
+npm run verify:spec      # targets via SPEC_TARGET_URL / SPEC_STORYBOOK_URL (default localhost:3000 / 6006)
 ```
 
 ## The sidebar map
@@ -64,6 +64,10 @@ for it, a **Watch out** callout).
 6. **Fixtures stay deterministic** — fixed ISO dates, no `Date.now()`, no
    randomness, PHI-free.
 7. Stories are new files; vendored `ui/*.tsx` primitives are never edited.
+8. **No password components.** The clinic product signs in by email code,
+   magic link or passkey — never add password fields or password-rule
+   components (issue #1 §6). Composition patterns live under the
+   **Recipes** group, registered as stories, not components.
 
 ## Consumer guide (how an app uses this package)
 

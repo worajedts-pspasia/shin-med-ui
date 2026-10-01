@@ -80,3 +80,24 @@ export const Thai: Story = {
     </ForcedLocale>
   ),
 }
+
+export const Japanese: Story = {
+  render: () => (
+    <ForcedLocale locale="th">
+      <AtDensity density="compact">
+        <StepTabs
+          steps={[
+            { id: "receipt", label: "รับของ" },
+            { id: "claim", label: "เคลม" },
+            { id: "scrub", label: "確認" },
+            { id: "transmit", label: "送信" },
+            { id: "print", label: "印刷キュー" },
+          ]}
+          activeId="scrub"
+          onSelect={() => {}}
+          completedIds={["receipt", "claim"]}
+        />
+      </AtDensity>
+    </ForcedLocale>
+  ),
+}

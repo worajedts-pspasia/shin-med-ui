@@ -32,12 +32,12 @@ type Story = StoryObj<typeof meta>
 const ICONS = [CalendarDays, UserRound, MessageSquare, FileText, ReceiptText, BarChart3]
 const MODULES: ModuleItem[] = moduleItemsData.map((m, i) => ({ ...m, icon: ICONS[i % ICONS.length] }))
 
-function Shell() {
+function Shell(props: Partial<React.ComponentProps<typeof AppShell>>) {
   const [activeModule, setActiveModule] = useState("schedule")
   const [activeSection, setActiveSection] = useState("summary")
   return (
     <div className="h-[100dvh] overflow-hidden">
-      <AppShell
+      <AppShell {...props}
         density="compact"
         rail={<ModuleRail items={MODULES} activeId={activeModule} onSelect={setActiveModule} />}
         header={
@@ -78,8 +78,11 @@ export const Desktop: Story = {
 }
 
 export const Tablet: Story = {
-  parameters: { viewport: { defaultViewport: "tablet" } },
-  render: () => <Shell />,
+  parameters: {
+    viewport: { defaultViewport: "tablet" },
+    docs: { description: { story: "Issue #1: the inspector edge tab at its large documented size (>=40x120px, icon + label, select tint, blue border)." } },
+  },
+  render: () => <Shell edgeTabSize="lg" inspectorTitle="Details" />,
 }
 
 export const Mobile: Story = {

@@ -464,7 +464,9 @@
       "search": "アプリを検索",
       "noResults": "アプリが見つかりません",
       "pin": "ツールバーにピン留め",
-      "unpin": "ツールバーのピン留めを解除"
+      "unpin": "ツールバーのピン留めを解除",
+      "modules": "モジュール",
+      "comingLater": "近日公開"
     },
     "recon": {
       "item": "項目",
@@ -799,5 +801,23 @@
       "accD4": "残り、未予定。",
       "accD5": "完了・中止済み。"
     }
+  },
+  "recipes": {
+    "expand": "展開",
+    "collapse": "折りたたむ",
+    "setupTitle": "クリニック設定",
+    "incomplete": "未完了",
+    "next": "次へ",
+    "day": "曜日",
+    "open": "開く",
+    "hours": "診療時間",
+    "addPeriod": "時間帯を追加",
+    "closed": "休診",
+    "copy": "コピー先…",
+    "copyTo": "この日を他の曜日にコピー",
+    "codeHint": "メールで送信した6桁のコードを入力してください。",
+    "codeLabel": "メールコード",
+    "resend": "再送信",
+    "passkey": "パスキーでサインイン"
   }
 }

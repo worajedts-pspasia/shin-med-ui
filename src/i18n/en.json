@@ -464,7 +464,9 @@
       "search": "Search apps",
       "noResults": "No apps found",
       "pin": "Pin to toolbar",
-      "unpin": "Unpin from toolbar"
+      "unpin": "Unpin from toolbar",
+      "modules": "Modules",
+      "comingLater": "Coming later"
     },
     "recon": {
       "item": "Item",
@@ -799,5 +801,23 @@
       "accD4": "Remaining, unscheduled.",
       "accD5": "Completed and canceled."
     }
+  },
+  "recipes": {
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "setupTitle": "Clinic setup",
+    "incomplete": "Incomplete",
+    "next": "Next",
+    "day": "Day",
+    "open": "Open",
+    "hours": "Hours",
+    "addPeriod": "Add period",
+    "closed": "Closed",
+    "copy": "Copy to…",
+    "copyTo": "Copy this day to another day",
+    "codeHint": "Enter the 6-digit code we emailed you.",
+    "codeLabel": "Email code",
+    "resend": "Resend",
+    "passkey": "Sign in with a passkey"
   }
 }
