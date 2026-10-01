@@ -691,6 +691,25 @@
       "from": "Window start",
       "to": "Window end",
       "window": "{{from}} – {{to}}"
+    },
+    "camera": {
+      "viewfinder": "Camera view",
+      "open": "Open camera",
+      "close": "Close camera",
+      "takePhoto": "Take photo",
+      "requesting": "Waiting for camera permission…",
+      "denied": "Camera blocked",
+      "deniedHint": "Allow the camera for this app in the browser settings.",
+      "unsupported": "No camera available",
+      "unsupportedHint": "This browser or connection cannot use the camera.",
+      "count": "{{n}} of {{max}}",
+      "max": "Photo limit reached",
+      "photos": "Photos",
+      "photoN": "Photo {{n}}, {{time}}",
+      "remove": "Remove photo {{n}}",
+      "taken": "Photo {{n}} taken",
+      "required": "A photo is required for this finding",
+      "noGallery": "Photos stay in the app, never in the gallery"
     }
   },
   "design": {

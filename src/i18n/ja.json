@@ -691,6 +691,25 @@
       "from": "期間の開始",
       "to": "期間の終了",
       "window": "{{from}} – {{to}}"
+    },
+    "camera": {
+      "viewfinder": "カメラ表示",
+      "open": "カメラを開く",
+      "close": "カメラを閉じる",
+      "takePhoto": "撮影",
+      "requesting": "カメラの許可を待っています…",
+      "denied": "カメラがブロック中",
+      "deniedHint": "ブラウザ設定でこのアプリのカメラを許可してください。",
+      "unsupported": "カメラを利用できません",
+      "unsupportedHint": "このブラウザまたは接続ではカメラを使えません。",
+      "count": "{{n}} / {{max}}",
+      "max": "撮影枚数の上限です",
+      "photos": "写真",
+      "photoN": "写真 {{n}}、{{time}}",
+      "remove": "写真 {{n}} を削除",
+      "taken": "写真 {{n}} を撮影しました",
+      "required": "この所見には写真が必要です",
+      "noGallery": "写真はアプリ内のみ、ギャラリーには入りません"
     }
   },
   "design": {

@@ -2,7 +2,7 @@
 
 The design system for the clinic and task-management product family: **~450 stories** of
 React 19 components — a full shadcn/ui registry vendored and Things-themed, a
-clinical layer of 96 components (from patient identity to the four-pane clinic
+clinical layer of 97 components (from patient identity to the four-pane clinic
 shell), the token set they all share, and the verifier that keeps them honest.
 Runs standalone in Storybook; consumed by apps as a package (first consumer:
 **[Sample Tasks UI](https://github.com/worajedts-pspasia/Sample-Task-UI)**, the Rails task-management app).
