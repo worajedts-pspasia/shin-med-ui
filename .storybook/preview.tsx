@@ -33,10 +33,15 @@ const preview: Preview = {
           method: "alphabetical",
           // group ORDER fixed (incl. the regrouped Medical/UI subgroups); stories sort A–Z
           order: [
+        // A group's subgroup order is the array right AFTER its name
+        // ("UI", [...]) — wrapping both in one array (["UI", [...]]) is
+        // ignored by Storybook's storySort and drops the group to the end.
         "Design System",
+        "UI", ["Display", "Input", "Navigation", "Containers", "Chat"],
+        "Charts",
+        "Recipes",
+        "Medical", ["Introduction", "Medical UI", "Medical Shell", "Medical Component"],
         "Task Management",
-        ["Medical", ["Introduction", "Medical UI", "Medical Shell", "Medical Component"]],
-        ["UI", ["Display", "Input", "Navigation", "Containers", "Chat"]],
       ],
         },
     },
