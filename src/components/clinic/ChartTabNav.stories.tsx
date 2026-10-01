@@ -30,3 +30,41 @@ export const Playground: Story = {
 }
 export const Vertical: Story = { render: () => <div className="max-w-44"><Demo /></div> }
 export const Horizontal: Story = { render: () => <Demo orientation="horizontal" /> }
+
+const TH_SECTIONS = [
+  { id: "summary", label: "สรุป", badge: 3 },
+  { id: "meds", label: "ยา", badge: 12 },
+  { id: "allergies", label: "การแพ้", badge: 2 },
+  { id: "vitals", label: "สัญญาณชีพ" },
+  { id: "results", label: "ผลแล็บ", badge: 5 },
+]
+const JA_SECTIONS = [
+  { id: "summary", label: "サマリー", badge: 3 },
+  { id: "meds", label: "薬剤", badge: 12 },
+  { id: "allergies", label: "アレルギー", badge: 2 },
+  { id: "vitals", label: "バイタル" },
+  { id: "results", label: "検査結果", badge: 5 },
+]
+
+function LocaleDemo({ sections }: { sections: { id: string; label: string; badge?: number }[] }) {
+  const [active, setActive] = useState("summary")
+  return <ChartTabNav sections={sections} activeId={active} onSelect={setActive} />
+}
+
+export const Thai: Story = {
+  parameters: { docs: { description: { story: "Long Thai labels in the narrow vertical rail (issue #1 locale coverage)." } } },
+  render: () => (
+    <div className="max-w-44">
+      <LocaleDemo sections={TH_SECTIONS} />
+    </div>
+  ),
+}
+
+export const Japanese: Story = {
+  parameters: { docs: { description: { story: "Long Japanese labels in the narrow vertical rail (issue #1 locale coverage)." } } },
+  render: () => (
+    <div className="max-w-44">
+      <LocaleDemo sections={JA_SECTIONS} />
+    </div>
+  ),
+}

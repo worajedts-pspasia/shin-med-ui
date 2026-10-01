@@ -112,3 +112,21 @@ export const Thai: Story = {
     </ForcedLocale>
   ),
 }
+
+export const Japanese: Story = {
+  render: () => (
+    <ForcedLocale locale="ja">
+      <AtDensity density="compact">
+        <div className="max-w-xl rounded-md border border-things-hairline">
+          <FormActionBar
+            primary={{ label: "บันทึก", onSelect: () => {} }}
+            secondary={[{ label: "ยกเลิก", onSelect: () => {} }, { label: "ส่งตรวจ", onSelect: () => {} }]}
+            destructive={{ label: "ลบ", confirmLabel: "ลบทะเบียนนี้?", onConfirm: () => {} }}
+            dirty
+            onCancel={() => {}}
+          />
+        </div>
+      </AtDensity>
+    </ForcedLocale>
+  ),
+}
