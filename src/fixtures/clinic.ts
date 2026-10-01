@@ -2,7 +2,7 @@
 // No fetches, no randomness, no Date.now — fixed ISO strings only.
 import type { AllergyRecord, CodedConcept, NameParts, PatientIdentity, Tone, Urgency, VisitStatus } from "@/components/clinic/types"
 import type { AttachmentRef } from "@/components/clinic/AttachmentChip"
-import type { LauncherApp } from "@/components/clinic/LauncherRail"
+import type { LauncherApp, LauncherSection } from "@/components/clinic/LauncherRail"
 import type { ReconciliationItem } from "@/components/clinic/ReconciliationList"
 import type { NoteHistoryEntry } from "@/components/clinic/NoteHistoryLog"
 import type { CodeGroup } from "@/components/clinic/CodePickerAccordion"
@@ -18,7 +18,7 @@ import {
   BarChart3, CalendarDays, ClipboardList, FlaskConical, HeartPulse, ListChecks,
   Mail, NotebookPen, PillBottle, Receipt, Scan, Settings, ShieldAlert,
   Stethoscope, Syringe, Users,
-  FileText, Megaphone,
+  FileText, Megaphone, TriangleAlert,
 } from "lucide-react"
 
 export const FIXTURE_AS_OF = "2026-09-28"
@@ -693,6 +693,32 @@ export const fixtureLauncherApps: LauncherApp[] = [
 ]
 
 /** Default rail shortcuts (5 — the daily modules). */
+/** Issue #1 sections mode: top-level modules of the clinic program (Billing + Settings disabled). */
+export const fixtureLauncherModuleGroups = [
+  { id: "core", label: "Core" },
+  { id: "more", label: "More" },
+]
+export const fixtureLauncherModules: LauncherApp[] = [
+  { id: "clinic", label: "Clinic", icon: Stethoscope, category: "notes", group: "core" },
+  { id: "reports", label: "Reports", icon: BarChart3, category: "orders", group: "core" },
+  { id: "billing", label: "Billing", icon: Receipt, category: "alerts", group: "more", disabled: true },
+  { id: "settings", label: "Settings", icon: Settings, category: "notes", group: "more", disabled: true },
+]
+
+/** The Clinic module's 10 sections, in the order the module defines. */
+export const fixtureClinicSections: LauncherSection[] = [
+  { id: "chart", label: "Chart", icon: FileText },
+  { id: "schedule", label: "Schedule", icon: CalendarDays },
+  { id: "vitals", label: "Vitals", icon: HeartPulse },
+  { id: "orders", label: "Orders", icon: ClipboardList },
+  { id: "problems", label: "Problems", icon: ShieldAlert },
+  { id: "meds", label: "Medications", icon: PillBottle },
+  { id: "allergies", label: "Allergies", icon: TriangleAlert },
+  { id: "results", label: "Results", icon: FlaskConical },
+  { id: "notes", label: "Notes", icon: NotebookPen },
+  { id: "documents", label: "Documents", icon: Scan },
+]
+
 export const fixtureLauncherPinned = ["chart", "schedule", "messages", "results", "rx"]
 
 /** Reconciliation — mixed decisions across the three sections. */

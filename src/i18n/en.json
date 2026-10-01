@@ -464,7 +464,9 @@
       "search": "Search apps",
       "noResults": "No apps found",
       "pin": "Pin to toolbar",
-      "unpin": "Unpin from toolbar"
+      "unpin": "Unpin from toolbar",
+      "modules": "Modules",
+      "comingLater": "Coming later"
     },
     "recon": {
       "item": "Item",
