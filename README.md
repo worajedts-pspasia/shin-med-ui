@@ -64,6 +64,10 @@ for it, a **Watch out** callout).
 6. **Fixtures stay deterministic** — fixed ISO dates, no `Date.now()`, no
    randomness, PHI-free.
 7. Stories are new files; vendored `ui/*.tsx` primitives are never edited.
+8. **No password components.** The clinic product signs in by email code,
+   magic link or passkey — never add password fields or password-rule
+   components (issue #1 §6). Composition patterns live under the
+   **Recipes** group, registered as stories, not components.
 
 ## Consumer guide (how an app uses this package)
 
