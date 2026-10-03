@@ -1079,3 +1079,107 @@ formatter-sized — an afternoon each — but they are P0 because getting
 locale-correct names, composite ages and unit-bearing values wrong later means
 touching every other component. The messaging four are P0 because the brief
 names the chat family and no other P0 component depends on a pending decision.
+
+---
+
+# Post-catalog additions (2026-09 → 2026-10)
+
+Added after the 93-entry reconciliation (09). Same rules, same format; the
+chart family extends Layer 4, the stage family serves workflow screens, and
+the tier reflects nursing-home priorities. Props live in each component's
+autodocs page; signatures below are the load-bearing parts only.
+
+## Chart family (`src/components/charts/`, extends Layer 4)
+
+Six charts sharing one `ChartConfig` (token-palette colors) and the
+**recharts via `ui/chart`** base. Fluid; every chart answers one question.
+
+### `Sparkline` — a bare trend with no axes
+**P1** · metric context · **Fluid**
+`{ points, color?, filled = true, height = "h-10" }`. The shape is the whole
+message; it belongs inside a MetricTile or a table row, never alone — it
+carries no scale, and the host is responsible for saying how high is high.
+
+### `LineChart` — the trend chart's flat sibling
+**P1** · `TrendChart` family · **Fluid**
+Multi-series lines for when position beats volume. A series may carry a dash
+pattern for projections — actual solid, forecast dashed — with a null gap
+ending the solid line where the future begins. Reference bands and
+annotations inherited from the family.
+
+### `AreaChart` — the volume chart
+**P1** · `TrendChart` family · **Fluid**
+Deals over time, traffic over months. Series stack or overlap; gradient
+fills fade to the baseline so two series never fight for the same ink.
+
+### `BarChart` — the comparison chart
+**P1** · **Fluid**
+Categories against each other, stages of a funnel sideways. Bars take
+rounded ends so each reads as a container, not a spike; grouped by default,
+stacked when the parts matter as much as the whole. Horizontal is not a
+style choice — it is the answer when labels outrun the width.
+
+### `DonutChart` — parts of a whole, total in the hole
+**P1** · **Fluid**
+The center stat answers "how much altogether" so the ring can stay busy
+answering "what are the parts". Past five or six slices, the ring stops
+being readable — take the excess to an "other" slice or a table.
+
+### `RadialChart` — one number against its ceiling
+**P1** · **Fluid**
+Quota, goal, completion. Track = remaining distance, bar = progress, tone =
+verdict (green at goal, amber behind, red only when the number itself is
+the alarm). A gauge answers exactly one question.
+
+## Stage family (workflow screens)
+
+### `StageFlowBar` — position in a fixed stage sequence
+**P1** · care pathways, review flows · **Fluid**
+`{ stages: string[], current, inactive = [], unitLabel }`. Chevron segments:
+done stages green with their dwell duration, the current stage blue, skipped
+stages hatched and unclickable. The stage list is fixed — this bar reports
+position, it never reorders.
+
+### `StageBoard` — columns of movable cards, one per stage
+**P1** · `StageFlowBar`, `BoardCard` · **Fluid**
+Cards move between stage columns (drop at an exact position, not just
+append). Every column header reports two numbers that stay honest — card
+count and column sum (money or any summable quantity, unit-prefixed) —
+re-derived from data on every move.
+
+### `BoardCard` — the card surface for board anatomy
+**P2** · `ui/card` · **Fluid**
+Title, a summable value in tabular figures, optional contact line, and a
+two-channel color status (left edge + soft chip). Selected is the blue left
+edge on the soft tint — the task-row language. A plain Card plus anatomy,
+never more.
+
+## Nursing-home atoms
+
+### `IdentityChip` — who a thing belongs to
+**P2** · owner / follower / assignee / care-team member · `ui/avatar` · **Fluid**
+Avatar, name, role, at most one caret menu (`variant="removable"`). The
+existing chips say what an item *has*; this one says who it *belongs to*,
+and it stays on screen after RecipientPicker has done its picking. Companion
+`FollowerStack` renders the overflow crowd. `dense` rides the density scale.
+
+### `CalloutNote` — a note pinned by a person, on purpose
+**P2** · between `AllergyBanner` (system) and `NoteHistoryLog` (append-only) · **Fluid**
+Tone carries intent, the provenance line carries author and date; position
+and dismiss timeout are settable, sticky inline by default. Two channels
+always — tone plus a glyph — per the never-colour-alone rule.
+
+## Recipes registry (Docs page — stories, never components)
+
+The **Recipes** group in Storybook holds compositions that are deliberately
+not components (issue #1 §2). Registered recipes:
+
+| Recipe | Product screen | Composition core |
+|---|---|---|
+| Setup progress bar | clinic SCR-022 | 2× Progress + tabular percents + link + warning Badge + collapse |
+| Weekly hours | clinic SCR-005/007 | DataTable + Switch + InputGroup periods + copy-to-day |
+| Time range | clinic SCR-005/007 | InputGroup(two time Inputs) + ghost remove |
+| Language switcher | app shell header | ghost Button(globe) + DropdownMenu radios, native names |
+| Email code entry | clinic SCR-043 | InputOTP(6) + Resend countdown + passkey — no passwords, ever |
+| Bed layout | nursing home SCR-007 | zone CollapsiblePanels → card-button rooms → StatusDot+mono bed chips; state tokens per §3 of issue #4; never colour alone |
+| Resident gallery | nursing home SCR-029 (WF-02 D-082) | card-buttons with Avatar + overdue/due/done Badges; own residents first; away dimmed; tap opens that resident's tasks |

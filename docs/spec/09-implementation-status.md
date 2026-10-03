@@ -1,6 +1,6 @@
 # 09 — Implementation status (spec ↔ storybook reconciliation)
 
-**Status: implemented.** Reconciled against the built system on 2026-09-29.
+**Status: implemented.** Reconciled against the built system on 2026-09-29; addendum reconciled 2026-10-02.
 This file records where the spec and the Storybook agree, where they drifted,
 and where the truth lives now. Update it whenever a component is added,
 renamed or consolidated.
@@ -11,9 +11,10 @@ renamed or consolidated.
 |---|---|---|
 | Authored components | 96 (90 `clinic/*.tsx` + 6 `things/*.tsx`, incl. the `story-utils` and `icons` helpers) | `src/components/` |
 | Vendored shadcn primitives | 61 | `src/components/ui/` (never edited) |
-| Stories | 448 across 167 story files | colocated `*.stories.tsx` |
+| Stories | 528 across ~180 story files (incl. the Recipes docs page) | colocated `*.stories.tsx` |
 | Tokens | 51, mirrored exactly between `src/theme.css` and `src/design-tokens.json` (verifier-enforced) | `src/` |
 | Locales | en / th / ja | `src/i18n/` |
+| Post-catalog additions | 12 components (chart family ×6, stage family ×3, IdentityChip, CalloutNote, CameraCapture) + 7 recipes — see 04's addendum | `src/components/{charts,clinic,recipes}/` |
 | Verifier | ~300 checks against the Sample Tasks UI Rails app (:3000) + Storybook (:6006) | `tools/verify-spec.mjs` |
 
 ## Catalog reconciliation (04)
